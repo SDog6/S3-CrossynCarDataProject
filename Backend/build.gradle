@@ -14,7 +14,7 @@ sonarqube {
 }
 
 springBoot {
-    mainClass = "com.example.Backend.CrossynApp"
+    mainClass = "Backend.CrossynApp"
 }
 
 group = 'com.example'

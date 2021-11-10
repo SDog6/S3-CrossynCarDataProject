@@ -27,7 +27,7 @@ public class CrossynApp {
 
     public static void main(String[] args) throws IOException
     {
-        SpringApplication.run(CrossynApp.class, args);
+        //SpringApplication.run(CrossynApp.class, args);
         BlockingQueue<TripEntry> queue = new ArrayBlockingQueue(10000);
         TripEntryAlgorithm Algorithm = new TripEntryAlgorithm(queue);
         new Thread(Algorithm).start();
