@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/CrossynApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/CrossynApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +131,20 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Backend [bootJarMainClassName]">
+  <component name="RunManager" selected="Application.CrossynApp">
+    <configuration name="CrossynApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Backend.CrossynApp" />
+      <module name="Backend.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Backend [bootJarMainClassName]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -144,27 +157,6 @@
         <option name="taskNames">
           <list>
             <option value="bootJarMainClassName" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="Backend [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="bootJar" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -239,11 +231,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CrossynApp" />
         <item itemvalue="Gradle.Backend [bootJarMainClassName]" />
         <item itemvalue="Gradle.Backend [bootRunMainClassName]" />
         <item itemvalue="Gradle.Backend [model]" />
         <item itemvalue="Gradle.Backend [compileJava]" />
-        <item itemvalue="Gradle.Backend [bootJar]" />
       </list>
     </recent_temporary>
   </component>
@@ -261,7 +253,7 @@
       <workItem from="1635894482758" duration="2974000" />
       <workItem from="1635927261525" duration="1817000" />
       <workItem from="1635939560613" duration="4748000" />
-      <workItem from="1636545189436" duration="2547000" />
+      <workItem from="1636545189436" duration="3006000" />
     </task>
     <servers />
   </component>
