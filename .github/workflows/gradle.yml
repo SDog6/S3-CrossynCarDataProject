@@ -36,10 +36,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      - name: cd into right directory
-        run: cd Backend
-      - name: make gradlew executable
-        run: chmod +x ./gradlew
-      - name: run sonarqube build!
-        run: ./gradlew build sonarqube --info
+      - name: cd into right directory, make executable and run
+        run: |
+          cd Backend
+          chmod +x ./gradlew
+          ./gradlew build sonarqube --info
          
