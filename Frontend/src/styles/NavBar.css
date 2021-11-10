@@ -1,0 +1,25 @@
+.nav-link{
+    font-size: 25px;
+    color: white !important;
+}
+
+.me-auto{
+ 
+    position:absolute;
+  top: 20px;
+  right:0;
+
+}
+
+a.nav-link {
+    margin-inline: 20px;
+}
+
+
+img.img-logo {
+    width: 75px;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+
