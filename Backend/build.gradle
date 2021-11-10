@@ -13,7 +13,9 @@ sonarqube {
     }
 }
 
-
+springBoot {
+    mainClass = "com.example.Backend.CrossynApp"
+}
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
