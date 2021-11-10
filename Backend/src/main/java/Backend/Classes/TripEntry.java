@@ -3,19 +3,16 @@ package Backend.Classes;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.*;
+//import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 
 
-@Entity
-@Table(name ="tripentry")
+
 public class TripEntry {
 
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String vehicleId;
     private double lat;

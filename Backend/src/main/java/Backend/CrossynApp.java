@@ -7,6 +7,7 @@ import Backend.Classes.TripEntry;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.swing.*;
@@ -20,12 +21,13 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 
-//@SpringBootApplication
+@SpringBootApplication
 public class CrossynApp {
 
 
-    public static void main(String a[]) throws IOException
+    public static void main(String[] args) throws IOException
     {
+        SpringApplication.run(CrossynApp.class, args);
         BlockingQueue<TripEntry> queue = new ArrayBlockingQueue(10000);
         TripEntryAlgorithm Algorithm = new TripEntryAlgorithm(queue);
         new Thread(Algorithm).start();
