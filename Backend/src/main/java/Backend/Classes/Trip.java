@@ -1,18 +1,28 @@
 package Backend.Classes;
 
-import Backend.Interfaces.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.boot.autoconfigure.web.WebProperties;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDate;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 
 
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Document(collection= "Trips")
 public class Trip{
 
 
-
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String id;
     private String vehicleId;
     private ZonedDateTime startTime;
     private ZonedDateTime endTime;
@@ -30,13 +40,10 @@ public class Trip{
         Entries = new ArrayList<TripEntry>();
     }
 
-    public Trip(){
-    }
 
+    public void setId(String id){this.id = id;}
 
-    public void setId(Long id){this.id = id;}
-
-    public Long getID() {
+    public String getID() {
         return id;
     }
 
@@ -107,4 +114,6 @@ public class Trip{
 
         }
     }
+
+
 }

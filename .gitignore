@@ -104,3 +104,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Directory for mongoDB but we don't want the log cuz it's too big
+Data/journal
+Data/**/*.lock

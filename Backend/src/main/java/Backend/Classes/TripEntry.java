@@ -1,15 +1,18 @@
 package Backend.Classes;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 //import javax.persistence.*;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+//import javax.persistence.Id;
 import java.time.ZonedDateTime;
 
-
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class TripEntry {
 
 
@@ -39,9 +42,6 @@ public TripEntry(String vehicleId, double lat, double lon, int alt, ZonedDateTim
     this.ignition = ignition;
 
 }
-
-public TripEntry() {} //this is for the deserializer
-
 
 
     public void setId(Long id){this.id = id;}

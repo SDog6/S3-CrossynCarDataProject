@@ -1,24 +1,20 @@
 package API;
 
-import com.mongodb.MongoClient;
-import com.mongodb.MongoClientURI;
-import com.mongodb.ServerAddress;
-
-import com.mongodb.client.MongoDatabase;
+import com.mongodb.ConnectionString;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
-
-import org.bson.Document;
-import java.util.Arrays;
-import com.mongodb.Block;
-
-import com.mongodb.client.MongoCursor;
+import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.*;
-import com.mongodb.client.result.DeleteResult;
-import static com.mongodb.client.model.Updates.*;
-import com.mongodb.client.result.UpdateResult;
-import java.util.ArrayList;
+import com.mongodb.client.model.CreateCollectionOptions;
+import com.mongodb.client.model.ValidationOptions;
+
+
+import java.util.Arrays;
 import java.util.List;
 
+import org.bson.Document;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
@@ -26,10 +22,17 @@ public class APIApp {
     public static void main(String[] args)
     {
         //SpringApplication.run(APIApp.class, args);
-        MongoClientURI connectionString = new MongoClientURI("mongodb://localhost:27017/CrossynApp");
-        MongoClient mongoClient = new MongoClient(connectionString);
-        MongoDatabase database = mongoClient.getDatabase("CrossynApp");
-        MongoCollection<Document> collection = database.getCollection("test");
+        /*ConnectionString connectionString = new ConnectionString("mongodb://localhost:27017");
+        MongoClientSettings settings = MongoClientSettings.builder()
+                .applyConnectionString(connectionString)
+                .build();
+        MongoClient mongoClient = MongoClients.create(settings);
+
+        MongoDatabase database = mongoClient.getDatabase("Crossyn");
+
+        //MongoClient mongoClient = new MongoClient(connectionString);
+        //MongoDatabase database = mongoClient.getDatabase("Crossyn");
+        MongoCollection<Document> collection = database.getCollection("Trips");
 
         Document doc = new Document("name", "MongoDB")
                 .append("type", "database")
@@ -37,7 +40,9 @@ public class APIApp {
                 .append("versions", Arrays.asList("v3.2", "v3.0", "v2.6"))
                 .append("info", new Document("x", 203).append("y", 102));
 
-        collection.insertOne(doc);
+        collection.insertOne(doc);*/
+
+
     }
 
 }

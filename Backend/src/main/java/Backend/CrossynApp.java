@@ -7,34 +7,49 @@ import Backend.Classes.TripEntry;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.swing.*;
 import java.io.*;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 
-@SpringBootApplication
+@SpringBootApplication()
+@RestController
 public class CrossynApp {
 
 
+    private static TripEntryAlgorithm Algorithm;
+
+
+    public CrossynApp(TripEntryAlgorithm Algorithm) {
+        this.Algorithm = Algorithm;
+    }
+
+    @RequestMapping("/")
+    public String home()
+    {
+        return "Hello Coker World";
+    }
+
     public static void main(String[] args) throws IOException
     {
-        //SpringApplication.run(CrossynApp.class, args);
+        SpringApplication.run(CrossynApp.class, args);
+
         BlockingQueue<TripEntry> queue = new ArrayBlockingQueue(10000);
-        TripEntryAlgorithm Algorithm = new TripEntryAlgorithm(queue);
         new Thread(Algorithm).start();
+        Algorithm.setQueue(queue);
         System.out.println("Debug purpose; You want to use dialog popup to select dataset? (write true or false)");
         Scanner input = new Scanner(System.in);
         boolean set = input.nextBoolean();
-            while(true){
+           // while(true){
 
                 //Algorithm test1 = new Algorithm();
                 TripEntryAccepter TE = new TripEntryAccepter();
@@ -54,26 +69,39 @@ public class CrossynApp {
 
 
 
-
                 for(TripEntry Test : list)
                 {
                     try
                     {
+                        //queue.add(Test);
+                        if(queue.isEmpty())
+                        {
+                            synchronized(queue) {
+                                queue.notify(); // notify the producer
+                            }
+                        }
+
                         queue.put(Test);
                     }
-                    catch(InterruptedException ex)
+                    catch(Exception ex)
                     {
                         ex.printStackTrace();
                     }
 
                 }
+                //Algorithm.setQueue(queue);
+
+                //TripEntryAlgorithm Algorithm = new TripEntryAlgorithm(queue);
+                //Algorithm.run();
+
+
                 //List<Trip> Test = new ArrayList<Trip>();
 
                 //Test = test1.MakeTrips(list);
                 //for (Trip test2 : Test) {
                 //    System.out.println(test2);
                 //}
-            }
+            //}
 
         }
 

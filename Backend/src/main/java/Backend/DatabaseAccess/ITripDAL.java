@@ -4,10 +4,11 @@ import Backend.Classes.Trip;
 
 import java.util.List;
 
-public interface ITripDAL {
+public interface ITripDAL
+{
 
         Trip getTripByName (String name);
         List<Trip> getAllTrips();
-        void addTrip(Trip trip);
+        void addTripdb(Trip trip);
 
 }

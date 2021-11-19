@@ -5,25 +5,30 @@ import Backend.Classes.Trip;
 import Backend.Classes.TripEntry;
 import Backend.Containers.TripContainer;
 import Backend.Containers.TripEntryContainer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigureOrder;
+import org.springframework.stereotype.Service;
 
 import java.time.Duration;
 
+@Service
 public class AlgorithmHandler
 {
     //Things
-    private TripEntry IncomingEntry;
+    @Autowired
     public TripContainer t;
 
     //Constructor
-    public AlgorithmHandler(TripContainer t)
+    @Autowired
+    public AlgorithmHandler()//TripContainer t)
     {
 
-        this.t = t;//new TripContainer();
+        //this.t = t;//new TripContainer();
     }
 
     //Functions
 
-    public boolean Add2Trip(TripEntry entry) //add entry to trip
+    public boolean Add2Trip(@org.jetbrains.annotations.NotNull TripEntry entry) //add entry to trip
     {
         //I do not know what the note under this means anymore but it sounds important so leaving it here for now
         //this.IncomingEntry = tripEntry; //TODO: instead of directly putting it in Incoming run it throught the algorithm first (so TripEntryAlgorithm.Start(TripEntry))
@@ -42,6 +47,7 @@ public class AlgorithmHandler
                 ProcessingTrip.setEndTime(PrevEntry.getDateTime());
                 ProcessingTrip.setCurrentlyOngoing(false); //update completed trip details
                 //Add2Trip(entry); //start this funtions again to create a new trip with the incoming entry (that still isn't handled)
+                t.dbSaveTrip(ProcessingTrip);
                 return true; //trip has ended
             }
 
