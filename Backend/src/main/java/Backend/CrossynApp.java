@@ -4,12 +4,14 @@ import Backend.Algorithm.Algorithm;
 import Backend.Algorithm.TripEntryAlgorithm;
 import Backend.Classes.Trip;
 import Backend.Classes.TripEntry;
+import Backend.Containers.TripContainer;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,8 +28,11 @@ import java.util.concurrent.BlockingQueue;
 public class CrossynApp {
 
 
+
     private static TripEntryAlgorithm Algorithm;
 
+    @Autowired
+    private TripContainer t;
 
     public CrossynApp(TripEntryAlgorithm Algorithm) {
         this.Algorithm = Algorithm;
@@ -36,18 +41,21 @@ public class CrossynApp {
     @RequestMapping("/")
     public String home()
     {
-        return "Hello Coker World";
+        return t.dbGetTrip("61978d3b475e6315eb8ddd6d").toString();
     }
 
     public static void main(String[] args) throws IOException
     {
         SpringApplication.run(CrossynApp.class, args);
 
+
+
         BlockingQueue<TripEntry> queue = new ArrayBlockingQueue(10000);
         new Thread(Algorithm).start();
         Algorithm.setQueue(queue);
         System.out.println("Debug purpose; You want to use dialog popup to select dataset? (write true or false)");
         Scanner input = new Scanner(System.in);
+
         boolean set = input.nextBoolean();
            // while(true){
 
@@ -88,7 +96,9 @@ public class CrossynApp {
                         ex.printStackTrace();
                     }
 
+
                 }
+
                 //Algorithm.setQueue(queue);
 
                 //TripEntryAlgorithm Algorithm = new TripEntryAlgorithm(queue);
@@ -103,7 +113,9 @@ public class CrossynApp {
                 //}
             //}
 
+
         }
+
 
 //
 // TODO: ASKING YOU IF YOU WANT TO SEE WHEN YOU BREAK THE SPEED LIMIT

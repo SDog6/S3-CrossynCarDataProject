@@ -2,14 +2,9 @@ package Backend.Containers;
 
 import Backend.Classes.*;
 import Backend.DatabaseAccess.ITripDAL;
-import com.sun.jdi.ArrayReference;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -54,8 +49,9 @@ public class TripContainer {
 
     public void dbSaveTrip(Trip t)
     {
-        dal.addTripdb(t);
+        dal.addTripinDB(t);
     }
+    public Trip dbGetTrip(String id) {return dal.getTripbyIdinDB(id);}
 
     public Trip CreateTrip(String vehicleId, ZonedDateTime startTime, ZonedDateTime endTime, boolean currentlyOngoing)
     {
