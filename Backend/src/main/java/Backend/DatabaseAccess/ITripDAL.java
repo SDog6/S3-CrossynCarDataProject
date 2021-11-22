@@ -15,13 +15,13 @@ public interface ITripDAL
 
         Trip getOngoingTripbyVehicleIDinDB(String vehicleID);
 
-        List<Trip> getLastThreeTripEntryFromTripinDB(String VehicleID);
+        List<TripEntry> getLastThreeTripEntryFromTripinDB(String VehicleID);
 
 
         void addTripinDB(Trip trip);
 
 
         void addEntryToActiveTripinDB(TripEntry entry, String VehicleID);
-        void changeTripOngoingStatusinDB(boolean status);
+        void changeTripOngoingStatusinDB(boolean status, String tripID);
 
 }

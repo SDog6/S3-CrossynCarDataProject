@@ -6,23 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Accepter/TripEntryAccepter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Accepter/TripEntryAccepter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/TripEntryAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/TripEntryAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/CrossynApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/CrossynApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/ITripDAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/ITripDAL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Repo/ITripRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Data/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/WiredTiger.turtle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Data/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/WiredTiger.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Data/collection-4--8477126271612064742.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/collection-4--8477126271612064742.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/collection-7--8477126271612064742.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/collection-7--8477126271612064742.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/diagnostic.data/metrics.2021-11-19T06-50-45Z-00000" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/diagnostic.data/metrics.2021-11-19T06-50-45Z-00000" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Data/diagnostic.data/metrics.interim" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/diagnostic.data/metrics.interim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Data/index-5--8477126271612064742.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/index-5--8477126271612064742.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Data/index-6--8477126271612064742.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/index-6--8477126271612064742.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/index-8--8477126271612064742.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/index-8--8477126271612064742.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Data/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/sizeStorer.wt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -285,6 +276,7 @@
       <workItem from="1637237277867" duration="2876000" />
       <workItem from="1637308306191" duration="12670000" />
       <workItem from="1637574364410" duration="7988000" />
+      <workItem from="1637582744191" duration="3133000" />
     </task>
     <servers />
   </component>

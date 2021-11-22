@@ -10,8 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.data.mongodb.core.query.*;
 
 import java.time.ZonedDateTime;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 
 @Repository
@@ -73,13 +72,40 @@ public class TripRepo implements ITripDAL
     }
 
     @Override
-    public List<Trip> getLastThreeTripEntryFromTripinDB(String VehicleID) {
-        return null;
+    public List<TripEntry> getLastThreeTripEntryFromTripinDB(String VehicleID)
+    {
+        Query query= new Query();
+        query.addCriteria(Criteria.where("vehicleId").is(VehicleID));
+        query.addCriteria(Criteria.where("currentlyOngoing").is(true));
+
+
+        Trip details = mt.findOne(query, Trip.class, "Trips");
+
+        Collections.sort(details.getEntries(), new Comparator<TripEntry>() {
+            public int compare(TripEntry o1, TripEntry o2) {
+                return o1.getDateTime().compareTo(o2.getDateTime());
+            }
+        });
+
+        List<TripEntry> ties = new LinkedList<>();
+        int i = 0;
+        for (TripEntry Entry : details.getEntries())
+        {
+            i++;
+            ties.add(Entry);
+            if(i >= 3) { break; }
+        }
+        return ties;
     }
 
     @Override
-    public void changeTripOngoingStatusinDB(boolean status) {
+    public void changeTripOngoingStatusinDB(boolean status, String tripID)
+    {
+        Query query= new Query();
+        query.addCriteria(Criteria.where("_id").is("61978d31475e6315eb8ddd6c"));
 
+        Update update = new Update();
+        update.set("currentlyOngoing", status);
     }
 
 
