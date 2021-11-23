@@ -5,27 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Backend.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/API/FakeTripData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/API/TripController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0d370419-0e93-4884-af8b-462273bef107.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0d370419-0e93-4884-af8b-462273bef107.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/API/APIApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/APIApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Accepter/TripEntryAccepter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Accepter/TripEntryAccepter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/ITripDAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/ITripDAL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Repo/ITripRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Repo/ITripRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripJPA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/pages/Trips.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/pages/Trips.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Data/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/WiredTiger.turtle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Data/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/WiredTiger.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Data/collection-4--8477126271612064742.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/collection-4--8477126271612064742.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Data/diagnostic.data/metrics.interim" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/diagnostic.data/metrics.interim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Data/index-5--8477126271612064742.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/index-5--8477126271612064742.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Data/index-6--8477126271612064742.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/index-6--8477126271612064742.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Data/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/sizeStorer.wt" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,9 +115,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1z6DOrxOsxsBzZgAHHoyJe5kQcP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -139,7 +130,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/API" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -150,15 +141,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\GitStuff\ZAP\Backend\src\main\java\API" />
       <recent name="C:\Users\Hristo\Desktop\New folder\crossyn_project\Backend" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
       <recent name="Backend" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Backend.Classes" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -168,7 +155,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.APIApp">
+  <component name="RunManager" selected="Spring Boot.CrossynApp">
     <configuration name="Backend [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -260,10 +247,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.APIApp" />
         <item itemvalue="Spring Boot.CrossynApp" />
         <item itemvalue="Gradle.BackendApplicationTests" />
         <item itemvalue="Gradle.Backend [build]" />
+        <item itemvalue="Spring Boot.APIApp" />
         <item itemvalue="Gradle.Backend [bootRun]" />
       </list>
     </recent_temporary>
@@ -291,9 +278,15 @@
       <workItem from="1637053584967" duration="4566000" />
       <workItem from="1637223911112" duration="9242000" />
       <workItem from="1637237277867" duration="2876000" />
+<<<<<<< Updated upstream
+      <workItem from="1637308306191" duration="12670000" />
+      <workItem from="1637574364410" duration="7988000" />
+      <workItem from="1637582744191" duration="3133000" />
+=======
       <workItem from="1637308306191" duration="12041000" />
       <workItem from="1637586313986" duration="32000" />
-      <workItem from="1637677622329" duration="5950000" />
+      <workItem from="1637674109177" duration="420000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -319,16 +312,6 @@
           <properties class="java.util.NoSuchElementException" package="java.util" />
           <option name="timeStamp" value="2" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Backend/Algorithm/TripEntryAlgorithm.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Backend/Algorithm/TripEntryAlgorithm.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

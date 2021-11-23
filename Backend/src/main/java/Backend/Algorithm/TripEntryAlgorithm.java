@@ -8,13 +8,17 @@ import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.*;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import javax.swing.*;
 import java.time.Duration;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
 
@@ -33,6 +37,9 @@ public class TripEntryAlgorithm implements Runnable {
     private TripContainer t;
     @Autowired
     private AlgorithmHandler h;
+
+    @Autowired
+    private MongoTemplate mt;
 
 
     /*

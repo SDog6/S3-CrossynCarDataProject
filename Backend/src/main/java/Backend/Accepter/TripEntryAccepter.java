@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -59,7 +60,7 @@ public class TripEntryAccepter {
     public String BigLineDialog() throws IOException {
         BufferedReader bufReader = null;
 
-        JFileChooser fc = new JFileChooser();
+        JFileChooser fc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         int returnVal = fc.showOpenDialog(null);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             // set the label to the path of the selected directory
