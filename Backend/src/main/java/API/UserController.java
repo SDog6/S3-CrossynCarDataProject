@@ -16,10 +16,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping("/user")
-
-
+@CrossOrigin(origins = "*")
 public class UserController {
 
 
@@ -27,6 +24,9 @@ private static final FakeUserData data = new FakeUserData();
 
         @PostMapping("/login")
         public ResponseEntity loginUser(@RequestBody User user){
+            System.out.println(user.getPassword());
+            System.out.println(user.getUsername());
+
             for (User other : data.GetAllUsers()) {
                 if (other.getUsername().equals(user.getUsername()) & other.getPassword().equals(user.getPassword())) {
                     return new ResponseEntity(HttpStatus.OK);

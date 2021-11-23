@@ -15,7 +15,7 @@ class TripList extends Component{
     
     
     componentDidMount() { 
-        axios.get('http://localhost:8080/Trips')
+        axios.get('http://localhost:8083/Trips')
         .then(response =>{
             this.setState({
                 trips: response.data
@@ -24,27 +24,29 @@ class TripList extends Component{
         })
     }
     
-
+    
     render() { 
-        const {trips} = this.state
-        return(
-            <div className = "wrapper">
-                {
-                    <Card className="card">
-                    <Card.Body>
-                      <Card.Title>Trip with vehicle {trips.vehicleId}</Card.Title>
-                      <Card.Text>
-                      Started on : {trips.startTime}
-                      Ended on : {trips.endTime}
-                      </Card.Text>
-                      <Button variant="primary">View details</Button>
-                    </Card.Body>
-                  </Card>
-                }
-            </div>
-        )
-    }
+      const {trips} = this.state
+      return(
+          <div>
+              {
+                  trips.map(trip => <div className = 'wrapper'><Card className="card">
+                  <Card.Body>
+                    <Card.Title>Trip with vehicle {trip.vehicleId}</Card.Title>
+                    <Card.Text>
+                    Started on : {trip.startTime}
+                    <br/>
+                    Ended on : {trip.endTime}
+                    </Card.Text>
+                    <Button variant="primary">View details</Button>
+                  </Card.Body>
+                </Card></div>)
+              }
+          </div>
+      )
+  }
 }
+
 
 
 export default TripList

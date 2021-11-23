@@ -1,7 +1,5 @@
 package API;
 
-import Backend.DatabaseAccess.ITripDAL;
-import Backend.Repo.TripJPA;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.client.MongoClients;
@@ -14,18 +12,22 @@ import com.mongodb.client.model.ValidationOptions;
 
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import org.bson.Document;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages={
+        "Backend", "API"})
 public class APIApp {
     public static void main(String[] args)
     {
-        SpringApplication.run(APIApp.class,args);
+        SpringApplication app = new SpringApplication(APIApp.class);
+        app.setDefaultProperties(Collections
+                .singletonMap("server.port", "8083"));
+        app.run(args);
     }
 
 }

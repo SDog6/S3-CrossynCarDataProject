@@ -2,6 +2,7 @@ package Backend.DatabaseAccess;
 
 import Backend.Classes.Trip;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 public class TripService implements ITripService{
 
     ITripDAL dal;
+
     @Autowired
     public TripService(ITripDAL dal)
     {
@@ -18,16 +20,17 @@ public class TripService implements ITripService{
 
     @Override
     public List<Trip> getTripByVehicleID(String name) {
-        return dal.getTripByVehicleID(name);
+//        return dal.getTripByVehicleID(name);
+        return null;
     }
 
     @Override
     public List<Trip> getAllTrips() {
-        return dal.getAllTrips();
+        return dal.getAllTripsfromDB();
     }
 
     @Override
     public void addTripdb(Trip trip) {
-        dal.addTripdb(trip);
+        dal.addTripinDB(trip);
     }
 }

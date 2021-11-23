@@ -12,11 +12,7 @@ function Home() {
 <h1>Trip History</h1>
 
 </div>
-
 <TripList/>
-<TripList/>
-<TripList/>
-
     </div>
    
   );

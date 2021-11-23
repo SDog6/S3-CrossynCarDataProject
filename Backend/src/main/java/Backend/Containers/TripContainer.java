@@ -24,6 +24,10 @@ public class TripContainer {
         this.trips = new ArrayList<>();
     }
 
+    public List<Trip> GetAllTrips(){
+        return dal.getAllTripsfromDB();
+    }
+
 
     //Functions (Crud)
 
