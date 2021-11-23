@@ -52,6 +52,7 @@ public class TripContainer {
         dal.addTripinDB(t);
     }
     public Trip dbGetTrip(String id) {return dal.getTripbyIdinDB(id);}
+    public List<TripEntry> dbGetLast3TripEntriesFromOngoingTripWithVehicleID(String VehID) {return dal.getLastThreeTripEntryFromTripinDB(VehID);};
 
     public Trip CreateTrip(String vehicleId, ZonedDateTime startTime, ZonedDateTime endTime, boolean currentlyOngoing)
     {

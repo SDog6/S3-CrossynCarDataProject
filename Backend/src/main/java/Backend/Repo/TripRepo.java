@@ -83,7 +83,7 @@ public class TripRepo implements ITripDAL
 
         Collections.sort(details.getEntries(), new Comparator<TripEntry>() {
             public int compare(TripEntry o1, TripEntry o2) {
-                return o1.getDateTime().compareTo(o2.getDateTime());
+                return o2.getDateTime().compareTo(o1.getDateTime());
             }
         });
 

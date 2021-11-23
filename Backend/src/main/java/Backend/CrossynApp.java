@@ -41,7 +41,12 @@ public class CrossynApp {
     @RequestMapping("/")
     public String home()
     {
-        return t.dbGetTrip("61978d3b475e6315eb8ddd6d").toString();
+        String test = "";
+         for (TripEntry entry : t.dbGetLast3TripEntriesFromOngoingTripWithVehicleID("abc"))
+         {
+             test = test + entry;
+         }
+        return test;
     }
 
     public static void main(String[] args) throws IOException
@@ -85,7 +90,8 @@ public class CrossynApp {
                         if(queue.isEmpty())
                         {
                             synchronized(queue) {
-                                queue.notify(); // notify the producer
+                                queue.notify(); // notify and wake the algorithm
+
                             }
                         }
 
@@ -99,11 +105,6 @@ public class CrossynApp {
 
                 }
 
-                //Algorithm.setQueue(queue);
-
-                //TripEntryAlgorithm Algorithm = new TripEntryAlgorithm(queue);
-                //Algorithm.run();
-
 
                 //List<Trip> Test = new ArrayList<Trip>();
 
@@ -115,33 +116,6 @@ public class CrossynApp {
 
 
         }
-
-
-//
-// TODO: ASKING YOU IF YOU WANT TO SEE WHEN YOU BREAK THE SPEED LIMIT
-
-//    public static boolean Prompt() throws IOException {
-//        // Enter data using BufferReader
-//        BufferedReader reader = new BufferedReader(
-//                new InputStreamReader(System.in));
-//
-//        // Reading data using readLine
-//        String input = reader.readLine();
-//        if(input.equals("Y")||input.equals("y"))
-//        {
-//            return true;
-//        }
-//        else if (input.equals("N")||input.equals("n"))
-//        {
-//            return false;
-//        }
-//        else
-//        {
-//            System.out.println("Please Try again");
-//            return Prompt();
-//        }
-//
-//    }
 
 
 //     TODO:           SpeedLimit Breaking

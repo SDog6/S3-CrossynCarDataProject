@@ -64,8 +64,6 @@ public class TripEntryAlgorithm implements Runnable {
     public void run()
     {
 
-        testing();
-
         while(true) //queue.peek() != null) //set to true when threading again
         {
 
@@ -99,27 +97,6 @@ public class TripEntryAlgorithm implements Runnable {
 
 
         }
-    }
-
-    private void testing()
-    {
-        //System.out.println(t.dbGetTrip("61978d3b475e6315eb8ddd6d"));
-
-        //List<Trip> list = mt.findAll(Trip.class);
-        //List<Trip> list = mt.findAll(Trip.class,"Trips");  //If collection name & the Entity Class Name are different (case-sensitive)
-        //list.forEach(System.out::println);
-
-        Query query= new Query();
-        query.addCriteria(Criteria.where("vehicleId").is("00A12"));
-
-        Trip details = mt.findOne(query, Trip.class, "Trips");
-        TripEntry te = new TripEntry("a", 5, 5, 3, ZonedDateTime.now(), 5, 4, 5, false);
-        //int i = 0; for (TripEntry entry: details.getEntries()) {entry.setAlt(i);  i++; }
-        Update update = new Update();
-        update.addToSet("Entries", te);
-
-        mt.findAndModify(query, update, Trip.class, "Trips");
-        System.out.println("Data Modified");
     }
 
 
