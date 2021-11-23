@@ -1,5 +1,13 @@
 package Backend.Classes;
 
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Data
+@Document(collection= "User")
 public class User {
         private String username;
         private String password;

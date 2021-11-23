@@ -34,7 +34,7 @@ public class TripEntryAccepter {
 
             switch (set) {
                 case 1:
-                    bufReader = new BufferedReader(new FileReader("C:\\Users\\UserY\\Desktop\\School\\Course Based Semester 3\\Group\\ZAP\\Backend\\src\\main\\java\\Backend\\DataStream\\dataset1.txt"));//"src\\main\\java\\Backend\\DataStream\\dataset1.txt"));
+                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset1.txt"));
                     break;
                 case 2:
                     bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset2.txt"));

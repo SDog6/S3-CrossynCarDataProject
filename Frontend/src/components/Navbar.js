@@ -34,6 +34,7 @@ render(){
      <Nav className="me-auto" >
      {isAuthenticated === "logged in" ? "" : <Nav.Link href="/login">Log in</Nav.Link>}  
       {isAuthenticated === "logged in" ? <Nav.Link href="/Trips">Trips</Nav.Link> : ""} 
+      {isAuthenticated === "logged in" ? <Nav.Link href="/Logout">Log out</Nav.Link> : ""} 
     </Nav>
     </Container>
   </Navbar>

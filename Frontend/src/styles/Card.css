@@ -1,0 +1,14 @@
+.card{
+    display:grid;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 70rem));
+    gap: 2rem;
+    justify-content: center;
+    padding: 10px;
+}

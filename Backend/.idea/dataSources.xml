@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="CrossynApp@localhost" uuid="0d370419-0e93-4884-af8b-462273bef107">
+    <data-source source="LOCAL" name="Crossyn@localhost" uuid="0d370419-0e93-4884-af8b-462273bef107">
       <driver-ref>mongo</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.dbschema.MongoJdbcDriver</jdbc-driver>
-      <jdbc-url>mongodb://localhost:27017/CrossynApp</jdbc-url>
+      <jdbc-url>mongodb://localhost:27017/Crossyn</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

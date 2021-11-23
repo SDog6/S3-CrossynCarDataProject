@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 
@@ -28,12 +29,21 @@ public class Trip{
     private ZonedDateTime endTime;
     private boolean currentlyOngoing;
 
+    private Vehicle vehicle;
 
     private ArrayList<TripEntry> Entries;
 
 
     public Trip(String vehicleId, ZonedDateTime startTime, ZonedDateTime endTime, boolean currentlyOngoing) {
         this.vehicleId = vehicleId;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.currentlyOngoing = currentlyOngoing;
+        Entries = new ArrayList<TripEntry>();
+    }
+
+    public Trip(Vehicle vehicle, ZonedDateTime startTime, ZonedDateTime endTime, boolean currentlyOngoing) {
+        this.vehicle = vehicle;
         this.startTime = startTime;
         this.endTime = endTime;
         this.currentlyOngoing = currentlyOngoing;
