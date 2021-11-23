@@ -25,7 +25,6 @@ public class DocumentToZonedDateTimeConverter implements Converter<Document, Zon
         Date dateTime = document.getDate(DATE_TIME);
         String zoneId = document.getString(ZONE);
         ZoneId zone = ZoneId.of(zoneId);
-        System.out.println("D: "+dateTime.toString()+"ZID: " + zoneId + "Z: " + zone.toString() );
         return ZonedDateTime.ofInstant(dateTime.toInstant(), zone);
     }
 }
