@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/ITripDAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/ITripDAL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripRepo.java" afterDir="false" />
@@ -15,6 +16,9 @@
       <change beforePath="$PROJECT_DIR$/../Data/index-5--8477126271612064742.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/index-5--8477126271612064742.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Data/index-6--8477126271612064742.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/index-6--8477126271612064742.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Data/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/sizeStorer.wt" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,9 +278,15 @@
       <workItem from="1637053584967" duration="4566000" />
       <workItem from="1637223911112" duration="9242000" />
       <workItem from="1637237277867" duration="2876000" />
+<<<<<<< Updated upstream
       <workItem from="1637308306191" duration="12670000" />
       <workItem from="1637574364410" duration="7988000" />
       <workItem from="1637582744191" duration="3133000" />
+=======
+      <workItem from="1637308306191" duration="12041000" />
+      <workItem from="1637586313986" duration="32000" />
+      <workItem from="1637674109177" duration="420000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
