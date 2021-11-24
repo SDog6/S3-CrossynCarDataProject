@@ -34,7 +34,7 @@ class Login extends Component{
                 console.log(response);
                 const token = "logged in";
                 localStorage.setItem("token", token);
-                this.props.history.push("/");
+                window.location.href = '/';
 
             
             },
