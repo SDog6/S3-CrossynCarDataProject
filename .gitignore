@@ -110,3 +110,4 @@ Temporary Items
 # Directory for mongoDB but we don't want the log cuz it's too big
 Data/journal
 Data/**/*.lock
+Backend/.idea/workspace.xml
