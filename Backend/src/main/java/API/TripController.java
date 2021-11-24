@@ -30,14 +30,26 @@ public class TripController {
         test = dal.dbFetchAllTripSummaries();
 
         System.out.println(test.size());
-//
-//        for ( Trip a : test ) {
-//            temp.add(new Trip(a.getVehicleId(),a.getStartTime(),a.getEndTime(),a.isCurrentlyOngoing(),"s"));
-//        }
         if(test != null){
             return ResponseEntity.ok().body(test);
         }
         else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Trip> getCPUByName(@PathVariable(value = "id") String id) {
+
+
+        Trip trip = dal.dbGetTrip(id);
+        System.out.println(id);
+        System.out.println(trip);
+
+        if (trip != null) {
+            return ResponseEntity.ok().body(trip);
+        } else {
             return ResponseEntity.notFound().build();
         }
     }

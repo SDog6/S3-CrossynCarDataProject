@@ -11,4 +11,5 @@ public interface ITripContainer
     List<Trip> dbgetAllTrips();
     List<Trip> dbFetchAllTripSummaries();
     List<Trip> dbFetchAllTripSummarieswithStatus(boolean isActive);
+    Trip dbGetTrip(String id);
 }

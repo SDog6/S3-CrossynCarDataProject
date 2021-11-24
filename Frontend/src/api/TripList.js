@@ -38,7 +38,7 @@ class TripList extends Component{
                     <br/>
                     Ended on : {trip.endTime}
                     </Card.Text>
-                    <Button variant="primary">View details</Button>
+                    <Button variant="primary" href={"/Trips/" + trip.id}>View details</Button>
                   </Card.Body>
                 </Card></div>)
               }
