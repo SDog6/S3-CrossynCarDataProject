@@ -2,14 +2,13 @@ package Backend.Repo;
 
 import Backend.Classes.Trip;
 import Backend.Classes.TripEntry;
-import Backend.DatabaseAccess.ITripDAL;
+import Backend.Interfaces.DatabaseAccess.ITripDAL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 
 import org.springframework.data.mongodb.core.query.*;
 
-import java.time.ZonedDateTime;
 import java.util.*;
 
 
@@ -73,7 +72,7 @@ public class TripRepo implements ITripDAL
     }
 
     @Override
-    public void addEntryToActiveTripinDB(TripEntry entry, String VehicleID)
+    public void addTripEntryToActiveTripinDB(TripEntry entry, String VehicleID)
     {
         Query query= new Query();
         query.addCriteria(Criteria.where("vehicleId").is(VehicleID));
@@ -84,6 +83,23 @@ public class TripRepo implements ITripDAL
 
         mt.findAndModify(query, update, Trip.class, "Trips");
         System.out.println("Data Modified");
+    }
+
+    @Override
+    public void addTripEntryListToActiveTripinDBwithVehicleID(List<TripEntry> Entries, String VehicleID) {
+        Query query= new Query();
+        query.addCriteria(Criteria.where("vehicleId").is(VehicleID));
+        query.addCriteria(Criteria.where("currentlyOngoing").is(true));
+
+        Update update = new Update();
+        for(TripEntry entry : Entries)
+        {
+            update.addToSet("Entries", entry);
+            update.add
+        }
+
+
+        mt.findAndModify(query, update, Trip.class, "Trips");
     }
 
     @Override
@@ -123,7 +139,18 @@ public class TripRepo implements ITripDAL
         update.set("currentlyOngoing", status);
     }
 
+    @Override
+    public void setTripStatustoFalseinDBwithVehicleID(String VehicleID) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("vehicleId").is(VehicleID));
+        query.addCriteria(Criteria.where("currentlyOngoing").is(true));
 
+        Update update = new Update();
+        update.set("currentlyOngoing", false);
+
+        mt.findAndModify(query, update, Trip.class, "Trips");
+
+    }
 
 
 }

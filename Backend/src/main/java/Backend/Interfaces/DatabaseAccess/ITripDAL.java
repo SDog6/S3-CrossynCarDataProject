@@ -1,4 +1,4 @@
-package Backend.DatabaseAccess;
+package Backend.Interfaces.DatabaseAccess;
 
 import Backend.Classes.Trip;
 import Backend.Classes.TripEntry;
@@ -23,7 +23,9 @@ public interface ITripDAL
         void addTripinDB(Trip trip);
 
 
-        void addEntryToActiveTripinDB(TripEntry entry, String VehicleID);
+        void addTripEntryToActiveTripinDB(TripEntry entry, String VehicleID);
+        void addTripEntryListToActiveTripinDBwithVehicleID(List<TripEntry> Entries, String VehicleID);
         void changeTripOngoingStatusinDB(boolean status, String tripID);
+        void setTripStatustoFalseinDBwithVehicleID(String VehicleID);
 
 }

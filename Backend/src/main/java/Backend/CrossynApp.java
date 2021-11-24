@@ -31,8 +31,8 @@ public class CrossynApp {
 
     private static TripEntryAlgorithm Algorithm;
 
-    @Autowired
-    private TripContainer t;
+//    @Autowired
+//    private TripContainer t;
 
     public CrossynApp(TripEntryAlgorithm Algorithm)
     {

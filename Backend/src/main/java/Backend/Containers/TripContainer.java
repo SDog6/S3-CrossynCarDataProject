@@ -1,7 +1,7 @@
 package Backend.Containers;
 
 import Backend.Classes.*;
-import Backend.DatabaseAccess.ITripDAL;
+import Backend.Interfaces.DatabaseAccess.ITripDAL;
 import Backend.Interfaces.ITripContainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -62,6 +62,8 @@ public class TripContainer implements ITripContainer {
     public Trip dbGetOngoingTripbyVehicleID(String vehicleID) {return dal.getOngoingTripbyVehicleIDinDB(vehicleID);}
     public List<Trip> dbFetchAllTripSummaries() {return dal.getAllTripswithoutTripEntriesfromDB();}
     public List<Trip> dbFetchAllTripSummarieswithStatus(boolean isActive) {return dal.getAllTripswthoutTripEntriesfromDBwithOngoingStatus(isActive);}
+    public void dbSaveEntriestoActiveTripwithVehicleID(List<TripEntry> entries, String VehicleID) {dal.addTripEntryListToActiveTripinDBwithVehicleID(entries, VehicleID);}
+    public void dbSetActiveTripOngoingStatusToFalsewithVehicleID(String VehicleID) {dal.setTripStatustoFalseinDBwithVehicleID(VehicleID);};
 
     public Trip CreateTrip(String vehicleId, ZonedDateTime startTime, ZonedDateTime endTime, boolean currentlyOngoing)
     {
@@ -166,10 +168,32 @@ public class TripContainer implements ITripContainer {
             if(trippu.getVehicleId().equals(vehicleID) && trippu.isCurrentlyOngoing())
             {
                 trippu.AddTripEntry(tripEntry);
+                if(trippu.getEntries().size() >= 10)
+                {
+                    List<TripEntry> temp = new ArrayList<TripEntry>();
+                    for(TripEntry te : trippu.getEntries())
+                    {
+                        if(trippu.getEntries().indexOf(te) != 0 && trippu.getEntries().indexOf(te) != 1 && trippu.getEntries().indexOf(te) != 2 )
+                        {
+                            temp.add(te);
+                            //System.out.println(te);
+                        }
+
+                    } //HACK: this might work...
+
+                    dbSaveEntriestoActiveTripwithVehicleID(temp, vehicleID);
+                    for(TripEntry entry : temp)
+                    {
+                        trippu.RemoveTripEntry(entry);
+                    }
+                }
                 return true;
             }
         }
         return false;
     }
+
+
+
 
 }

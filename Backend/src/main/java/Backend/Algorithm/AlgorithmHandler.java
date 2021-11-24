@@ -47,7 +47,8 @@ public class AlgorithmHandler
                 ProcessingTrip.setEndTime(PrevEntry.getDateTime());
                 ProcessingTrip.setCurrentlyOngoing(false); //update completed trip details
                 //Add2Trip(entry); //start this funtions again to create a new trip with the incoming entry (that still isn't handled)
-                t.dbSaveTrip(ProcessingTrip);
+                //t.dbSaveTrip(ProcessingTrip);
+                t.dbSetActiveTripOngoingStatusToFalsewithVehicleID(ProcessingTrip.getVehicleId());
                 return true; //trip has ended
             }
 
@@ -56,6 +57,7 @@ public class AlgorithmHandler
         {
             ProcessingTrip = t.CreateTrip(entry.getVehicleID(), entry.getDateTime(), null, true);
             t.AddTrip(ProcessingTrip);
+            t.dbSaveTrip(ProcessingTrip);
         }
 
         t.AddToTripWithVehicleID(entry.getVehicleID(), entry);

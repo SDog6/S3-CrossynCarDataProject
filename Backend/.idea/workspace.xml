@@ -5,17 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/DataStream/dataset4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/DataStream/dataset5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/DataStream/dataset6.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/DataStream/dataset7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/VehicleContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/DatabaseAccess/IUserDAL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/DatabaseAccess/IVehicleDAL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/IVehicleContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/Repo/UserRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/Repo/VehicleRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/API/TripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/TripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/VehicleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/TripEntryAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/TripEntryAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/ITripContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/ITripContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/CrossynApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/CrossynApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/ITripDAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/DatabaseAccess/ITripDAL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/ITripService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/TripService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/IVehicleRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/api/TripList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/api/TripList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +140,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/Backend/DataStream" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/Backend/Interfaces" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -155,7 +166,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.APIApp">
+  <component name="RunManager" selected="Spring Boot.CrossynApp">
     <configuration name="Backend [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -247,8 +258,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.APIApp" />
         <item itemvalue="Spring Boot.CrossynApp" />
+        <item itemvalue="Spring Boot.APIApp" />
         <item itemvalue="Gradle.BackendApplicationTests" />
         <item itemvalue="Gradle.Backend [build]" />
         <item itemvalue="Gradle.Backend [bootRun]" />
