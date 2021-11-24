@@ -115,3 +115,6 @@ Backend/.idea/workspace.xml
 *.bin
 Backend/build/tmp/compileJava/previous-compilation-data.bin
 Backend/.idea/workspace.xml
+*.bin
+*.xml
+*.bin
