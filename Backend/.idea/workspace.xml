@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="" />
+    <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/DataStream/dataset4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/DataStream/dataset5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/DataStream/dataset6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/DataStream/dataset7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/TripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/TripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/ITripContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/ITripContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/api/TripList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/api/TripList.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,7 +129,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/Backend/DataStream" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -128,6 +140,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\GitStuff\ZAP\Backend\src\main\java\Backend\DataStream" />
       <recent name="C:\Users\Hristo\Desktop\New folder\crossyn_project\Backend" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -142,7 +155,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.CrossynApp">
+  <component name="RunManager" selected="Spring Boot.APIApp">
     <configuration name="Backend [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -234,8 +247,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.CrossynApp" />
         <item itemvalue="Spring Boot.APIApp" />
+        <item itemvalue="Spring Boot.CrossynApp" />
         <item itemvalue="Gradle.BackendApplicationTests" />
         <item itemvalue="Gradle.Backend [build]" />
         <item itemvalue="Gradle.Backend [bootRun]" />

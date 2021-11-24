@@ -1,9 +1,5 @@
 package Backend.Classes;
-
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.GeneratedValue;
@@ -23,7 +19,7 @@ public class User {
     private String username;
     private String password;
     private boolean admin;
-    private List<Trip> ConnectedVehicles = new ArrayList<>();
+    private List<Trip> ConnectedTripIDs = new ArrayList<>();
 
     public User() {
     }
@@ -65,11 +61,4 @@ public class User {
         this.admin = admin;
     }
 
-    public List<Trip> getConnectedVehicles() {
-        return ConnectedVehicles;
-    }
-
-    public void setConnectedVehicles(List<Trip> connectedVehicles) {
-        ConnectedVehicles = connectedVehicles;
-    }
 }

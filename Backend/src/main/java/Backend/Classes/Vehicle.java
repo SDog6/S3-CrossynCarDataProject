@@ -26,11 +26,15 @@ public class Vehicle {
     @Getter
     @Setter
     private String color;
+    @Getter
+    @Setter
+    private boolean currentlyInUse;
 
-    public Vehicle(String id, String brand, String lplate, String color) {
+    public Vehicle(String id, String brand, String lplate, String color,boolean currentlyInUse) {
         this.id = id;
         this.brand = brand;
         this.lplate = lplate;
         this.color = color;
+        this.currentlyInUse = currentlyInUse;
     }
 }

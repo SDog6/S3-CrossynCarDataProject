@@ -34,6 +34,15 @@ public class Trip{
     private ArrayList<TripEntry> Entries;
 
 
+    public Trip(String id ,String vehicleId, ZonedDateTime startTime, ZonedDateTime endTime, boolean currentlyOngoing) {
+        this.id = id;
+        this.vehicleId = vehicleId;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.currentlyOngoing = currentlyOngoing;
+        Entries = new ArrayList<TripEntry>();
+    }
+
     public Trip(String vehicleId, ZonedDateTime startTime, ZonedDateTime endTime, boolean currentlyOngoing) {
         this.vehicleId = vehicleId;
         this.startTime = startTime;
@@ -58,9 +67,9 @@ public class Trip{
     }
 
 
-    public void setId(String id){this.id = id;}
+    public void setid(String id){this.id = id;}
 
-    public String getID() {
+    public String getid() {
         return id;
     }
 
