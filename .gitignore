@@ -112,3 +112,4 @@ Temporary Items
 Data/journal
 Data/**/*.lock
 Backend/.idea/workspace.xml
+*.bin
