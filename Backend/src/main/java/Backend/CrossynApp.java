@@ -1,4 +1,5 @@
 package Backend;
+
 import Backend.Accepter.TripEntryAccepter;
 import Backend.Algorithm.Algorithm;
 import Backend.Algorithm.TripEntryAlgorithm;
@@ -24,9 +25,8 @@ import java.util.concurrent.BlockingQueue;
 
 
 @SpringBootApplication()
-@RestController
+//@RestController
 public class CrossynApp {
-
 
 
     private static TripEntryAlgorithm Algorithm;
@@ -34,25 +34,24 @@ public class CrossynApp {
     @Autowired
     private TripContainer t;
 
-    public CrossynApp(TripEntryAlgorithm Algorithm) {
+    public CrossynApp(TripEntryAlgorithm Algorithm)
+    {
         this.Algorithm = Algorithm;
     }
 
-    @RequestMapping("/")
-    public String home()
-    {
-        String test = "";
-         for (TripEntry entry : t.dbGetLast3TripEntriesFromOngoingTripWithVehicleID("abc"))
-         {
-             test = test + entry;
-         }
-        return test;
-    }
+//    @RequestMapping("/")
+//    public String home() {
+//        String test = "";
+//        for (Trip item : t.dbFetchAllTripSummaries())
+//        {
+//            test = test + item;
+//        }
+//        return test;
+//    }
 
     public static void main(String[] args) throws IOException
     {
         SpringApplication.run(CrossynApp.class, args);
-
 
 
         BlockingQueue<TripEntry> queue = new ArrayBlockingQueue(10000);
@@ -62,60 +61,50 @@ public class CrossynApp {
         Scanner input = new Scanner(System.in);
 
         boolean set = input.nextBoolean();
-           // while(true){
+        // while(true){
 
-                //Algorithm test1 = new Algorithm();
-                TripEntryAccepter TE = new TripEntryAccepter();
+        //Algorithm test1 = new Algorithm();
+        TripEntryAccepter TE = new TripEntryAccepter();
 
-                //String finalLine = TE.BigLine();
+        //String finalLine = TE.BigLine();
 
-                List<TripEntry> list;
-                if(set)
-                {
-                    list = TE.TurnJSONStringToObject(TE.BigLineDialog());
-                }
-                else
-                {
-                    list = TE.TurnJSONStringToObject(TE.BigLine());
-                }
+        List<TripEntry> list;
+        if (set) {
+            list = TE.TurnJSONStringToObject(TE.BigLineDialog());
+        } else {
+            list = TE.TurnJSONStringToObject(TE.BigLine());
+        }
 
 
+        for (TripEntry Test : list) {
+            try {
+                //queue.add(Test);
+                if (queue.isEmpty()) {
+                    synchronized (queue) {
+                        queue.notify(); // notify and wake the algorithm
 
-
-                for(TripEntry Test : list)
-                {
-                    try
-                    {
-                        //queue.add(Test);
-                        if(queue.isEmpty())
-                        {
-                            synchronized(queue) {
-                                queue.notify(); // notify and wake the algorithm
-
-                            }
-                        }
-
-                        queue.put(Test);
                     }
-                    catch(Exception ex)
-                    {
-                        ex.printStackTrace();
-                    }
-
-
                 }
 
-
-                //List<Trip> Test = new ArrayList<Trip>();
-
-                //Test = test1.MakeTrips(list);
-                //for (Trip test2 : Test) {
-                //    System.out.println(test2);
-                //}
-            //}
+                queue.put(Test);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
 
 
         }
+
+
+        //List<Trip> Test = new ArrayList<Trip>();
+
+        //Test = test1.MakeTrips(list);
+        //for (Trip test2 : Test) {
+        //    System.out.println(test2);
+        //}
+        //}
+
+
+    }
 
 
 //     TODO:           SpeedLimit Breaking
@@ -138,7 +127,7 @@ public class CrossynApp {
 //        }
 //    }
 //}
-    }
+}
 
 
 

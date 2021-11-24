@@ -10,6 +10,8 @@ public interface ITripDAL
 {
 
         List<Trip> getAllTripsfromDB();
+        List<Trip> getAllTripswithoutTripEntriesfromDB();
+        List<Trip> getAllTripswthoutTripEntriesfromDBwithOngoingStatus(boolean CurrentlyOngoing);
         Trip getTripbyIdinDB(String ID);
         Trip getTripbyVehicleIDinDB(String vehicleID);
 

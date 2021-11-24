@@ -7,15 +7,8 @@
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/API/APIApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/APIApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/API/TripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/TripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/API/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/ITripService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/ITripService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/TripService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/TripService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/api/TripList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/api/TripList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,8 +239,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.APIApp" />
         <item itemvalue="Spring Boot.CrossynApp" />
+        <item itemvalue="Spring Boot.APIApp" />
         <item itemvalue="Gradle.BackendApplicationTests" />
         <item itemvalue="Gradle.Backend [build]" />
         <item itemvalue="Gradle.Backend [bootRun]" />
@@ -277,6 +270,7 @@
       <workItem from="1637053584967" duration="4566000" />
       <workItem from="1637223911112" duration="9242000" />
       <workItem from="1637237277867" duration="2876000" />
+      <workItem from="1637744382411" duration="2683000" />
     </task>
     <servers />
   </component>

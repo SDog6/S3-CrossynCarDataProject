@@ -2,6 +2,7 @@ package Backend.Containers;
 
 import Backend.Classes.*;
 import Backend.DatabaseAccess.ITripDAL;
+import Backend.Interfaces.ITripContainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Service
-public class TripContainer {
+public class TripContainer implements ITripContainer {
     //Items
 
     @Autowired
@@ -57,6 +58,10 @@ public class TripContainer {
     }
     public Trip dbGetTrip(String id) {return dal.getTripbyIdinDB(id);}
     public List<TripEntry> dbGetLast3TripEntriesFromOngoingTripWithVehicleID(String VehID) {return dal.getLastThreeTripEntryFromTripinDB(VehID);};
+    public List<Trip> dbgetAllTrips() {return dal.getAllTripsfromDB();}
+    public Trip dbGetOngoingTripbyVehicleID(String vehicleID) {return dal.getOngoingTripbyVehicleIDinDB(vehicleID);}
+    public List<Trip> dbFetchAllTripSummaries() {return dal.getAllTripswithoutTripEntriesfromDB();}
+    public List<Trip> dbFetchAllTripSummarieswithStatus(boolean isActive) {return dal.getAllTripswthoutTripEntriesfromDBwithOngoingStatus(isActive);}
 
     public Trip CreateTrip(String vehicleId, ZonedDateTime startTime, ZonedDateTime endTime, boolean currentlyOngoing)
     {
