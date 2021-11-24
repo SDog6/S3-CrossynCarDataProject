@@ -5,18 +5,17 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @NoArgsConstructor
 @Entity
-@Document(collection= "Vehicle")
+@Document(collection = "Vehicle")
 public class Vehicle {
 
     @Getter
     @Setter
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
     @Getter
     @Setter
