@@ -113,3 +113,5 @@ Data/journal
 Data/**/*.lock
 Backend/.idea/workspace.xml
 *.bin
+Backend/build/tmp/compileJava/previous-compilation-data.bin
+Backend/.idea/workspace.xml
