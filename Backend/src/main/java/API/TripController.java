@@ -26,15 +26,16 @@ public class TripController {
         List<Trip> test = null;
         List<Trip> temp = new ArrayList<>();
 
-        test = dal.dbgetAllTrips();
+        //test = dal.dbgetAllTrips();
+        test = dal.dbFetchAllTripSummaries();
 
         System.out.println(test.size());
-
-        for ( Trip a : test ) {
-            temp.add(new Trip(a.getVehicleId(),a.getStartTime(),a.getEndTime(),a.isCurrentlyOngoing(),"s"));
-        }
+//
+//        for ( Trip a : test ) {
+//            temp.add(new Trip(a.getVehicleId(),a.getStartTime(),a.getEndTime(),a.isCurrentlyOngoing(),"s"));
+//        }
         if(test != null){
-            return ResponseEntity.ok().body(temp);
+            return ResponseEntity.ok().body(test);
         }
         else {
             return ResponseEntity.notFound().build();
