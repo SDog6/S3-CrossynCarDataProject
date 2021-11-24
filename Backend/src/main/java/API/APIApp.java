@@ -1,7 +1,6 @@
 package API;
 
 import Backend.DatabaseAccess.ITripDAL;
-import Backend.Repo.TripJPA;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.client.MongoClients;

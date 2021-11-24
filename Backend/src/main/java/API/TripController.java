@@ -3,7 +3,7 @@ package API;
 import Backend.Classes.Trip;
 import Backend.DatabaseAccess.ITripDAL;
 import Backend.DatabaseAccess.ITripService;
-import Backend.Repo.TripJPA;
+import Backend.Interfaces.ITripContainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -18,13 +18,13 @@ import java.util.List;
 public class TripController {
 
     @Autowired
-    ITripService dal;
+    ITripContainer dal;
 
     @GetMapping
     public ResponseEntity<List<Trip>> getAllTrips(@RequestBody String username){
         List<Trip> test = null;
 
-        test = dal.getAllTrips();
+        test = dal.dbgetAllTrips();
 
         if(test != null){
             return ResponseEntity.ok().body(test);

@@ -27,6 +27,21 @@ public class TripRepo implements ITripDAL
         return mt.findAll(Trip.class, "Trips");
     }
 
+    @Override
+    public List<Trip> getAllTripswithoutTripEntriesfromDB()
+    {
+        Query q = new Query();
+        q.fields().exclude("Entries");
+        return mt.find(q, Trip.class, "Trips");
+    }
+
+    @Override
+    public List<Trip> getAllTripswthoutTripEntriesfromDBwithOngoingStatus(boolean CurrentlyOngoing)
+    {
+        Query q = new Query();
+        q.fields().exclude("Entries");
+        return mt.find(q, Trip.class, "Trips");
+    }
 
 
     @Override
@@ -107,6 +122,8 @@ public class TripRepo implements ITripDAL
         Update update = new Update();
         update.set("currentlyOngoing", status);
     }
+
+
 
 
 }

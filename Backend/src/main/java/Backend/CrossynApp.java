@@ -34,17 +34,15 @@ public class CrossynApp {
     @Autowired
     private TripContainer t;
 
-    public CrossynApp(TripEntryAlgorithm Algorithm) {
-        this.Algorithm = Algorithm;
-    }
+    public CrossynApp(TripEntryAlgorithm Algorithm) {this.Algorithm = Algorithm;    }
 
     @RequestMapping("/")
     public String home()
     {
         String test = "";
-         for (TripEntry entry : t.dbGetLast3TripEntriesFromOngoingTripWithVehicleID("abc"))
+         for (Trip item : t.dbFetchAllTripSummaries())
          {
-             test = test + entry;
+             test = test + item;
          }
         return test;
     }
