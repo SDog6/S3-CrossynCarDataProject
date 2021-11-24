@@ -1,6 +1,7 @@
 package Backend.DatabaseAccess;
 
 import Backend.Classes.Trip;
+import org.springframework.context.annotation.Bean;
 
 import java.util.List;
 

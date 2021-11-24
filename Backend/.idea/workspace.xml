@@ -5,20 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
-<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/ITripDAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/ITripDAL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/WiredTiger.turtle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/WiredTiger.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/collection-4--8477126271612064742.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/collection-4--8477126271612064742.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/diagnostic.data/metrics.interim" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/diagnostic.data/metrics.interim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/index-5--8477126271612064742.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/index-5--8477126271612064742.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/index-6--8477126271612064742.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/index-6--8477126271612064742.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/sizeStorer.wt" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
->>>>>>> Stashed changes
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/APIApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/APIApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/TripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/TripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/ITripService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/ITripService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/TripService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/DatabaseAccess/TripService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/api/TripList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/api/TripList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +112,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1z6DOrxOsxsBzZgAHHoyJe5kQcP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -247,10 +246,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.APIApp" />
         <item itemvalue="Spring Boot.CrossynApp" />
         <item itemvalue="Gradle.BackendApplicationTests" />
         <item itemvalue="Gradle.Backend [build]" />
-        <item itemvalue="Spring Boot.APIApp" />
         <item itemvalue="Gradle.Backend [bootRun]" />
       </list>
     </recent_temporary>
@@ -278,15 +277,6 @@
       <workItem from="1637053584967" duration="4566000" />
       <workItem from="1637223911112" duration="9242000" />
       <workItem from="1637237277867" duration="2876000" />
-<<<<<<< Updated upstream
-      <workItem from="1637308306191" duration="12670000" />
-      <workItem from="1637574364410" duration="7988000" />
-      <workItem from="1637582744191" duration="3133000" />
-=======
-      <workItem from="1637308306191" duration="12041000" />
-      <workItem from="1637586313986" duration="32000" />
-      <workItem from="1637674109177" duration="420000" />
->>>>>>> Stashed changes
     </task>
     <servers />
   </component>

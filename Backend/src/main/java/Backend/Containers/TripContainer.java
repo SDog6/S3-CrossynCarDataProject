@@ -25,6 +25,10 @@ public class TripContainer implements ITripContainer {
         this.trips = new ArrayList<>();
     }
 
+    public List<Trip> GetAllTrips(){
+        return dal.getAllTripsfromDB();
+    }
+
 
     //Functions (Crud)
 

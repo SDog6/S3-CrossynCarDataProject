@@ -42,6 +42,13 @@ public class Trip{
         Entries = new ArrayList<TripEntry>();
     }
 
+    public Trip(String vehicleId, ZonedDateTime startTime, ZonedDateTime endTime, boolean currentlyOngoing,String s) {
+        this.vehicleId = vehicleId;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.currentlyOngoing = currentlyOngoing;
+    }
+
     public Trip(Vehicle vehicle, ZonedDateTime startTime, ZonedDateTime endTime, boolean currentlyOngoing) {
         this.vehicle = vehicle;
         this.startTime = startTime;
