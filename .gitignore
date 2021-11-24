@@ -36,7 +36,7 @@ hs_err_pid*
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
-backend/.idea/workspace.xml
+Backend\.idea\workspace.xml
 backend/.idea/tasks.xml
 backend/.idea/dictionaries
 backend/.idea/vcs.xml
