@@ -37,11 +37,13 @@ hs_err_pid*
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/dictionaries
-.idea/vcs.xml
-.idea/jsLibraryMappings.xml
+Backend\.idea\workspace.xml
+backend/.idea/tasks.xml
+backend/.idea/dictionaries
+backend/.idea/vcs.xml
+backend/.idea/jsLibraryMappings.xml
+backend/.idea/**/usage.statistics.xml
+backend/.idea/**/shelf
 
 # Sensitive or high-churn files:
 .idea/dataSources.ids
@@ -109,3 +111,4 @@ Temporary Items
 # Directory for mongoDB but we don't want the log cuz it's too big
 Data/journal
 Data/**/*.lock
+Backend/.idea/workspace.xml
