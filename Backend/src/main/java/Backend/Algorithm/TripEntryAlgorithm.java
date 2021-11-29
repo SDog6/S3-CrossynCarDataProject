@@ -70,7 +70,7 @@ public class TripEntryAlgorithm implements Runnable {
             {
                 synchronized(queue) {
                     while (queue.isEmpty())
-                        queue.wait(); //wait for the queue to become empty
+                        queue.wait();
                 }
 
                  entry = queue.take();

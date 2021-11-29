@@ -3,13 +3,18 @@ package Backend.Repo;
 import Backend.Classes.Trip;
 import Backend.Classes.TripEntry;
 import Backend.Interfaces.DatabaseAccess.ITripDAL;
+import com.mongodb.client.model.*;
+import org.bson.conversions.Bson;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.ExecutableUpdateOperation;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 
 import org.springframework.data.mongodb.core.query.*;
 
 import java.util.*;
+
+import static com.mongodb.client.model.Updates.pushEach;
 
 
 @Repository
@@ -92,14 +97,18 @@ public class TripRepo implements ITripDAL
         query.addCriteria(Criteria.where("currentlyOngoing").is(true));
 
         Update update = new Update();
-        for(TripEntry entry : Entries)
-        {
-            update.addToSet("Entries", entry);
-            update.add
-        }
-
+//        for(TripEntry entry : Entries)
+//        {
+//
+//            update.addToSet("Entries", entry);
+//        }
+        update.push("Entries").each(Entries);
+//        final Bson BsonTest = pushEach("Entries", Entries);
+//        mt.findAndModify(query, BsonTest, Trip.class, "Trips");
 
         mt.findAndModify(query, update, Trip.class, "Trips");
+
+
     }
 
     @Override
