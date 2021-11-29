@@ -112,3 +112,5 @@ Temporary Items
 Data/journal
 Data/**/*.lock
 Backend/.idea/workspace.xml
+Backend/.idea/workspace.xml
+Backend/build/tmp/compileJava/previous-compilation-data.bin

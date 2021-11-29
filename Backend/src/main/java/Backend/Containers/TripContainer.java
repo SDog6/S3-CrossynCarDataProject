@@ -171,8 +171,9 @@ public class TripContainer implements ITripContainer {
                 if(trippu.getEntries().size() >= 10)
                 {
                     List<TripEntry> temp = new ArrayList<TripEntry>();
-                    for(TripEntry te : trippu.getEntries())
+                    for(int i = trippu.getEntries().size() -1; i >= 0; i--)//is reversed so it's kinda correct in the db
                     {
+                        TripEntry te = trippu.getEntries().get(i);
                         if(trippu.getEntries().indexOf(te) != 0 && trippu.getEntries().indexOf(te) != 1 && trippu.getEntries().indexOf(te) != 2 )
                         {
                             temp.add(te);
