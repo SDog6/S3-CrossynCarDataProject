@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import org.springframework.data.mongodb.core.query.*;
 
+import java.time.ZonedDateTime;
 import java.util.*;
 
 import static com.mongodb.client.model.Updates.pushEach;
@@ -43,6 +44,7 @@ public class TripRepo implements ITripDAL
     public List<Trip> getAllTripswthoutTripEntriesfromDBwithOngoingStatus(boolean CurrentlyOngoing)
     {
         Query q = new Query();
+        q.addCriteria(Criteria.where("currentlyOngoing").is(CurrentlyOngoing));
         q.fields().exclude("Entries");
         return mt.find(q, Trip.class, "Trips");
     }
@@ -52,6 +54,31 @@ public class TripRepo implements ITripDAL
     public void addTripinDB(Trip trip)
     {
         mt.save(trip);
+    }
+
+    @Override
+    public void removeTripEntryfromTripinDBwithID(String tripID, TripEntry entry)
+    {
+        Query q = new Query();
+        q.addCriteria(Criteria.where("_id").is(tripID));
+
+        Update update = new Update();
+        update.pull("Entries", entry);
+
+        mt.findAndModify(q, update, Trip.class, "Trips");
+
+    }
+
+    @Override
+    public void removeTripEntriesfromTripinDBwithID(String tripID, List<TripEntry> entries)
+    {
+        Query q = new Query();
+        q.addCriteria(Criteria.where("_id").is(tripID));
+
+        Update update = new Update();
+        update.pullAll("Entries", new List[]{entries});
+
+        mt.findAndModify(q, update, Trip.class, "Trips");
     }
 
     @Override
@@ -112,7 +139,7 @@ public class TripRepo implements ITripDAL
     }
 
     @Override
-    public List<TripEntry> getLastThreeTripEntryFromTripinDB(String VehicleID)
+    public List<TripEntry> getLastThreeTripEntriesFromTripinDBwithVehicleID(String VehicleID)
     {
         Query query= new Query();
         query.addCriteria(Criteria.where("vehicleId").is(VehicleID));
@@ -139,13 +166,41 @@ public class TripRepo implements ITripDAL
     }
 
     @Override
+    public ArrayList<TripEntry> getLastThreeTripEntriesFromTripinDBwithID(String ID) {
+        Query query= new Query();
+        query.addCriteria(Criteria.where("_id").is(ID));
+
+
+        Trip details = mt.findOne(query, Trip.class, "Trips");
+
+        Collections.sort(details.getEntries(), new Comparator<TripEntry>() {
+            public int compare(TripEntry o1, TripEntry o2) {
+                return o2.getDateTime().compareTo(o1.getDateTime());
+            }
+        });
+
+        ArrayList<TripEntry> ties = new ArrayList<>();
+        int i = 0;
+        for (TripEntry Entry : details.getEntries())
+        {
+            i++;
+            ties.add(Entry);
+            if(i >= 3) { break; }
+        }
+        return ties;
+    }
+
+
+    @Override
     public void changeTripOngoingStatusinDB(boolean status, String tripID)
     {
         Query query= new Query();
-        query.addCriteria(Criteria.where("_id").is("61978d31475e6315eb8ddd6c"));
+        query.addCriteria(Criteria.where("_id").is(tripID));
 
         Update update = new Update();
         update.set("currentlyOngoing", status);
+
+        mt.findAndModify(query, update, Trip.class, "Trips");
     }
 
     @Override
@@ -156,6 +211,32 @@ public class TripRepo implements ITripDAL
 
         Update update = new Update();
         update.set("currentlyOngoing", false);
+
+        mt.findAndModify(query, update, Trip.class, "Trips");
+
+    }
+
+    @Override
+    public void setOngoingTripEndTimeinDBwithVehicleID(String vehicleID, ZonedDateTime dateTime)
+    {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("vehicleId").is(vehicleID));
+        query.addCriteria(Criteria.where("currentlyOngoing").is(true));
+
+        Update update = new Update();
+        update.set("endTime", dateTime);
+
+        mt.findAndModify(query, update, Trip.class, "Trips");
+    }
+
+    @Override
+    public void setTripEndTimeinDBwithTripID(String tripID, ZonedDateTime dateTime)
+    {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("_id").is(tripID));
+
+        Update update = new Update();
+        update.set("endTime", dateTime);
 
         mt.findAndModify(query, update, Trip.class, "Trips");
 

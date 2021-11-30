@@ -3,6 +3,7 @@ package Backend.Containers;
 import Backend.Classes.*;
 import Backend.Interfaces.DatabaseAccess.ITripDAL;
 import Backend.Interfaces.ITripContainer;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,7 @@ public class TripContainer implements ITripContainer {
     @Autowired
     ITripDAL dal;
 
+    @Setter
     private List<Trip>  trips;
 
     public TripContainer()
@@ -57,14 +59,30 @@ public class TripContainer implements ITripContainer {
         dal.addTripinDB(t);
     }
     public Trip dbGetTrip(String id) {return dal.getTripbyIdinDB(id);}
-    public List<TripEntry> dbGetLast3TripEntriesFromOngoingTripWithVehicleID(String VehID) {return dal.getLastThreeTripEntryFromTripinDB(VehID);};
+    public List<TripEntry> dbGetLast3TripEntriesfromOngoingTripWithVehicleID(String VehID) {return dal.getLastThreeTripEntriesFromTripinDBwithVehicleID(VehID);};
+    public ArrayList<TripEntry> dbGetLast3TripEntriesfromTripWithID(String ID) {return dal.getLastThreeTripEntriesFromTripinDBwithID(ID);};
     public List<Trip> dbgetAllTrips() {return dal.getAllTripsfromDB();}
     public Trip dbGetOngoingTripbyVehicleID(String vehicleID) {return dal.getOngoingTripbyVehicleIDinDB(vehicleID);}
     public List<Trip> dbFetchAllTripSummaries() {return dal.getAllTripswithoutTripEntriesfromDB();}
     public List<Trip> dbFetchAllTripSummarieswithStatus(boolean isActive) {return dal.getAllTripswthoutTripEntriesfromDBwithOngoingStatus(isActive);}
     public void dbSaveEntriestoActiveTripwithVehicleID(List<TripEntry> entries, String VehicleID) {dal.addTripEntryListToActiveTripinDBwithVehicleID(entries, VehicleID);}
     public void dbSetActiveTripOngoingStatusToFalsewithVehicleID(String VehicleID) {dal.setTripStatustoFalseinDBwithVehicleID(VehicleID);};
+    public void dbSetActiveTripEndTimewithVehicleID(String vehicleID, ZonedDateTime endTime) {dal.setOngoingTripEndTimeinDBwithVehicleID(vehicleID, endTime);};
+    public void dbDeleteTripEntriesfromTrip(String tripID, List<TripEntry> entries) {dal.removeTripEntriesfromTripinDBwithID(tripID, entries);}
 
+    public void LoadTrips()
+    {
+        trips = dbFetchAllTripSummarieswithStatus(true);
+        for(Trip trip : trips)
+        {
+            trip.setEntries(dbGetLast3TripEntriesfromTripWithID(trip.getid()));
+            dbDeleteTripEntriesfromTrip(trip.getid(), trip.getEntries()); //might work too fast, should work in theorie, if problems arise, uncomment for loop under here;
+        }
+//        for(Trip trip : trips)
+//        {
+//            dbDeleteTripEntriesfromTrip(trip.getid(), trip.getEntries());
+//        }
+    }
     public Trip CreateTrip(String vehicleId, ZonedDateTime startTime, ZonedDateTime endTime, boolean currentlyOngoing)
     {
          return new Trip(vehicleId, startTime, endTime, currentlyOngoing);
@@ -159,6 +177,20 @@ public class TripContainer implements ITripContainer {
         {
             return null;
         }
+    }
+
+    public void FinishUpTrip(Trip trip)
+    {
+        //find trip
+        Trip toBeEnded = trips.get(trips.indexOf(trip));
+        //push latest entries db
+        dbSaveEntriestoActiveTripwithVehicleID(trip.getEntries(), trip.getVehicleId());
+
+        //push end time and set status to false db
+        dbSetActiveTripEndTimewithVehicleID(trip.getVehicleId(),trip.GetLatestTripEntry().getDateTime());
+        dbSetActiveTripOngoingStatusToFalsewithVehicleID(trip.getVehicleId());
+        //remove from memory
+        trips.remove(trip);
     }
 
     public boolean AddToTripWithVehicleID(String vehicleID, TripEntry tripEntry)

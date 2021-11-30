@@ -1,5 +1,6 @@
 package Backend.Classes;
 
+import com.mongodb.lang.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,6 +30,7 @@ public class Trip{
     private String id;
     private String vehicleId;
     private ZonedDateTime startTime;
+    @Nullable
     private ZonedDateTime endTime;
     private boolean currentlyOngoing;
 

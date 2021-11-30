@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import lombok.ToString;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
@@ -33,19 +34,19 @@ public class TripEntryAccepter {
             System.out.println("Please select 1/2/3 to choose a dataset");
             int set = input.nextInt();
 
-            switch (set) {
-                case 1:
-                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset1.txt"));
-                    break;
-                case 2:
-                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset2.txt"));
-                    break;
-                case 3:
-                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset3.txt"));
-                    break;
-            }
-
-
+//            switch (set) {
+//                case 1:
+//                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset1.txt"));
+//                    break;
+//                case 2:
+//                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset2.txt"));
+//                    break;
+//                case 3:
+//                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset3.txt"));
+//                    break;
+//            }
+            //bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset".concat(String.valueOf(set)).concat(".txt")));
+            bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\Splitted Dataset 1\\".concat(String.valueOf(set)).concat(".txt")));
             String line = bufReader.readLine();
             String finalLine = "";
             while (line != null) {

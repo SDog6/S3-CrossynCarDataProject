@@ -5,12 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0d370419-0e93-4884-af8b-462273bef107.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0d370419-0e93-4884-af8b-462273bef107.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/Accepter/AccepterFlow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Accepter/TripEntryAccepter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Accepter/TripEntryAccepter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/TripEntryAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/TripEntryAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/CrossynApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/CrossynApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/DatabaseAccess/ITripDAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/DatabaseAccess/ITripDAL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +110,7 @@
       <map>
         <entry key="JPA Inspector" value="false" />
         <entry key="JPA Palette" value="false" />
-        <entry key="JPA Structure" value="true" />
+        <entry key="JPA Structure" value="false" />
       </map>
     </option>
   </component>
@@ -124,7 +132,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Individual/Pollstar/pollstar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -276,7 +284,9 @@
       <workItem from="1637744382411" duration="3095000" />
       <workItem from="1637829263059" duration="475000" />
       <workItem from="1637833541618" duration="17000" />
-      <workItem from="1638176599911" duration="3852000" />
+      <workItem from="1638176599911" duration="9672000" />
+      <workItem from="1638187311931" duration="853000" />
+      <workItem from="1638267688007" duration="6803000" />
     </task>
     <servers />
   </component>
