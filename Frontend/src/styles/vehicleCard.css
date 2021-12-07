@@ -1,0 +1,35 @@
+
+img.card-img {
+    height: 400px;
+    object-fit: contain;
+}
+  
+.card {
+    overflow: hidden;
+    box-shadow: 0 2px 20px grey;
+    border-radius: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 200ms ease-in;   
+}
+.grid-container {
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: auto auto auto;
+    background-color: white;
+    padding: 20px;
+    grid-row-gap: 50px;
+  }
+
+  .lpate.card-title {
+    font-size: 30px;
+}
+
+label {
+    margin-left: 50px;
+}
+
+
+  
