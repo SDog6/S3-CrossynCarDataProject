@@ -38,9 +38,6 @@ public class TripEntryAlgorithm implements Runnable {
     @Autowired
     private AlgorithmHandler h;
 
-    @Autowired
-    private MongoTemplate mt;
-
 
     /*
     public TripEntryAlgorithm(BlockingQueue<TripEntry> queue)
@@ -63,7 +60,8 @@ public class TripEntryAlgorithm implements Runnable {
     @Override
     public void run()
     {
-
+        t.LoadTrips();
+        System.out.println(t.ReadTrips());
         while(true) //queue.peek() != null) //set to true when threading again
         {
 
@@ -73,14 +71,15 @@ public class TripEntryAlgorithm implements Runnable {
             {
                 synchronized(queue) {
                     while (queue.isEmpty())
-                        queue.wait(); //wait for the queue to become empty
+                        queue.wait();
                 }
 
                  entry = queue.take();
                  //entry = queue.poll();
                  if(h.Add2Trip(entry))
                  {
-                     System.out.println("Trip Finished: " + t.GetPastTripsFromVehicleID(entry.getVehicleID()).get(t.GetPastTripsFromVehicleID(entry.getVehicleID()).size() - 1));
+                     //System.out.println("Trip Finished: " + t.GetPastTripsFromVehicleID(entry.getVehicleID()).get(t.GetPastTripsFromVehicleID(entry.getVehicleID()).size() - 1));
+                     if(!h.Add2Trip(entry)){System.out.println("Something went wrong here.... a trip with one entry is created?");}
                  }
             }
             catch(InterruptedException ex)

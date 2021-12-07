@@ -1,5 +1,6 @@
 package Backend.Classes;
 
+import com.mongodb.lang.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,6 +13,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 
 @Data
@@ -26,6 +30,7 @@ public class Trip{
     private String id;
     private String vehicleId;
     private ZonedDateTime startTime;
+    @Nullable
     private ZonedDateTime endTime;
     private boolean currentlyOngoing;
 
@@ -98,9 +103,15 @@ public class Trip{
     }
 
 
-    public boolean AddTripEntry(Object a) {
+    public boolean AddTripEntry(TripEntry a) {
         if (a != null){
-            Entries.add((TripEntry) a);
+            Entries.add(a);
+            //check size, if true then put all except 3 in db
+            if(Entries.size() >= 10)
+            {
+                this.Entries = this.SortbyTime(Entries); //sorts
+
+            }
             return true;
         }
         else {
@@ -109,9 +120,9 @@ public class Trip{
 
     }
 
-    public boolean RemoveTripEntry(Object a) {
+    public boolean RemoveTripEntry(TripEntry a) {
         if (a != null){
-            Entries.remove((TripEntry) a);
+            Entries.remove(a);
             return true;
         }
         else {
@@ -119,7 +130,11 @@ public class Trip{
         }
     }
 
-    public TripEntry GetLatestTripEntry() {return Entries.get(Entries.size() -1); }
+    public TripEntry GetLatestTripEntry()
+    {
+        this.Entries = this.SortbyTime(Entries); //sorts
+        return Entries.get(0);
+    }
 
     public ArrayList<Object> GetAllTripEntries() {
         ArrayList<Object> replacement = new ArrayList<Object>();
@@ -139,6 +154,26 @@ public class Trip{
             return "Trip with vehicle id: "+ this.getVehicleId() + " Started at : " + this.getStartTime() + " and ended at : " + this.getEndTime() + " the status is: Stopped";
 
         }
+    }
+
+    public List<TripEntry> SortbyTime(List<TripEntry> entries)
+    {
+        Collections.sort(entries, new Comparator<TripEntry>() {
+            public int compare(TripEntry o1, TripEntry o2) {
+                return o2.getDateTime().compareTo(o1.getDateTime());
+            }
+        });
+        return entries;
+    }
+
+    public ArrayList<TripEntry> SortbyTime(ArrayList<TripEntry> entries)
+    {
+        Collections.sort(entries, new Comparator<TripEntry>() {
+            public int compare(TripEntry o1, TripEntry o2) {
+                return o2.getDateTime().compareTo(o1.getDateTime());
+            }
+        });
+        return entries;
     }
 
 

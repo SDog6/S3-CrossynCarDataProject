@@ -1,5 +1,6 @@
 package Backend;
 
+import Backend.Accepter.AccepterFlow;
 import Backend.Accepter.TripEntryAccepter;
 import Backend.Algorithm.Algorithm;
 import Backend.Algorithm.TripEntryAlgorithm;
@@ -31,8 +32,8 @@ public class CrossynApp {
 
     private static TripEntryAlgorithm Algorithm;
 
-    @Autowired
-    private TripContainer t;
+//    @Autowired
+//    private TripContainer t;
 
     public CrossynApp(TripEntryAlgorithm Algorithm)
     {
@@ -57,52 +58,10 @@ public class CrossynApp {
         BlockingQueue<TripEntry> queue = new ArrayBlockingQueue(10000);
         new Thread(Algorithm).start();
         Algorithm.setQueue(queue);
-        System.out.println("Debug purpose; You want to use dialog popup to select dataset? (write true or false)");
-        Scanner input = new Scanner(System.in);
-
-        boolean set = input.nextBoolean();
-        // while(true){
-
-        //Algorithm test1 = new Algorithm();
-        TripEntryAccepter TE = new TripEntryAccepter();
-
-        //String finalLine = TE.BigLine();
-
-        List<TripEntry> list;
-        if (set) {
-            list = TE.TurnJSONStringToObject(TE.BigLineDialog());
-        } else {
-            list = TE.TurnJSONStringToObject(TE.BigLine());
-        }
 
 
-        for (TripEntry Test : list) {
-            try {
-                //queue.add(Test);
-                if (queue.isEmpty()) {
-                    synchronized (queue) {
-                        queue.notify(); // notify and wake the algorithm
-
-                    }
-                }
-
-                queue.put(Test);
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-
-
-        }
-
-
-        //List<Trip> Test = new ArrayList<Trip>();
-
-        //Test = test1.MakeTrips(list);
-        //for (Trip test2 : Test) {
-        //    System.out.println(test2);
-        //}
-        //}
-
+        AccepterFlow Start = new AccepterFlow(queue);
+        Start.init();
 
     }
 

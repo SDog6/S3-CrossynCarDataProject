@@ -15,12 +15,13 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long userID;
+
     private String username;
     private String password;
     private boolean admin;
-    private List<Trip> ConnectedTripIDs = new ArrayList<>();
-
+    private List<String> connectedTripIDs;
+    private List<String> activeVehicles;
     public User() {
     }
 
@@ -46,11 +47,11 @@ public class User {
     }
 
     public Long getId() {
-        return id;
+        return userID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long userID) {
+        this.userID = userID;
     }
 
     public boolean isAdmin() {
