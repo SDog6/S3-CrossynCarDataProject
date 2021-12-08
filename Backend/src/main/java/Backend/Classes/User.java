@@ -1,7 +1,12 @@
 package Backend.Classes;
+
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,13 +20,10 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long userID;
-
+    private String id;
     private String username;
     private String password;
-    private boolean admin;
-    private List<String> connectedTripIDs;
-    private List<String> connectedVehicleIDs;
+    private String type;
 
     public User() {
     }
@@ -29,6 +31,11 @@ public class User {
     public User(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+    public User(String username, String password, String type) {
+        this.username = username;
+        this.password = password;
+        this.type = type;
     }
 
     public String getUsername() {
@@ -47,20 +54,19 @@ public class User {
         this.password = password;
     }
 
-    public Long getId() {
-        return userID;
+    public String getId() {
+        return id;
     }
 
-    public void setId(Long userID) {
-        this.userID = userID;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public boolean isAdmin() {
-        return admin;
+    public String getType() {
+        return type;
     }
 
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
+    public void setType(String type) {
+        this.type = type;
     }
-
 }
