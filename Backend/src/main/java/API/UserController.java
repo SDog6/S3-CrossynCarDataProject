@@ -62,7 +62,7 @@ public class UserController {
             return new ResponseEntity(entity, HttpStatus.CONFLICT);
         } else {
             repo.save(user);
-            String url = "vehicle" + "/" + user.getUsername(    );
+            String url = "vehicle" + "/" + user.getUsername();
             URI uri = URI.create(url);
             return new ResponseEntity(uri,HttpStatus.CREATED);
         }

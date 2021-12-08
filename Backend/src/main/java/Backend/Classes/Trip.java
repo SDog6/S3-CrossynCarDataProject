@@ -28,6 +28,10 @@ public class Trip{
     private ZonedDateTime startTime;
     private ZonedDateTime endTime;
     private boolean currentlyOngoing;
+    private int speedLimitBreakCounter;
+    private int averageSpeed;
+    private int averageRoad;
+
 
     private Vehicle vehicle;
 
@@ -88,6 +92,29 @@ public class Trip{
         this.currentlyOngoing = currentlyOngoing;
     }
 
+    public int getSpeedLimitBreakCounter() {
+        return speedLimitBreakCounter;
+    }
+
+    public void setSpeedLimitBreakCounter(int speedLimitBreakCounter) {
+        this.speedLimitBreakCounter = speedLimitBreakCounter;
+    }
+
+    public int getAverageSpeed() {
+        return averageSpeed;
+    }
+
+    public void setAverageSpeed(int averageSpeed) {
+        this.averageSpeed = averageSpeed;
+    }
+
+    public int getAverageRoad() {
+        return averageRoad;
+    }
+
+    public void setAverageRoad(int averageRoad) {
+        this.averageRoad = averageRoad;
+    }
 
     public boolean AddTripEntry(Object a) {
         if (a != null){

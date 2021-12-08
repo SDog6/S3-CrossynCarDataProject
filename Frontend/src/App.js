@@ -25,7 +25,7 @@ function App() {
       <Switch>
       <Route path='/' exact component={Home} />
       {localStorage.getItem("token") === "logged in" ? <Route path='/Login' exact component={Home} /> : <Route path='/Login' exact component={Login} />}
-      {localStorage.getItem("token") === "logged in" ? <Route path='/Trips' exact component={Trips}/> : <Route path='/Trips' exact component={Home}/>}
+      <Route path='/Trips' exact component={Trips}/>
       {localStorage.getItem("token") === "logged in" ? <Route path='/Logout' exact component={Logout}/> : <Route path='/Logout' exact component={Home}/>}
       <Route path="/VehicleCreation" component={AddVehicle}></Route>
       <Route path="/Register" component={Register}></Route>
