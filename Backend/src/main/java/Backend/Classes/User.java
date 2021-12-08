@@ -21,7 +21,8 @@ public class User {
     private String password;
     private boolean admin;
     private List<String> connectedTripIDs;
-    private List<String> activeVehicles;
+    private List<String> connectedVehicleIDs;
+
     public User() {
     }
 
