@@ -16,7 +16,6 @@ public class UserContainer implements IUserContainer {
     @Autowired
     IUserDAL dal;
 
-
     @Override
     public boolean verifyUserfromDBbyUserNameandPassword(String userName, String password) {
        return  dal.verifyUserfromDBbyUserNameandPassword(userName,password);
@@ -24,21 +23,21 @@ public class UserContainer implements IUserContainer {
 
     @Override
     public User getUserfromDBbyUserName(String userName) {
-        return null;
+        return dal.getUserfromDBbyUserName(userName);
     }
 
     @Override
     public List<User> getAllUsersfromDB() {
-        return null;
+        return dal.getAllUsersfromDB();
     }
 
     @Override
     public List<User> getAllUsersfromDBbyVehicleID(String vehicleID) {
-        return null;
+        return dal.getAllUsersfromDBbyVehicleID(vehicleID);
     }
 
     @Override
     public void addUserinDB(User user) {
-
+        dal.addUserinDB(user);
     }
 }

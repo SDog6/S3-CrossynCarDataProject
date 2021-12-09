@@ -23,7 +23,7 @@ public class User {
     private String id;
     private String username;
     private String password;
-    private String type;
+    private String role;
 
     public User() {
     }
@@ -32,10 +32,10 @@ public class User {
         this.username = username;
         this.password = password;
     }
-    public User(String username, String password, String type) {
+    public User(String username, String password, String role) {
         this.username = username;
         this.password = password;
-        this.type = type;
+        this.role = role;
     }
 
     public String getUsername() {
@@ -62,11 +62,11 @@ public class User {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public String getRole() {
+        return role;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setRole(String role) {
+        this.role = role;
     }
 }

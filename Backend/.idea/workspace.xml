@@ -5,17 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/UserContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/IUserContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0d370419-0e93-4884-af8b-462273bef107.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0d370419-0e93-4884-af8b-462273bef107.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/API/Security/AuthenticationConfigConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/API/Security/AuthenticationUserDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/API/Security/JWTAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/API/Security/JWTAuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/API/Security/SecurityConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/API/Security/UserCreateRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/API/Security/WebConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logs/spring.log.2021-11-29.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/FakeTripData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/FakeTripData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/VehicleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Repo/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Repo/UserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Containers/UserContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/UserContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/Logout.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +139,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/API/Security" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -140,6 +150,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\GitStuff\ZAP\Backend\src\main\java\API\Security" />
       <recent name="C:\GitStuff\ZAP\Backend\src\main\java\Backend\DataStream" />
       <recent name="C:\Users\Hristo\Desktop\New folder\crossyn_project\Backend" />
     </key>
@@ -155,7 +166,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.CrossynApp">
+  <component name="RunManager" selected="Spring Boot.APIApp">
     <configuration name="Backend [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -247,8 +258,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.CrossynApp" />
         <item itemvalue="Spring Boot.APIApp" />
+        <item itemvalue="Spring Boot.CrossynApp" />
         <item itemvalue="Gradle.BackendApplicationTests" />
         <item itemvalue="Gradle.Backend [build]" />
         <item itemvalue="Gradle.Backend [bootRun]" />
@@ -284,7 +295,7 @@
       <workItem from="1638176599911" duration="9672000" />
       <workItem from="1638187311931" duration="853000" />
       <workItem from="1638267688007" duration="6803000" />
-      <workItem from="1638795437068" duration="2042000" />
+      <workItem from="1638795437068" duration="6399000" />
     </task>
     <servers />
   </component>

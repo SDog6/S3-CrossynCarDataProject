@@ -33,7 +33,7 @@ public class VehicleController {
             }
         } else {
             repo.save(vehicle);
-            String url = "vehicle" + "/" + vehicle.getId();
+            String url = "vehicle" + "/" + vehicle.getBrand();
             URI uri = URI.create(url);
             return new ResponseEntity(uri,HttpStatus.CREATED);
         }
