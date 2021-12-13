@@ -40,6 +40,7 @@ dependencies {
 
     implementation 'javax.persistence:javax.persistence-api'
     implementation 'org.jetbrains:annotations:20.1.0'
+    implementation 'org.webjars.bowergithub.perliedman:leaflet-control-geocoder:1.13.0'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'

@@ -31,6 +31,8 @@ public class Trip{
     private int speedLimitBreakCounter;
     private int averageSpeed;
     private int averageRoad;
+    private String startAddress;
+    private String endAddress;
 
 
     private Vehicle vehicle;
@@ -114,6 +116,22 @@ public class Trip{
 
     public void setAverageRoad(int averageRoad) {
         this.averageRoad = averageRoad;
+    }
+
+    public String getStartAddress() {
+        return startAddress;
+    }
+
+    public void setStartAddress(String startAddress) {
+        this.startAddress = startAddress;
+    }
+
+    public String getEndAddress() {
+        return endAddress;
+    }
+
+    public void setEndAddress(String endAddress) {
+        this.endAddress = endAddress;
     }
 
     public boolean AddTripEntry(Object a) {

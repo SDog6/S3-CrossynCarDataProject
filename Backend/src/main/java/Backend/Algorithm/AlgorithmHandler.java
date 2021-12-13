@@ -5,10 +5,13 @@ import Backend.Classes.Trip;
 import Backend.Classes.TripEntry;
 import Backend.Containers.TripContainer;
 import Backend.Containers.TripEntryContainer;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.time.Duration;
 import java.util.*;
 
@@ -28,14 +31,15 @@ public class AlgorithmHandler
 
     //Functions
 
-    public boolean Add2Trip(@org.jetbrains.annotations.NotNull TripEntry entry) //add entry to trip
+    public boolean Add2Trip(@NotNull TripEntry entry) throws IOException //add entry to trip
     {
         //I do not know what the note under this means anymore but it sounds important so leaving it here for now
         //this.IncomingEntry = tripEntry; //TODO: instead of directly putting it in Incoming run it throught the algorithm first (so TripEntryAlgorithm.Start(TripEntry))
 
         Trip ProcessingTrip;
         TripEntry PrevEntry;
-         if(t.VehicleOnTrip(entry.getVehicleID())) //check if trip is ongoing
+        GeocoderAlgo geo = new GeocoderAlgo();
+        if(t.VehicleOnTrip(entry.getVehicleID())) //check if trip is ongoing
         {
             ProcessingTrip = t.GetOngoingTripFromVehicleID(entry.getVehicleID());
             PrevEntry = ProcessingTrip.GetLatestTripEntry();
@@ -86,6 +90,8 @@ public class AlgorithmHandler
                 ProcessingTrip.setEndTime(PrevEntry.getDateTime());
                 ProcessingTrip.setCurrentlyOngoing(false); //update completed trip details
                 //Add2Trip(entry); //start this funtions again to create a new trip with the incoming entry (that still isn't handled)
+                String result = geo.FindAddress(String.valueOf(entry.getLat()),String.valueOf(entry.getLon()));
+                ProcessingTrip.setEndAddress(result);
                 t.dbSaveTrip(ProcessingTrip);
                 return true; //trip has ended
             }
@@ -94,6 +100,8 @@ public class AlgorithmHandler
         else
         {
             ProcessingTrip = t.CreateTrip(entry.getVehicleID(), entry.getDateTime(), null, true);
+            String result = geo.FindAddress(String.valueOf(entry.getLat()),String.valueOf(entry.getLon()));
+            ProcessingTrip.setStartAddress(result);
             t.AddTrip(ProcessingTrip);
         }
 
