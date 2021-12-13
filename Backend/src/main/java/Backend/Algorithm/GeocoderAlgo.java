@@ -36,7 +36,6 @@ public class GeocoderAlgo {
         String inputLine;
         StringBuffer response = new StringBuffer();
         while ((inputLine = in.readLine()) != null)
-            //System.out.println(inputLine);
             response.append(inputLine);
         // Close Connection - Important!
         in.close();
