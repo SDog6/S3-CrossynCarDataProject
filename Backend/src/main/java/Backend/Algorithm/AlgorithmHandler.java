@@ -20,7 +20,7 @@ public class AlgorithmHandler
 {
 
     //filter
-    public CorruptLocationFilter filter;
+    public CorruptLocationFilter filter = new CorruptLocationFilter();
     //Things
     @Autowired
     public TripContainer t;
