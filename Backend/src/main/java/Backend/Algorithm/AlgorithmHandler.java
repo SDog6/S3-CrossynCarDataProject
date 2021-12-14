@@ -98,7 +98,9 @@ public class AlgorithmHandler
                 String result = geo.FindAddress(String.valueOf(entry.getLat()),String.valueOf(entry.getLon()));
                 ProcessingTrip.setEndAddress(result);
                 User temp = UserRep.getUserByConnectedVehiclesAndRole(ProcessingTrip.getVehicleId(),"DRIVER");
-                ProcessingTrip.setDriver(temp.getUsername());
+                if (temp != null) {
+                    ProcessingTrip.setDriver(temp.getUsername());
+                }
                 t.dbSaveTrip(ProcessingTrip);
                 return true; //trip has ended
             }

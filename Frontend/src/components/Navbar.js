@@ -40,6 +40,7 @@ render(){
       {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? <Nav.Link href="/Vehicles">Vehicles</Nav.Link> : ""} 
       {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? <Nav.Link href="/VehicleCreation">Add vehicle</Nav.Link> : ""} 
       {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? <Nav.Link href="/Users">Users</Nav.Link> : ""} 
+      {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? <Nav.Link href="/ConnectVehicle">Connect vehicle</Nav.Link> : ""} 
       {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? <Nav.Link href="/CreateUser">Create user</Nav.Link> : ""} 
       {this.state.isAuthenticated === '' ? "" : <Nav.Link href="/Logout">Log out</Nav.Link>} 
 

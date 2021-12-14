@@ -24,6 +24,8 @@ class CreateUser extends Component {
         let member = { username: this.state.username, password: this.state.password , role : this.state.role};
         axios.post("http://localhost:8083/register", member).then((response) => {
             console.log(response)
+            window.location.href = '/Users';
+
         });
         }
 

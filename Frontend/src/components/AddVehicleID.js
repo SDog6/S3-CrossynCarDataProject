@@ -22,6 +22,8 @@ class AddVehicleID extends Component {
         console.log(this.state.color);
         axios.put(`http://localhost:8083/${this.state.username}/${this.state.vehcileID}`, member).then((response) => {
             console.log(response)
+            window.location.href = '/Users';
+
         });
         }
 
@@ -40,7 +42,7 @@ class AddVehicleID extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="card col-md-6 offset-md-3 offset-md-3">
-                            <h3 className="text-center">REGISTER</h3>
+                            <h3 className="text-center">Connect Vehicle</h3>
                             <div className="card-body">
                                 <form onSubmit = {this.hndlSubmit} style = {{ marginBottom: '30mm' }}>
 

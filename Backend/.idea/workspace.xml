@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/DatabaseAccess/ITrip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/API/TripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/TripController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/IUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/IUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/DataStream/dataset2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/DataStream/dataset2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/api/TripList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/api/TripList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Frontend/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/Navbar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,7 +154,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.APIApp">
+  <component name="RunManager" selected="Spring Boot.CrossynApp">
     <configuration name="Backend [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -263,8 +259,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.APIApp" />
         <item itemvalue="Spring Boot.CrossynApp" />
+        <item itemvalue="Spring Boot.APIApp" />
         <item itemvalue="Gradle.BackendApplicationTests" />
         <item itemvalue="Gradle.Backend [build]" />
         <item itemvalue="Gradle.Backend [bootRun]" />
