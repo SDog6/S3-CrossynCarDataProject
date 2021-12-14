@@ -1,7 +1,7 @@
 package API.Security;
 
 import Backend.Classes.User;
-import Backend.Containers.UserContainer;
+import Backend.Containers.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -10,7 +10,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -18,10 +17,10 @@ import java.util.Collection;
 @RequiredArgsConstructor
 public class AuthenticationUserDetailService implements UserDetailsService {
 
-    private final UserContainer service;
+    private final UserService service;
 
     @Override public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User apiUser = service.getUserfromDBbyUserName(username);
+        User apiUser = service.readUserByUsername(username);
         if (apiUser == null) {
             throw new UsernameNotFoundException(username);
         }

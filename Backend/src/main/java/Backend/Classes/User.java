@@ -4,7 +4,9 @@ package Backend.Classes;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,6 +17,7 @@ import java.util.List;
 
 @Data
 @Document(collection = "User")
+@AllArgsConstructor
 public class User {
 
 
@@ -24,6 +27,10 @@ public class User {
     private String username;
     private String password;
     private String role;
+    @Field("connectedVehicles")
+    private List<String> connectedVehicles;
+    @Field("connectedTrips")
+    private List<String> connectedTrips;
 
     public User() {
     }

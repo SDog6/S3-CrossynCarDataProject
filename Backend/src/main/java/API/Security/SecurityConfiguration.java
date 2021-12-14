@@ -1,5 +1,6 @@
 package API.Security;
 
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
@@ -22,6 +23,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().authorizeRequests()
                 .antMatchers(HttpMethod.POST, AuthenticationConfigConstants.SIGN_UP_URL).permitAll()
+                .antMatchers(HttpMethod.POST,"/api/library/book/**").hasAnyAuthority("USER", "ADMIN")
+                .antMatchers("/account").hasAnyAuthority("USER", "ADMIN")
+                .antMatchers("/inventory").hasAnyAuthority("ADMIN")
+                .antMatchers(HttpMethod.POST,"/login").permitAll()
                 .anyRequest().permitAll()
                 .and()
                 .addFilter(new JWTAuthenticationFilter(authenticationManager()))
@@ -34,4 +39,18 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(authenticationUserDetailService).passwordEncoder(bCryptPasswordEncoder);
     }
+
+
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**")
+                        .allowedOrigins("http://localhost:3000")
+                                .allowedMethods("GET", "PUT", "POST", "PATCH", "DELETE", "OPTIONS");
+            }
+        };
+    }
+
 }

@@ -5,27 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/API/Security/AuthenticationConfigConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/API/Security/AuthenticationUserDetailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/API/Security/JWTAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/API/Security/JWTAuthorizationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/API/Security/SecurityConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/API/Security/UserCreateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/API/Security/WebConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logs/spring.log.2021-11-29.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/API/FakeTripData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/FakeTripData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/APIApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/APIApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/Security/AuthenticationConfigConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/Security/AuthenticationConfigConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/Security/AuthenticationUserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/Security/AuthenticationUserDetailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/Security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/Security/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/Security/WebConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/Security/WebConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/API/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/API/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/VehicleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Containers/UserContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/UserContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/IUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/IUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/Logout.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,6 +149,9 @@
       <recent name="" />
       <recent name="Backend" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Backend.Containers" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -230,6 +224,19 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Backend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Backend" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="APIApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Backend.main" />
       <extension name="coverage">
@@ -295,7 +302,7 @@
       <workItem from="1638176599911" duration="9672000" />
       <workItem from="1638187311931" duration="853000" />
       <workItem from="1638267688007" duration="6803000" />
-      <workItem from="1638795437068" duration="6399000" />
+      <workItem from="1638795437068" duration="12382000" />
     </task>
     <servers />
   </component>
