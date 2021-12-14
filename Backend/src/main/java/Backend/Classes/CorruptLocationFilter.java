@@ -1,14 +1,13 @@
 package Backend.Classes;
 
 import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
 public class CorruptLocationFilter {
-
-    private List<TripEntry> data;
     private double maxSpeed = 300; // KM/H
 
     public CorruptLocationFilter() {}
@@ -25,19 +24,53 @@ public class CorruptLocationFilter {
         return d; // in KM
     }
 
-    public double avgDifference(double data1, long data2, long data3)
+    public double avgDifference(double data1, double data2, double data3)
     {
         return (data1+data2+data3)/3;
     }
 
-    public double calculateSpeed(long time, long distance) // time in seconds : distance in KM
+    public double calculateSpeed(double time, double distance) // time in seconds : distance in KM
     {
         return distance/(time/3600); // KM/H
     }
 
-    public TripEntry createFalseTripEntry(double lat, double lon , int alt, ZonedDateTime time)
+    public TripEntry createFalseTripEntry(double lat, double lon , double alt, ZonedDateTime time)
     {
-        return new TripEntry(null, lat, lon, alt, time, -1, -1, -1, false);
+        return new TripEntry(null, lat, lon, (int) alt, time, -1, -1, -1, false);
     }
 
+    public double calculateTime(ZonedDateTime t1, ZonedDateTime t2)
+    {
+        return ChronoUnit.SECONDS.between(t1, t2);
+    }
+
+    public TripEntry doFilter(List<TripEntry> data, boolean fakeData) //TODO: maybe add a trySwitch method which checks the speed if the long and lat were changed
+    {
+        if (fakeData == true) // if working with fake data increase the margin
+        {
+            maxSpeed = 350;
+        }
+
+        //get data from parameter
+        TripEntry first = data.get(0);
+        TripEntry second = data.get(1);
+        TripEntry third = data.get(2);
+
+        //calculate the speed
+        double distance = calculateDistance(first.getLat(), first.getLon(), second.getLat(), second.getLon());
+        double time = calculateTime(first.getDateTime(), second.getDateTime());
+        double speed = calculateSpeed(distance, time);
+
+        //if the car was too fast then the data was corrupt otherwise give back nothing
+        if (speed > maxSpeed || speed < 0)
+        {
+            //create the fake location for the fake data with the average change
+            double fakeAlt = first.getAlt()+avgDifference(first.getAlt(), second.getAlt(), third.getAlt());
+            double fakeLon = first.getLon()+avgDifference(first.getLon(), second.getLon(), third.getLon());
+            double fakeLat = first.getAlt()+avgDifference(first.getAlt(), second.getAlt(), third.getLat());
+
+            return createFalseTripEntry(fakeLat, fakeLon, fakeAlt, first.getDateTime()); //return a fake entry with the fake location and the corrupt data entry
+        }
+        return null;
+    }
 }
