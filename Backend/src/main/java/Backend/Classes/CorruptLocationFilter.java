@@ -64,6 +64,7 @@ public class CorruptLocationFilter {
         //if the car was too fast then the data was corrupt otherwise give back nothing
         if (speed > maxSpeed || speed < 0)
         {
+            maxSpeed = 300;
             //create the fake location for the fake data with the average change
             double fakeAlt = first.getAlt()+avgDifference(first.getAlt(), second.getAlt(), third.getAlt());
             double fakeLon = first.getLon()+avgDifference(first.getLon(), second.getLon(), third.getLon());
@@ -71,6 +72,7 @@ public class CorruptLocationFilter {
 
             return createFalseTripEntry(fakeLat, fakeLon, fakeAlt, first.getDateTime()); //return a fake entry with the fake location and the corrupt data entry
         }
+        maxSpeed = 300;
         return null;
     }
 }
