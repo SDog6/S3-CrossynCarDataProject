@@ -31,8 +31,8 @@ public class CrossynApp {
 
     private static TripEntryAlgorithm Algorithm;
 
-//    @Autowired
-//    private TripContainer t;
+    @Autowired
+    private TripContainer t;
 
     public CrossynApp(TripEntryAlgorithm Algorithm)
     {
@@ -49,44 +49,49 @@ public class CrossynApp {
 //        return test;
 //    }
 
-    public static void main(String[] args) throws IOException
-    {
+    public static void main(String[] args) throws IOException {
         SpringApplication.run(CrossynApp.class, args);
 
 
         BlockingQueue<TripEntry> queue = new ArrayBlockingQueue(10000);
         new Thread(Algorithm).start();
         Algorithm.setQueue(queue);
+        System.out.println("Debug purpose; You want to use dialog popup to select dataset? (write true or false)");
+        Scanner input = new Scanner(System.in);
+
+        boolean set = input.nextBoolean();
+        // while(true){
+
+        //Algorithm test1 = new Algorithm();
+        TripEntryAccepter TE = new TripEntryAccepter();
+
+        //String finalLine = TE.BigLine();
+
+        List<TripEntry> list;
+        if (set) {
+            list = TE.TurnJSONStringToObject(TE.BigLineDialog());
+        } else {
+            list = TE.TurnJSONStringToObject(TE.BigLine());
+        }
 
 
-        AccepterFlow Start = new AccepterFlow(queue);
-        Start.init();
+        for (TripEntry Test : list) {
+            try {
+                //queue.add(Test);
+                if (queue.isEmpty()) {
+                    synchronized (queue) {
+                        queue.notify(); // notify and wake the algorithm
 
-    }
+                    }
+                }
 
-
-//     TODO:           SpeedLimit Breaking
-
-//    List<TripEntry> BrokenSpeeds = new LinkedList<>();
-//
-//                for (TripEntry entry : list) {
-//        if (entry.getSpeed() > entry.getSpeedlimit())
-//        {
-//            BrokenSpeeds.add(entry);
-//        }
-//    }
-//                System.out.println("Speed Limit broken: " + BrokenSpeeds.size());
-//                System.out.println("Do you want to see the entries Where speed was broken? (Y/N)");
-//                if(Prompt())
-//    {
-//        for (TripEntry Entry : BrokenSpeeds)
-//        {
-//            System.out.println(Entry);
-//        }
-//    }
-//}
-}
+                queue.put(Test);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
 
 
+        }
 
 
+    }}
