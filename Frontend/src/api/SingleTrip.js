@@ -10,7 +10,7 @@ function SingleTrip (props) {
         axios.get(`http://localhost:8083/Trips/${PropsID}`)
         .then(response =>{
             setProduct(response.data)
-            console.log()
+            console.log(response.data)
         })
     },[])
 

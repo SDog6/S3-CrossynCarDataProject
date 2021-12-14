@@ -44,9 +44,6 @@ public class TripController {
 
 
         Trip trip = dal.dbGetTrip(id);
-        System.out.println(id);
-        System.out.println(trip);
-
         if (trip != null) {
             return ResponseEntity.ok().body(trip);
         } else {
