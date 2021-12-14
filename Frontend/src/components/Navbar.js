@@ -4,7 +4,7 @@ import {  Link } from "react-router-dom";
 import {Container ,Navbar, Nav} from 'react-bootstrap'
 import logo from "../images/logo.png";
 import SecuredRoute from './SecureRoute';
-
+import jwtDecode from 'jwt-decode';
 
 
 class NavBar extends React.Component  {
@@ -17,24 +17,32 @@ class NavBar extends React.Component  {
 }
 
 componentDidMount() {
-  if (localStorage.getItem('token') === "logged in") {
-      this.setState({ isAuthenticated: "logged in" });
+  var tok = localStorage.getItem('token');
+  if(tok == null){
+  }
+  else {
+    var decoded = jwtDecode(tok);
+      this.setState({ isAuthenticated: decoded.role});
   }
 }
 
 render(){
   
-  const isAuthenticated = localStorage.getItem("token")
-
   return (
     <div className="Navigation">
     <Navbar bg="dark" variant="dark">
     <Container>
     <Navbar.Brand href="/"> <img src={logo} className="img-logo" alt="Logo"/></Navbar.Brand>
      <Nav className="me-auto" >
-     {isAuthenticated === "logged in" ? "" : <Nav.Link href="/login">Log in</Nav.Link>}  
-      {isAuthenticated === "logged in" ? <Nav.Link href="/Trips">Trips</Nav.Link> : ""} 
-      {isAuthenticated === "logged in" ? <Nav.Link href="/Logout">Log out</Nav.Link> : ""} 
+     {this.state.isAuthenticated === '' ?  <Nav.Link href="/login">Log in</Nav.Link> : ""}  
+      {this.state.isAuthenticated != '' ? <Nav.Link href="/Trips">Trips</Nav.Link> : ""} 
+      {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? <Nav.Link href="/Vehicles">Vehicles</Nav.Link> : ""} 
+      {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? <Nav.Link href="/VehicleCreation">Add vehicle</Nav.Link> : ""} 
+      {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? <Nav.Link href="/Users">Users</Nav.Link> : ""} 
+      {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? <Nav.Link href="/CreateUser">Create user</Nav.Link> : ""} 
+      {this.state.isAuthenticated === '' ? "" : <Nav.Link href="/Logout">Log out</Nav.Link>} 
+
+
     </Nav>
     </Container>
   </Navbar>

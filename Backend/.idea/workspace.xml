@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/API/APIApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/APIApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/API/Security/AuthenticationConfigConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/Security/AuthenticationConfigConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/API/Security/AuthenticationUserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/Security/AuthenticationUserDetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/API/Security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/Security/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/API/Security/WebConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/Security/WebConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/API/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/IUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/IUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Containers/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/Navbar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +295,7 @@
       <workItem from="1638176599911" duration="9672000" />
       <workItem from="1638187311931" duration="853000" />
       <workItem from="1638267688007" duration="6803000" />
-      <workItem from="1638795437068" duration="12382000" />
+      <workItem from="1638795437068" duration="13824000" />
     </task>
     <servers />
   </component>

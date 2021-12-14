@@ -35,7 +35,6 @@ class Login extends Component{
                 const token = response.data.Authorization;
                 localStorage.setItem("token", token);
                 window.location.href = '/';
-
             
             },
             (error) => {

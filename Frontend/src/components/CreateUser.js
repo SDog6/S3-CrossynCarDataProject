@@ -3,23 +3,25 @@ import React, { Component } from 'react'
 import "../styles/form.css"
 
 
-class Register extends Component {
+class CreateUser extends Component {
     constructor(props) {
         super(props)
         this.state = {         
             username: '',
             password: '',
+            role:''
         }
         this.changeUsernameHandler = this.changeUsernameHandler.bind(this);
         this.changePasswordHandler = this.changePasswordHandler.bind(this);
+        this.changeRoleHandler = this.changeRoleHandler.bind(this);
+
         this.saveMember = this.saveMember.bind(this);
     }
 
 
     saveMember = (hndl) => {
         hndl.preventDefault();
-        let member = { username: this.state.username, password: this.state.password , role : "DRIVER"};
-        console.log(this.state.color);
+        let member = { username: this.state.username, password: this.state.password , role : this.state.role};
         axios.post("http://localhost:8083/register", member).then((response) => {
             console.log(response)
         });
@@ -35,7 +37,9 @@ class Register extends Component {
     changePasswordHandler = (event) => {
         this.setState({ password: event.target.value });
     }
-
+    changeRoleHandler = (event) => {
+        this.setState({ role: event.target.value });
+    }
 
     render() {
         return (
@@ -57,8 +61,13 @@ class Register extends Component {
                                         <input placeholder="Password" name="password" className="form-control"
                                             value={this.state.password} onChange={this.changePasswordHandler} />
                                     </div>
+                                    <div className="form=group">
+                                        <label> Role : </label>
+                                        <input placeholder="Role" name="role" className="form-control"
+                                            value={this.state.role} onChange={this.changeRoleHandler} />
+                                    </div>
                                     <br></br>
-                                    <button className="btn btn-success" onClick={this.saveMember}>SIGN UP</button>
+                                    <button className="btn btn-success" onClick={this.saveMember}>Create user</button>
                                 </form>
                             </div>
                         </div>
@@ -68,4 +77,4 @@ class Register extends Component {
         )
     }
 }
-export default Register
+export default CreateUser

@@ -30,7 +30,7 @@ public class UserService {
         }
         user.setUsername(userCreateRequest.getUsername());
         user.setPassword(passwordEncoder.encode(userCreateRequest.getPassword()));
-        user.setRole("USER");
+        user.setRole(userCreateRequest.getRole());
         List<String> connectedTrips = new ArrayList<>();
         List<String> connectedVehicles = new ArrayList<>();
         user.setConnectedTrips(connectedTrips);
