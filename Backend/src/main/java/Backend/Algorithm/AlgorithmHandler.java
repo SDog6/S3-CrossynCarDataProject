@@ -1,6 +1,7 @@
 package Backend.Algorithm;
 
 
+import Backend.Classes.CorruptLocationFilter;
 import Backend.Classes.Trip;
 import Backend.Classes.TripEntry;
 import Backend.Containers.TripContainer;
@@ -17,6 +18,9 @@ import java.time.temporal.Temporal;
 @Service
 public class AlgorithmHandler
 {
+
+    //filter
+    public CorruptLocationFilter filter;
     //Things
     @Autowired
     public TripContainer t;
@@ -37,11 +41,17 @@ public class AlgorithmHandler
         //I do not know what the note under this means anymore but it sounds important so leaving it here for now
         //this.IncomingEntry = tripEntry; //TODO: instead of directly putting it in Incoming run it throught the algorithm first (so TripEntryAlgorithm.Start(TripEntry))
 
-
          if(t.VehicleOnTrip(entry.getVehicleID())) //check if trip is ongoing
         {
             ProcessingTrip = t.GetOngoingTripFromVehicleID(entry.getVehicleID());
             PrevEntry = ProcessingTrip.GetLatestTripEntry();
+
+            //if the entry is corrupt a fakeEntry is provided else proceed as normal
+            TripEntry falseEntry = filter.doFilter(ProcessingTrip.getEntries());
+            if (falseEntry != null)
+            {
+                entry = falseEntry; //now when you save the entry you'll save the false entry instead
+            }
 
             Duration between = Duration.between(PrevEntry.getDateTime().toLocalTime(),entry.getDateTime().toLocalTime()); //check if entry is older then 5 minutes
 

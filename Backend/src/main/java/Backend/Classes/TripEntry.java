@@ -26,6 +26,7 @@ public class TripEntry {
     private int speedLimit;
     private int roadType;
     private boolean ignition;
+    private boolean fake;
 
 
 //for the algorithm
@@ -40,7 +41,7 @@ public TripEntry(String vehicleId, double lat, double lon, int alt, ZonedDateTim
     this.speedLimit = speedLimit;
     this.roadType = roadType;
     this.ignition = ignition;
-
+    this.fake = false;
 }
 
 
@@ -82,6 +83,8 @@ public TripEntry(String vehicleId, double lat, double lon, int alt, ZonedDateTim
         return roadType;
     }
 
+    public boolean getFake() {return fake;}
+
     public boolean isIgnition() {
         return ignition;
     }
@@ -121,6 +124,8 @@ public TripEntry(String vehicleId, double lat, double lon, int alt, ZonedDateTim
     public void setIgnition(boolean ignition) {
         this.ignition = ignition;
     }
+
+    public void setFake(boolean fake) {this.fake = fake;}
 
     public String toString(){
         return "Vehicle: " + getVehicleID().toString() + " at Latitude: " +getLat()+", Longitude: "+getLon()+" and Altitude: "+getAlt()+". Driver on RoadType: "+ getRoadType()+ " Driving: "+ getSpeed() +"Km/H, " + (getSpeed()>getSpeedlimit() ? "" : "Not ") + "Breaking the Speedlimit (Speedlimit: " + getSpeedlimit() + "Km/H) on " + getDateTime() + "ignition: "  + this.isIgnition();

@@ -56,7 +56,6 @@ public class TripEntryAlgorithm implements Runnable {
 
     }*/
 
-
     @Override
     public void run()
     {

@@ -183,8 +183,8 @@ public class TripContainer implements ITripContainer {
     {
         //find trip
         Trip toBeEnded = trips.get(trips.indexOf(trip));
-        //push latest entries db
-        dbSaveEntriestoActiveTripwithVehicleID(trip.getEntries(), trip.getVehicleId());
+        //push latest non fake entries to db
+        dbSaveEntriestoActiveTripwithVehicleID(trip.getEntriesWithoutFake(), trip.getVehicleId());
 
         //push end time and set status to false db
         dbSetActiveTripEndTimewithVehicleID(trip.getVehicleId(),trip.GetLatestTripEntry().getDateTime());
@@ -208,8 +208,11 @@ public class TripContainer implements ITripContainer {
                         TripEntry te = trippu.getEntries().get(i);
                         if(trippu.getEntries().indexOf(te) != 0 && trippu.getEntries().indexOf(te) != 1 && trippu.getEntries().indexOf(te) != 2 )
                         {
-                            temp.add(te);
-                            //System.out.println(te);
+                            if (te.getFake() != true) //check if the entry is a fake or not
+                            {
+                                temp.add(te);
+                                //System.out.println(te);
+                            }
                         }
 
                     } //HACK: this might work...
