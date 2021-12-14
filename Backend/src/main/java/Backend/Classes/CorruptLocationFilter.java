@@ -49,6 +49,12 @@ public class CorruptLocationFilter {
 
     public TripEntry doFilter(List<TripEntry> data) //TODO: maybe add a trySwitch method which checks the speed if the long and lat were changed
     {
+        //if one of the first 3 entries is corrupt it breaks this keeps the application alive even tho the corrupt entries don't get filtered
+        if (data.size() < 3)
+        {
+            return null;
+        }
+
         //get data from parameter
         TripEntry first = data.get(0);
         TripEntry second = data.get(1);
