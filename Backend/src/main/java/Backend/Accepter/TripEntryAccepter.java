@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class TripEntryAccepter {
 
     public TripEntryAccepter() {
@@ -31,30 +32,30 @@ public class TripEntryAccepter {
 
         Scanner input = new Scanner(System.in);
 
-            System.out.println("Please select 1/2/3 to choose a dataset");
-            int set = input.nextInt();
+        System.out.println("Please select 1/2/3 to choose a dataset");
+        int set = input.nextInt();
 
-//            switch (set) {
-//                case 1:
-//                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset1.txt"));
-//                    break;
-//                case 2:
-//                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset2.txt"));
-//                    break;
-//                case 3:
-//                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset3.txt"));
-//                    break;
-//            }
-            //bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset".concat(String.valueOf(set)).concat(".txt")));
-            bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\Splitted Dataset 1\\".concat(String.valueOf(set)).concat(".txt")));
-            String line = bufReader.readLine();
-            String finalLine = "";
-            while (line != null) {
-                finalLine = finalLine + line;
-                line = bufReader.readLine();
-            }
-            bufReader.close();
-            return finalLine;
+        switch (set) {
+            case 1:
+                bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset1.txt"));
+                break;
+            case 2:
+                bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset2.txt"));
+                break;
+            case 3:
+                bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset3.txt"));
+                break;
+        }
+
+
+        String line = bufReader.readLine();
+        String finalLine = "";
+        while (line != null) {
+            finalLine = finalLine + line;
+            line = bufReader.readLine();
+        }
+        bufReader.close();
+        return finalLine;
 
     }
 
@@ -104,13 +105,13 @@ public class TripEntryAccepter {
 //            }
 
 
-            String line = bufReader.readLine();
+        String line = bufReader.readLine();
 
-            while (line != null) {
-                finalLine = finalLine + line;
-                line = bufReader.readLine();
-            }
-            bufReader.close();
+        while (line != null) {
+            finalLine = finalLine + line;
+            line = bufReader.readLine();
+        }
+        bufReader.close();
 
 
         return finalLine;

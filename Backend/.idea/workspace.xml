@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/API/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Containers/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Accepter/TripEntryAccepter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Accepter/TripEntryAccepter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/Algorithm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/GeocoderAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/GeocoderAlgo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/TripEntryAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/TripEntryAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripEntryContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripEntryContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/CrossynApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/CrossynApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/Navbar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
