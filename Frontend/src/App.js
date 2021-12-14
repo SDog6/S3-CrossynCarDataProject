@@ -17,6 +17,7 @@ import ListOfVehicle from './components/ListOfVehicle';
 import ListOfUser from './components/ListOfUser';
 import SingleTrip from './api/SingleTrip';
 import CreateUser from './components/CreateUser';
+import UpdateVehicle from './components/UpdateVehicle';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
       <Route path="/Users" component={ListOfUser}></Route>
       <Route path="/CreateUser" component={CreateUser}></Route>
       <Route path='/Trips/:id' exact component={SingleTrip}/>
+      <Route path='/Vehicle/:id' exact component={UpdateVehicle}/>
 
 
       </Switch>

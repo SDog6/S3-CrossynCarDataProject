@@ -1,5 +1,6 @@
 package API;
 
+import Backend.Classes.User;
 import Backend.Classes.Vehicle;
 import Backend.Interfaces.IVehicleRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,20 @@ public class VehicleController {
         }
         return null;
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<Vehicle> getVehiclePath(@PathVariable(value = "id") String vehicleID) {
+        Vehicle temp = repo.getVehicleById(vehicleID);
+        return ResponseEntity.ok().body(temp);
+    }
 
+    @PutMapping("/{vehicleID}/{Vehicle}")
+    public ResponseEntity<String> updateVehicleDetails(@PathVariable(value="vehicleID") String vehicleID,@PathVariable(value = "Vehicle") Vehicle v){
+        Vehicle vehicle = repo.getVehicleById(vehicleID);
+        vehicle.setLplate(vehicle.getLplate());
+        vehicle.setColor(vehicle.getColor());
+        Vehicle update = repo.save(vehicle);
+        System.out.println(update);
+        return ResponseEntity.ok().body("Added");
+    }
 
 }

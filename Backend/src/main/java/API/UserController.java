@@ -53,7 +53,6 @@ public class UserController {
 
     }
 
-
     @PutMapping("/{username}/{vehicleID}")
     public ResponseEntity<String> updateConnectedVehicle(@PathVariable String username, @PathVariable String vehicleID){
         User u = userService.readUserByUsername(username);
