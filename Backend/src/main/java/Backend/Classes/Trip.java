@@ -38,7 +38,7 @@ public class Trip{
     private int averageRoad;
     private String startAddress;
     private String endAddress;
-
+    private String driver;
 
     private Vehicle vehicle;
 
@@ -163,6 +163,14 @@ public class Trip{
             return false;
         }
 
+    }
+
+    public String getDriver() {
+        return driver;
+    }
+
+    public void setDriver(String driver) {
+        this.driver = driver;
     }
 
     public boolean RemoveTripEntry(TripEntry a) {

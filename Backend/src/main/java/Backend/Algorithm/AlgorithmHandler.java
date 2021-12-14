@@ -3,8 +3,10 @@ package Backend.Algorithm;
 
 import Backend.Classes.Trip;
 import Backend.Classes.TripEntry;
+import Backend.Classes.User;
 import Backend.Containers.TripContainer;
 import Backend.Containers.TripEntryContainer;
+import Backend.Interfaces.IUser;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;
@@ -21,6 +23,9 @@ public class AlgorithmHandler
     //Things
     @Autowired
     public TripContainer t;
+
+    @Autowired
+    IUser UserRep;
 
     //Constructor
     @Autowired
@@ -92,6 +97,8 @@ public class AlgorithmHandler
                 //Add2Trip(entry); //start this funtions again to create a new trip with the incoming entry (that still isn't handled)
                 String result = geo.FindAddress(String.valueOf(entry.getLat()),String.valueOf(entry.getLon()));
                 ProcessingTrip.setEndAddress(result);
+                User temp = UserRep.getUserByConnectedVehiclesAndRole(ProcessingTrip.getVehicleId(),"DRIVER");
+                ProcessingTrip.setDriver(temp.getUsername());
                 t.dbSaveTrip(ProcessingTrip);
                 return true; //trip has ended
             }

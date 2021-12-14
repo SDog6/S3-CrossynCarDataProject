@@ -1,6 +1,7 @@
 package API;
 
 import Backend.Classes.Trip;
+import Backend.Interfaces.DatabaseAccess.ITrip;
 import Backend.Interfaces.ITripContainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -21,6 +22,9 @@ public class TripController {
     @Autowired
     ITripContainer dal;
 
+    @Autowired
+    ITrip repo;
+
     @GetMapping
     public ResponseEntity<List<Trip>> getAllTrips(){
         List<Trip> test = null;
@@ -29,7 +33,6 @@ public class TripController {
         //test = dal.dbgetAllTrips();
         test = dal.dbFetchAllTripSummaries();
 
-        System.out.println(test.size());
         if(test != null){
             return ResponseEntity.ok().body(test);
         }
@@ -38,10 +41,14 @@ public class TripController {
         }
     }
 
+    @GetMapping("/connected/{username}")
+    public ResponseEntity<List<Trip>> getAllConnectedTrips(@PathVariable(value = "username") String username){
+        return ResponseEntity.ok().body(repo.getTripsByDriver(username));
+    }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<Trip> getCPUByName(@PathVariable(value = "id") String id) {
-
 
         Trip trip = dal.dbGetTrip(id);
         if (trip != null) {

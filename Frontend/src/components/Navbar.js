@@ -23,6 +23,7 @@ componentDidMount() {
   else {
     var decoded = jwtDecode(tok);
       this.setState({ isAuthenticated: decoded.role});
+      console.log(decoded);
   }
 }
 
