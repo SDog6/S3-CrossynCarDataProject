@@ -2,7 +2,6 @@ package Backend;
 
 import Backend.Accepter.AccepterFlow;
 import Backend.Accepter.TripEntryAccepter;
-import Backend.Algorithm.Algorithm;
 import Backend.Algorithm.TripEntryAlgorithm;
 import Backend.Classes.Trip;
 import Backend.Classes.TripEntry;

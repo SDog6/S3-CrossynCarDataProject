@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import javax.swing.*;
+import java.io.IOException;
 import java.time.Duration;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
@@ -91,8 +92,9 @@ public class TripEntryAlgorithm implements Runnable {
             {
                 System.out.println(ex2);
                 ex2.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
 
 
         }

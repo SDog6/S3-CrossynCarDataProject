@@ -13,14 +13,11 @@ public class Algorithm
 {
     private List<Trip> trips=new ArrayList<Trip>();
 
-
     public Algorithm(){
         trips = new ArrayList<>();
     }
 
     public List<Trip> MakeTrips (List<TripEntry> entries) {
-
-
         TripEntry OldEntry = null;
         int count = 0;
 
