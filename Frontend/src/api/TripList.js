@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import axios from "axios";
 import { Card, Button } from "react-bootstrap";
 import '../styles/Card.css'
+import jwtDecode from "jwt-decode";
 
 class TripList extends Component{
     
@@ -15,7 +16,13 @@ class TripList extends Component{
     
     
     componentDidMount() { 
-        axios.get('http://localhost:8083/Trips')
+        var tok = localStorage.getItem('token');
+        if(tok == null){
+        }
+        else {
+          var decoded = jwtDecode(tok);
+        }
+        axios.get(`http://localhost:8083/Trips/connected/${decoded.sub}`)
         .then(response =>{
             this.setState({
                 trips: response.data

@@ -9,4 +9,5 @@ import java.util.Optional;
 public interface IUser extends MongoRepository<User, String> {
     Optional<User> getUserByUsername(String username);
     String getUserByUsernameAndAndConnectedVehicles(String username,String VehicleID);
+    User getUserByConnectedVehiclesAndRole(String connectedVehicles,String role);
 }
