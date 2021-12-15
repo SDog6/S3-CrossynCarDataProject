@@ -17,7 +17,7 @@ public class GeocoderAlgo {
 
     //THIS THING WILL EXPIRE AND THEN WE ARE FUCKED
     //MAKE SURE YOU CHANGE THIS AND TEST IT ON THE DAY OF PRESENTATION!!!!!!!!
-    private String apikey = "777UorKbWLb25DbtXqVOTZsYOwgHp1wxakKT594TvSQ";
+    private String apikey = "Ux2BzrHz6u6IsjqPs9uzEOAVZnDvoMhsC1qYLxk5hiY";
     // Coordinates link generator
     // Does not require api key since Nominatim is open source
     private String Stringify(String lat, String lon) {
