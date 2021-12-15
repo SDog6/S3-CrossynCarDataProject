@@ -21,14 +21,25 @@ class TripList extends Component{
         }
         else {
           var decoded = jwtDecode(tok);
-        }
-        axios.get(`http://localhost:8083/Trips/connected/${decoded.sub}`)
-        .then(response =>{
-            this.setState({
-                trips: response.data
+          if(decoded.role === "CROSSYNEMPLOYEE"){
+            axios.get(`http://localhost:8083/Trips`)
+            .then(response =>{
+                this.setState({
+                    trips: response.data
+                })
+                console.log(response.data)
             })
-            console.log(response.data)
-        })
+          }
+          else {
+            axios.get(`http://localhost:8083/Trips/connected/${decoded.sub}`)
+            .then(response =>{
+                this.setState({
+                    trips: response.data
+                })
+                console.log(response.data)
+            })
+          }
+        }
     }
     
     
