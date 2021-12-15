@@ -41,7 +41,7 @@ class ListOfUser extends Component {
               <CardSubtitle>Username :{user.username}</CardSubtitle>
               <CardSubtitle>Role :{user.role}</CardSubtitle>
               <CardSubtitle><b>Connected Vehicle IDs:</b></CardSubtitle>
-              {user.connectedVehicles.map(product => <CardSubtitle>{product}</CardSubtitle> )}
+              {user.connectedVehicles.map(product => <CardSubtitle> - {product}</CardSubtitle> )}
             </CardBody>
           </Card>
           <br></br>
