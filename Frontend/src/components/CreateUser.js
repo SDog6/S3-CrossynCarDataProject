@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import "../styles/form.css"
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+
 
 
 class CreateUser extends Component {
@@ -49,7 +51,7 @@ class CreateUser extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="card col-md-6 offset-md-3 offset-md-3">
-                            <h3 className="text-center">REGISTER</h3>
+                            <h3 className="text-center">Create a user</h3>
                             <div className="card-body">
                                 <form onSubmit = {this.hndlSubmit} style = {{ marginBottom: '30mm' }}>
 
@@ -64,9 +66,17 @@ class CreateUser extends Component {
                                             value={this.state.password} onChange={this.changePasswordHandler} />
                                     </div>
                                     <div className="form=group">
-                                        <label> Role : </label>
-                                        <input placeholder="Role" name="role" className="form-control"
-                                            value={this.state.role} onChange={this.changeRoleHandler} />
+                                    <FormGroup>
+          <Label for="Gender">Select Role</Label>
+          <Input type="select" name="select" id="exampleSelect" 
+          value = {this.state.role} onChange={this.changeRoleHandler}>
+            <option value="" select disabled>Select role</option>
+            <option value="DRIVER">Driver</option>
+            <option value="FLEETOWNER">Fleet owner</option>
+            <option value="CROSSYNEMPLOYEE">Crossyn Employee</option>
+
+          </Input>
+        </FormGroup>
                                     </div>
                                     <br></br>
                                     <button className="btn btn-success" onClick={this.saveMember}>Create user</button>
