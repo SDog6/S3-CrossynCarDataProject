@@ -12,6 +12,7 @@ function UpdateVehicle(props) {
     const [Color, setColor] = useState([])
 
 
+
     useEffect(() => {
         axios.get(`http://localhost:8083/Vehicle/${PropsID}`)
         .then(response =>{
@@ -30,7 +31,7 @@ function UpdateVehicle(props) {
             lplate : LPlate,
             color: Color,
           };
-        axios.put(`http://localhost:8083/Vehicle/${Vehicle.id}/${vehicle}`)
+        axios.put(`http://localhost:8083/Vehicle/${Vehicle.id}` , vehicle)
         .then(response =>{
             console.log(response.data)
         })
