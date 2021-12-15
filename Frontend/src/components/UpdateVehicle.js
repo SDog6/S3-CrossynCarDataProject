@@ -36,14 +36,6 @@ function UpdateVehicle(props) {
         })
 }
 
-
-// componentDidMount() {
-//     // Simple PUT request with a JSON body using axios
-//     const article = { title: 'React PUT Request Example' };
-//     axios.put('https://reqres.in/api/articles/1', article)
-//         .then(response => this.setState({ updatedAt: response.data.updatedAt }));
-// }
-
 return (
     <div>
         <div className="container">

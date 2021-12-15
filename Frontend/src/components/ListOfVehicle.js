@@ -39,6 +39,8 @@ class ListOfVehicle extends Component {
               <CardSubtitle>ID :{vehicle.id}</CardSubtitle>
               <CardSubtitle>Brand :{vehicle.brand}</CardSubtitle>
               <CardSubtitle>Color :{vehicle.color}</CardSubtitle>
+              <Button variant="primary" href={"/" + "Vehicle" + "/" + vehicle.id}>Change Details</Button>
+
             </CardBody>
           </Card>
           <br></br>
