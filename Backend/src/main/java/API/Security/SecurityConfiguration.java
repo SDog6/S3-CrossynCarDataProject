@@ -23,9 +23,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().authorizeRequests()
                 .antMatchers(HttpMethod.POST, AuthenticationConfigConstants.SIGN_UP_URL).permitAll()
-                .antMatchers(HttpMethod.POST,"/api/library/book/**").hasAnyAuthority("USER", "ADMIN")
-                .antMatchers("/account").hasAnyAuthority("USER", "ADMIN")
-                .antMatchers("/inventory").hasAnyAuthority("ADMIN")
+                .antMatchers(HttpMethod.GET,"/Trips").hasAnyAuthority("CROSSYNEMPLOYEE")
                 .antMatchers(HttpMethod.POST,"/login").permitAll()
                 .anyRequest().permitAll()
                 .and()
