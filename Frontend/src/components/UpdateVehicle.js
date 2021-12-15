@@ -24,7 +24,7 @@ function UpdateVehicle(props) {
 
     function saveMember (event){
         event.preventDefault();
-        const vehicle = {
+        let vehicle = {
             id: Vehicle.id,
             brand: Vehicle.brand,
             lplate : LPlate,

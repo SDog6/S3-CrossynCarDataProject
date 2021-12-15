@@ -46,14 +46,13 @@ public class VehicleController {
         return ResponseEntity.ok().body(temp);
     }
 
-    @PutMapping("/{vehicleID}/{Vehicle}")
-    public ResponseEntity<String> updateVehicleDetails(@PathVariable(value="vehicleID") String vehicleID,@PathVariable(value = "Vehicle") Vehicle v){
-        Vehicle vehicle = repo.getVehicleById(vehicleID);
-        vehicle.setLplate(vehicle.getLplate());
-        vehicle.setColor(vehicle.getColor());
+    @PutMapping("/{id}")
+    public ResponseEntity<Vehicle> updateVehicleDetails(@PathVariable(value="id") String vehicleID,@RequestBody Vehicle vehicle){
+        Vehicle v = repo.getVehicleById(vehicleID);
+        v.setLplate(vehicle.getLplate());
+        v.setColor(vehicle.getColor());
         Vehicle update = repo.save(vehicle);
-        System.out.println(update);
-        return ResponseEntity.ok().body("Added");
+        return ResponseEntity.ok().body(update);
     }
 
 }
