@@ -3,6 +3,7 @@ import axios from "axios";
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button } from 'reactstrap';
 import "../styles/vehicleCard.css"
+import { Button } from "reactstrap";
 
 class ListOfVehicle extends Component {
   constructor(props) {
