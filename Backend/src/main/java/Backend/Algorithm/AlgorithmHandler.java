@@ -29,9 +29,8 @@ public class AlgorithmHandler
 
     //Constructor
     @Autowired
-    public AlgorithmHandler()//TripContainer t)
+    public AlgorithmHandler()
     {
-        //this.t = t;//new TripContainer();
     }
 
     //Functions

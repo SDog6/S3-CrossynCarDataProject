@@ -31,6 +31,5 @@ public class MongoConfiguration extends AbstractMongoClientConfiguration
     @Override
     protected void configureConverters(MongoCustomConversions.MongoConverterConfigurationAdapter adapter) {
         adapter.registerConverter(new Backend.Repo.ZonedDateTimeToDocumentConverter());
-        //adapter.registerConverter(new com.example.PersonWriteConverter());
     }
 }

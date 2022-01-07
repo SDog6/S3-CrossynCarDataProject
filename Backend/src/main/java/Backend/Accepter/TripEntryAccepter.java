@@ -89,20 +89,6 @@ public class TripEntryAccepter {
 
 
 
-//            System.out.println("Please select 1/2/3 to choose a dataset");
-//            int set = input.nextInt();
-//
-//            switch (set) {
-//                case 1:
-//                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset1.txt"));
-//                    break;
-//                case 2:
-//                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset2.txt"));
-//                    break;
-//                case 3:
-//                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset3.txt"));
-//                    break;
-//            }
 
 
         String line = bufReader.readLine();

@@ -30,8 +30,6 @@ public class TripEntryAlgorithm implements Runnable {
 
     @Setter
     BlockingQueue<TripEntry> queue;
-    //Queue<TripEntry> queue;
-
 
     @Autowired
     private TripContainer t;

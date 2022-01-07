@@ -15,17 +15,14 @@ import java.net.URLConnection;
 public class GeocoderAlgo {
 
 
-    //THIS THING WILL EXPIRE AND THEN WE ARE FUCKED
+    //THIS THING WILL EXPIRE AND THEN IT WILL NOT WORK
     //MAKE SURE YOU CHANGE THIS AND TEST IT ON THE DAY OF PRESENTATION!!!!!!!!
     private String apikey = "Ux2BzrHz6u6IsjqPs9uzEOAVZnDvoMhsC1qYLxk5hiY";
-    // Coordinates link generator
-    // Does not require api key since Nominatim is open source
     private String Stringify(String lat, String lon) {
         return "https://revgeocode.search.hereapi.com/v1/revgeocode?lang=en-US&at=" + lat + "%2C" + lon + "&apikey=" + apikey;
     }
 
     public String FindAddress(String lat, String lon) throws IOException, JSONException {
-        // HTTP Get request - Uses Stringify method to make custom URL with provided coordinates
         URL request = new URL(Stringify(lat, lon));
         // Open Connection
         URLConnection rq = request.openConnection();
@@ -42,7 +39,6 @@ public class GeocoderAlgo {
         // Convert the String response into a JSON object
         JSONObject myResponse = new JSONObject(response.toString());
         // Navigate through JSON object
-        // Save all needed fields to string
         JSONArray temp = myResponse.getJSONArray("items");
         JSONObject inside = temp.getJSONObject(0);
         String result = inside.getString("title");

@@ -29,18 +29,6 @@ public class TripContainer implements ITripContainer {
     }
 
 
-    //Functions (Crud)
-
-    /*
-    public boolean AddTrip(Trip t)
-    {
-        if(trips.add(t))
-        {
-            return true;
-        }
-        return false;
-    }*/
-
     public boolean AddTrip(Trip t) {
         if (trips.add(t)) {
 
