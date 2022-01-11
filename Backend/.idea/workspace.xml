@@ -5,20 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/Accepter/AccepterFlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Backend/Algorithm/AlgorithmTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Backend/Classes/CorruptLocationFilterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Backend/Classes/TripTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.example.backend.BackendApplicationTests.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.example.backend.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.example.backend.BackendApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Accepter/TripEntryAccepter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Accepter/TripEntryAccepter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/TripEntryAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/TripEntryAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/CrossynApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/CrossynApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/DatabaseAccess/ITripDAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Interfaces/DatabaseAccess/ITripDAL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Repo/TripRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/Backend/BackendApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +88,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -132,23 +137,32 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../IDEA_Projects/WebsiteVolleybal" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.152439" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\GitStuff\ZAP\Backend\src\main\java\Backend\DataStream" />
       <recent name="C:\Users\Hristo\Desktop\New folder\crossyn_project\Backend" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
       <recent name="Backend" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Backend.Algorithm" />
+      <recent name="Backend.Classes" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -158,103 +172,94 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.CrossynApp">
-    <configuration name="Backend [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="bootRun" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="Backend [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="BackendApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.Backend.BackendApplicationTests&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="APIApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="Backend.main" />
+  <component name="RunManager" selected="JUnit.AlgorithmTest.makeTrips">
+    <configuration name="AlgorithmTest.makeTrips" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Backend.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="API.*" />
+          <option name="PATTERN" value="Backend.Algorithm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="API.APIApp" />
+      <option name="PACKAGE_NAME" value="Backend.Algorithm" />
+      <option name="MAIN_CLASS_NAME" value="Backend.Algorithm.AlgorithmTest" />
+      <option name="METHOD_NAME" value="makeTrips" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CrossynApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="Backend.main" />
+    <configuration name="CorruptLocationFilterTest.calculateDistance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Backend.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Backend.*" />
+          <option name="PATTERN" value="Backend.Classes.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="Backend.CrossynApp" />
+      <option name="PACKAGE_NAME" value="Backend.Classes" />
+      <option name="MAIN_CLASS_NAME" value="Backend.Classes.CorruptLocationFilterTest" />
+      <option name="METHOD_NAME" value="calculateDistance" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CorruptLocationFilterTest.createFalseTripEntry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Backend.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Backend.Classes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Backend.Classes" />
+      <option name="MAIN_CLASS_NAME" value="Backend.Classes.CorruptLocationFilterTest" />
+      <option name="METHOD_NAME" value="createFalseTripEntry" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TripTest.getEntriesWithoutFake" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Backend.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Backend.Classes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Backend.Classes" />
+      <option name="MAIN_CLASS_NAME" value="Backend.Classes.TripTest" />
+      <option name="METHOD_NAME" value="getEntriesWithoutFake" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TripTest.sortbyTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Backend.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Backend.Classes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Backend.Classes" />
+      <option name="MAIN_CLASS_NAME" value="Backend.Classes.TripTest" />
+      <option name="METHOD_NAME" value="sortbyTime" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.CrossynApp" />
-        <item itemvalue="Spring Boot.APIApp" />
-        <item itemvalue="Gradle.BackendApplicationTests" />
-        <item itemvalue="Gradle.Backend [build]" />
-        <item itemvalue="Gradle.Backend [bootRun]" />
+        <item itemvalue="JUnit.AlgorithmTest.makeTrips" />
+        <item itemvalue="JUnit.TripTest.getEntriesWithoutFake" />
+        <item itemvalue="JUnit.TripTest.sortbyTime" />
+        <item itemvalue="JUnit.CorruptLocationFilterTest.createFalseTripEntry" />
+        <item itemvalue="JUnit.CorruptLocationFilterTest.calculateDistance" />
       </list>
     </recent_temporary>
   </component>
@@ -287,6 +292,7 @@
       <workItem from="1638176599911" duration="9672000" />
       <workItem from="1638187311931" duration="853000" />
       <workItem from="1638267688007" duration="6803000" />
+      <workItem from="1641910464259" duration="12877000" />
     </task>
     <servers />
   </component>
