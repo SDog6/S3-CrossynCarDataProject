@@ -35,7 +35,7 @@ public class AlgorithmHandler
 
     //Functions
 
-    public boolean Add2Trip(@NotNull TripEntry entry) throws IOException //add entry to trip
+    public boolean Add2Trip(@NotNull TripEntry entry,boolean LastTrip) throws IOException //add entry to trip
     {
         //I do not know what the note under this means anymore but it sounds important so leaving it here for now
         //this.IncomingEntry = tripEntry; //TODO: instead of directly putting it in Incoming run it throught the algorithm first (so TripEntryAlgorithm.Start(TripEntry))
@@ -114,6 +114,10 @@ public class AlgorithmHandler
         }
 
         t.AddToTripWithVehicleID(entry.getVehicleID(), entry);
+        if (LastTrip){
+            ProcessingTrip.setCurrentlyOngoing(false);
+            t.dbSaveTrip(ProcessingTrip);
+        }
         return false; //trip has not ended
 
     }

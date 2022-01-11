@@ -56,10 +56,10 @@ public class CrossynApp {
         BlockingQueue<TripEntry> queue = new ArrayBlockingQueue(10000);
         new Thread(Algorithm).start();
         Algorithm.setQueue(queue);
-        System.out.println("Debug purpose; You want to use dialog popup to select dataset? (write true or false)");
-        Scanner input = new Scanner(System.in);
-
-        boolean set = input.nextBoolean();
+//        System.out.println("Debug purpose; You want to use dialog popup to select dataset? (write true or false)");
+//        Scanner input = new Scanner(System.in);
+//
+//        boolean set = input.nextBoolean();
         // while(true){
 
         //Algorithm test1 = new Algorithm();
@@ -68,11 +68,13 @@ public class CrossynApp {
         //String finalLine = TE.BigLine();
 
         List<TripEntry> list;
-        if (set) {
-            list = TE.TurnJSONStringToObject(TE.BigLineDialog());
-        } else {
-            list = TE.TurnJSONStringToObject(TE.BigLine());
-        }
+//        if (set) {
+//            list = TE.TurnJSONStringToObject(TE.BigLineDialog());
+//        } else {
+//            list = TE.TurnJSONStringToObject(TE.BigLine());
+//        }
+
+        list = TE.TurnJSONStringToObject(TE.BigLine());
 
 
         for (TripEntry Test : list) {

@@ -32,7 +32,7 @@ public class TripEntryAccepter {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Please select 1/2/3 to choose a dataset");
+        System.out.println("Please select 1/2/3/4/5/6/7 to choose a dataset");
         int set = input.nextInt();
 
         switch (set) {
@@ -44,6 +44,18 @@ public class TripEntryAccepter {
                 break;
             case 3:
                 bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset3.txt"));
+                break;
+            case 4:
+                bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset4.txt"));
+                break;
+            case 5:
+                bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset5.txt"));
+                break;
+            case 6:
+                bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset6.txt"));
+                break;
+            case 7:
+                bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset7.txt"));
                 break;
         }
 

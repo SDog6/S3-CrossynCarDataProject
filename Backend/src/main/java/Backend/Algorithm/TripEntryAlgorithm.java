@@ -56,9 +56,14 @@ public class TripEntryAlgorithm implements Runnable {
                 }
 
                 entry = queue.take();
+                boolean LastTrip = false;
                 //entry = queue.poll();
-                if(h.Add2Trip(entry))
+                if (queue.toArray().length == 1){
+                    LastTrip = true;
+                }
+                if(h.Add2Trip(entry,LastTrip))
                 {
+                    LastTrip = false;
                     System.out.println("Trip Finished: " + t.GetPastTripsFromVehicleID(entry.getVehicleID()).get(t.GetPastTripsFromVehicleID(entry.getVehicleID()).size() - 1));
                 }
             }
