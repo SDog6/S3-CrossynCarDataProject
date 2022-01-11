@@ -57,6 +57,7 @@ public class AlgorithmHandler
 
             if( between.toMinutes() >= 5 || between.toMinutes() <= -3) //if difference is bigger than 5 minutes or smaller than -3 minutes
             {
+                System.out.println(between);
                 t.FinishUpTrip(ProcessingTrip);
                 return true; //trip has ended
             }

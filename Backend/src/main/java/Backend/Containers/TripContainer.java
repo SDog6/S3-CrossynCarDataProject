@@ -61,6 +61,7 @@ public class TripContainer implements ITripContainer {
     public Trip dbGetTrip(String id) {return dal.getTripbyIdinDB(id);}
     public List<TripEntry> dbGetLast3TripEntriesfromOngoingTripWithVehicleID(String VehID) {return dal.getLastThreeTripEntriesFromTripinDBwithVehicleID(VehID);};
     public ArrayList<TripEntry> dbGetLast3TripEntriesfromTripWithID(String ID) {return dal.getLastThreeTripEntriesFromTripinDBwithID(ID);};
+    public void dbRemoveLast3TripEntriesfromTripWithID(String ID) {dal.rmLastThreeTripEntriesFromTripinDBwithID(ID);};
     public List<Trip> dbgetAllTrips() {return dal.getAllTripsfromDB();}
     public Trip dbGetOngoingTripbyVehicleID(String vehicleID) {return dal.getOngoingTripbyVehicleIDinDB(vehicleID);}
     public List<Trip> dbFetchAllTripSummaries() {return dal.getAllTripswithoutTripEntriesfromDB();}
@@ -76,7 +77,8 @@ public class TripContainer implements ITripContainer {
         for(Trip trip : trips)
         {
             trip.setEntries(dbGetLast3TripEntriesfromTripWithID(trip.getid()));
-            dbDeleteTripEntriesfromTrip(trip.getid(), trip.getEntries()); //might work too fast, should work in theorie, if problems arise, uncomment for loop under here;
+            dbRemoveLast3TripEntriesfromTripWithID(trip.getid());
+            //dbDeleteTripEntriesfromTrip(trip.getid(), trip.getEntries()); //might work too fast, should work in theorie, if problems arise, uncomment for loop under here;
         }
 //        for(Trip trip : trips)
 //        {
