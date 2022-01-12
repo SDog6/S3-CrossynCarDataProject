@@ -9,3 +9,11 @@
     backface-visibility: hidden;
     transition: transform .6s ease-in-out;
 }
+
+.carousel-item.active {
+    text-align: -webkit-center;
+}
+
+img.d-block.w-100 {
+    max-width: 800px;
+}
