@@ -229,5 +229,15 @@ public class Trip{
         return entries;
     }
 
+    public List<TripEntry> getEntriesWithoutFake()
+    {
+        List<TripEntry> temp = new ArrayList<>();
+        for (TripEntry entry: Entries) {
+            if (entry.getFake() != true) {
+                temp.add(entry);
+            }
+        }
+        return temp;
+    }
 
 }

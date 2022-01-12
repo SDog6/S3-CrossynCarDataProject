@@ -41,26 +41,31 @@ public class TripContainer implements ITripContainer {
         dal.addTripinDB(t);
     }
 
-    public Trip dbGetTrip(String id) {
-        return dal.getTripbyIdinDB(id);
-    }
 
-    public List<Trip> dbgetAllTrips() {
-        return dal.getAllTripsfromDB();
-    }
 
-    public Trip dbGetOngoingTripbyVehicleID(String vehicleID) {
-        return dal.getOngoingTripbyVehicleIDinDB(vehicleID);
-    }
+    public Trip dbGetTrip(String id) {return dal.getTripbyIdinDB(id);}
+    public List<TripEntry> dbGetLast3TripEntriesfromOngoingTripWithVehicleID(String VehID) {return dal.getLastThreeTripEntriesFromTripinDBwithVehicleID(VehID);};
+    public ArrayList<TripEntry> dbGetLast3TripEntriesfromTripWithID(String ID) {return dal.getLastThreeTripEntriesFromTripinDBwithID(ID);};
+    public void dbRemoveLast3TripEntriesfromTripWithID(String ID) {dal.rmLastThreeTripEntriesFromTripinDBwithID(ID);};
+    public List<Trip> dbgetAllTrips() {return dal.getAllTripsfromDB();}
+    public Trip dbGetOngoingTripbyVehicleID(String vehicleID) {return dal.getOngoingTripbyVehicleIDinDB(vehicleID);}
+    public List<Trip> dbFetchAllTripSummaries() {return dal.getAllTripswithoutTripEntriesfromDB();}
+    public List<Trip> dbFetchAllTripSummarieswithStatus(boolean isActive) {return dal.getAllTripswthoutTripEntriesfromDBwithOngoingStatus(isActive);}
+    public void dbSaveEntriestoActiveTripwithVehicleID(List<TripEntry> entries, String VehicleID) {dal.addTripEntryListToActiveTripinDBwithVehicleID(entries, VehicleID);}
+    public void dbSetActiveTripOngoingStatusToFalsewithVehicleID(String VehicleID) {dal.setTripStatustoFalseinDBwithVehicleID(VehicleID);};
+    public void dbSetActiveTripEndTimewithVehicleID(String vehicleID, ZonedDateTime endTime) {dal.setOngoingTripEndTimeinDBwithVehicleID(vehicleID, endTime);};
+    public void dbDeleteTripEntriesfromTrip(String tripID, List<TripEntry> entries) {dal.removeTripEntriesfromTripinDBwithID(tripID, entries);}
 
-    public List<Trip> dbFetchAllTripSummaries() {
-        return dal.getAllTripswithoutTripEntriesfromDB();
+    public void LoadTrips()
+    {
+        trips = dbFetchAllTripSummarieswithStatus(true);
+        for(Trip trip : trips)
+        {
+            trip.setEntries(dbGetLast3TripEntriesfromTripWithID(trip.getid()));
+            dbRemoveLast3TripEntriesfromTripWithID(trip.getid());
+            //dbDeleteTripEntriesfromTrip(trip.getid(), trip.getEntries()); //might work too fast, should work in theorie, if problems arise, uncomment for loop under here;
+        }
     }
-
-    public List<Trip> dbFetchAllTripSummarieswithStatus(boolean isActive) {
-        return dal.getAllTripswthoutTripEntriesfromDBwithOngoingStatus(isActive);
-    }
-
     public Trip CreateTrip(String vehicleId, ZonedDateTime startTime, ZonedDateTime endTime, boolean currentlyOngoing) {
         return new Trip(vehicleId, startTime, endTime, currentlyOngoing);
     }
@@ -133,11 +138,51 @@ public class TripContainer implements ITripContainer {
             return null;
         }
     }
+    public void FinishUpTrip(Trip trip)
+    {
 
-    public boolean AddToTripWithVehicleID(String vehicleID, TripEntry tripEntry) {
-        for (Trip trippu : trips) {
-            if (trippu.getVehicleId().equals(vehicleID) && trippu.isCurrentlyOngoing()) {
+        //find trip
+        Trip toBeEnded = trips.get(trips.indexOf(trip));
+        //push latest non fake entries to db
+        dbSaveEntriestoActiveTripwithVehicleID(trip.getEntriesWithoutFake(), trip.getVehicleId());
+
+        //push end time and set status to false db
+        dbSetActiveTripEndTimewithVehicleID(trip.getVehicleId(),trip.GetLatestTripEntry().getDateTime());
+        dbSetActiveTripOngoingStatusToFalsewithVehicleID(trip.getVehicleId());
+        //remove from memory
+        trips.remove(trip);
+    }
+
+    public boolean AddToTripWithVehicleID(String vehicleID, TripEntry tripEntry)
+    {
+        for(Trip trippu: trips )
+        {
+            if(trippu.getVehicleId().equals(vehicleID) && trippu.isCurrentlyOngoing())
+            {
                 trippu.AddTripEntry(tripEntry);
+                if(trippu.getEntries().size() >= 10)
+                {
+                    List<TripEntry> temp = new ArrayList<TripEntry>();
+                    for(int i = trippu.getEntries().size() -1; i >= 0; i--)//is reversed so it's kinda correct in the db
+                    {
+                        TripEntry te = trippu.getEntries().get(i);
+                        if(trippu.getEntries().indexOf(te) != 0 && trippu.getEntries().indexOf(te) != 1 && trippu.getEntries().indexOf(te) != 2 )
+                        {
+                            if (te.getFake() != true) //check if the entry is a fake or not
+                            {
+                                temp.add(te);
+                                //System.out.println(te);
+                            }
+                        }
+
+                    } //HACK: this might work...
+
+                    dbSaveEntriestoActiveTripwithVehicleID(temp, vehicleID);
+                    for(TripEntry entry : temp)
+                    {
+                        trippu.RemoveTripEntry(entry);
+                    }
+                }
                 return true;
             }
         }

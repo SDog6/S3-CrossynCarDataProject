@@ -36,8 +36,23 @@ public class TripEntryAlgorithm implements Runnable {
     @Autowired
     private AlgorithmHandler h;
 
-    @Autowired
-    private MongoTemplate mt;
+
+    /*
+    public TripEntryAlgorithm(BlockingQueue<TripEntry> queue)
+    {
+        this.queue = queue;
+        //t = new TripContainer();
+        //h = new AlgorithmHandler(t);
+
+    }
+
+    public TripEntryAlgorithm(Queue<TripEntry> queue)
+    {
+        this.queue = queue;
+        //t = new TripContainer();
+        //h = new AlgorithmHandler(t);
+
+    }*/
 
     @Override
     public void run()

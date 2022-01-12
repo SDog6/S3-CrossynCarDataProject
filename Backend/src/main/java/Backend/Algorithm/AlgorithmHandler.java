@@ -1,6 +1,7 @@
 package Backend.Algorithm;
 
 
+import Backend.Classes.CorruptLocationFilter;
 import Backend.Classes.Trip;
 import Backend.Classes.TripEntry;
 import Backend.Classes.User;
@@ -20,6 +21,9 @@ import java.util.*;
 @Service
 public class AlgorithmHandler
 {
+
+    //filter
+    public CorruptLocationFilter filter = new CorruptLocationFilter();
     //Things
     @Autowired
     public TripContainer t;
@@ -87,6 +91,12 @@ public class AlgorithmHandler
                     }).getKey();
             ProcessingTrip.setAverageRoad(popular);
             //Average Road Type Calculation END
+            //if the entry is corrupt a fakeEntry is provided else proceed as normal
+            TripEntry falseEntry = filter.doFilter(ProcessingTrip.getEntries());
+            if (falseEntry != null)
+            {
+                entry = falseEntry; //now when you save the entry you'll save the false entry instead
+            }
 
             Duration between = Duration.between(PrevEntry.getDateTime().toLocalTime(),entry.getDateTime().toLocalTime()); //check if entry is older then 5 minutes
             if( between.toMinutes() >= 5)
@@ -100,7 +110,8 @@ public class AlgorithmHandler
                 if (temp != null) {
                     ProcessingTrip.setDriver(temp.getUsername());
                 }
-                t.dbSaveTrip(ProcessingTrip);
+                 System.out.println(between);
+                 t.FinishUpTrip(ProcessingTrip);
                 return true; //trip has ended
             }
 
