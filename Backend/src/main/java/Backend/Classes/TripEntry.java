@@ -1,5 +1,6 @@
 package Backend.Classes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,8 @@ import java.time.ZonedDateTime;
 public class TripEntry {
 
 
-    private Long id;
+    //private Long id;
+
     private String vehicleId;
     private double lat;
     private double lon;
@@ -45,11 +47,11 @@ public TripEntry(String vehicleId, double lat, double lon, int alt, ZonedDateTim
 }
 
 
-    public void setId(Long id){this.id = id;}
-
-    public Long getID() {
-        return id;
-    }
+//    public void setId(Long id){this.id = id;}
+//
+//    public Long getID() {
+//        return id;
+//    }
 
     public String getVehicleID() {
         return vehicleId;
