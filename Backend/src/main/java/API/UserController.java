@@ -71,10 +71,10 @@ public class UserController {
             temp.add(vehicleID);
             u.setConnectedVehicles(temp);
             dal.addUserinDB(u);
-            return ResponseEntity.ok().body("Added");
+            return ResponseEntity.ok().body("Connected");
         }
         else{
-            return ResponseEntity.ok().body("Error");
+            return ResponseEntity.ok().body("Vehicle is disabled please choose another one");
         }
 
 
