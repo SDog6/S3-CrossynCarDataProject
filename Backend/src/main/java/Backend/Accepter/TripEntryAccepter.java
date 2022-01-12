@@ -59,6 +59,8 @@ public class TripEntryAccepter {
                 break;
         }
 
+//        bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\Splitted Dataset 1\\".concat(String.valueOf(set)).concat(".txt")));
+
 
         String line = bufReader.readLine();
         String finalLine = "";
