@@ -1,9 +1,11 @@
 package API;
 import API.Security.UserCreateRequest;
 import Backend.Classes.User;
+import Backend.Classes.Vehicle;
 import Backend.Containers.UserService;
 import Backend.Interfaces.IUser;
 import Backend.Interfaces.IUserContainer;
+import Backend.Interfaces.IVehicleRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -22,6 +24,10 @@ public class UserController {
 
     @Autowired
     IUser repo;
+
+
+    @Autowired
+    IVehicleRepo Vrepo;
 
     @Autowired
     IUserContainer dal;
@@ -57,10 +63,20 @@ public class UserController {
     public ResponseEntity<String> updateConnectedVehicle(@PathVariable String username, @PathVariable String vehicleID){
         User u = userService.readUserByUsername(username);
         List<String> temp = u.getConnectedVehicles();
-        temp.add(vehicleID);
-        u.setConnectedTrips(temp);
-        dal.addUserinDB(u);
-        return ResponseEntity.ok().body("Added");
+        Vehicle check = Vrepo.getVehicleById(vehicleID);
+        if(u.getConnectedVehicles().contains(check)){
+            return ResponseEntity.ok().body("Already connected");
+        }
+        if (check.isActive()){
+            temp.add(vehicleID);
+            u.setConnectedVehicles(temp);
+            dal.addUserinDB(u);
+            return ResponseEntity.ok().body("Added");
+        }
+        else{
+            return ResponseEntity.ok().body("Error");
+        }
+
 
     }
 

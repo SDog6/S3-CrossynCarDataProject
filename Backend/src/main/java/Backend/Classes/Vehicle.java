@@ -26,11 +26,20 @@ public class Vehicle {
     @Getter
     @Setter
     private String color;
+    private boolean active;
 
     public Vehicle(String id, String brand, String lplate, String color) {
         this.id = id;
         this.brand = brand;
         this.lplate = lplate;
         this.color = color;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

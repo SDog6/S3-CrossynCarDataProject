@@ -32,21 +32,16 @@ render(){
   return (
     <div className="Navigation">
     <Navbar bg="dark" variant="dark">
-    <Container>
     <Navbar.Brand href="/"> <img src={logo} className="img-logo" alt="Logo"/></Navbar.Brand>
      <Nav className="me-auto" >
      {this.state.isAuthenticated === '' ?  <Nav.Link href="/login">Log in</Nav.Link> : ""}  
       {this.state.isAuthenticated != '' ? <Nav.Link href="/Trips">Trips</Nav.Link> : ""} 
       {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? <Nav.Link href="/Vehicles">Vehicles</Nav.Link> : ""} 
-      {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? <Nav.Link href="/VehicleCreation">Add vehicle</Nav.Link> : ""} 
       {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? <Nav.Link href="/Users">Users</Nav.Link> : ""} 
-      {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? <Nav.Link href="/ConnectVehicle">Connect vehicle</Nav.Link> : ""} 
-      {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? <Nav.Link href="/CreateUser">Create user</Nav.Link> : ""} 
       {this.state.isAuthenticated === '' ? "" : <Nav.Link href="/Logout">Log out</Nav.Link>} 
 
 
     </Nav>
-    </Container>
   </Navbar>
 </div>
   );

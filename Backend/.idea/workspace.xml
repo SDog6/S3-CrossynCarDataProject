@@ -7,11 +7,19 @@
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/Security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/Security/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/TripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/TripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/API/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/VehicleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/DataStream/dataset2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/DataStream/dataset2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/GeocoderAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/GeocoderAlgo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/Vehicle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/node_modules/bootstrap/scss/_navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/node_modules/bootstrap/scss/_navbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/ListOfUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/ListOfUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/ListOfVehicle.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/ListOfVehicle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Frontend/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/styles/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/styles/NavBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/styles/vehicleCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/styles/vehicleCard.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,6 +293,7 @@
       <workItem from="1638187311931" duration="853000" />
       <workItem from="1638267688007" duration="6803000" />
       <workItem from="1638795437068" duration="13824000" />
+      <workItem from="1641830728499" duration="10472000" />
     </task>
     <servers />
   </component>

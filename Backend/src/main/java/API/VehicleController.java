@@ -55,4 +55,18 @@ public class VehicleController {
         return ResponseEntity.ok().body(update);
     }
 
+
+    @PutMapping("/DisableVehicle/{id}")
+    public ResponseEntity<List<Vehicle>> ChangeVehicleStatus(@PathVariable(value="id") String vehicleID){
+        Vehicle v = repo.getVehicleById(vehicleID);
+        if (v.isActive()){
+            v.setActive(false);
+        }
+        else{
+            v.setActive(true);
+        }
+        repo.save(v);
+        return ResponseEntity.ok().body(repo.findAll());
+    }
+
 }

@@ -9,6 +9,7 @@ class AddVehicleID extends Component {
         this.state = {         
             username: '',
             vehcileID: '',
+            errorMessage: ''
         }
         this.changeUsernameHandler = this.changeUsernameHandler.bind(this);
         this.changeVehicleHandler = this.changeVehicleHandler.bind(this);
@@ -21,9 +22,8 @@ class AddVehicleID extends Component {
         let member = { username: this.state.username, password: this.state.password , role : "DRIVER"};
         console.log(this.state.color);
         axios.put(`http://localhost:8083/${this.state.username}/${this.state.vehcileID}`, member).then((response) => {
-            console.log(response)
-            window.location.href = '/Users';
-
+            console.log(response.data)
+            this.setState({errorMessage:response.data})
         });
         }
 
@@ -59,9 +59,13 @@ class AddVehicleID extends Component {
                                     <br></br>
                                     <button className="btn btn-success" onClick={this.saveMember}>Add vehicle to user</button>
                                 </form>
+                                { this.state.errorMessage &&
+                   <p className="message"> { this.state.errorMessage } </p> }
                             </div>
                         </div>
+                       
                     </div>
+                   
                 </div>
             </div>
         )

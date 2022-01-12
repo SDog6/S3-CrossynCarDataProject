@@ -31,8 +31,9 @@ public class TripController {
         List<Trip> temp = new ArrayList<>();
 
         //test = dal.dbgetAllTrips();
-        test = dal.dbFetchAllTripSummaries();
+        test = repo.findAll();
 
+        
         if(test != null){
             return ResponseEntity.ok().body(test);
         }
@@ -48,7 +49,7 @@ public class TripController {
 
 
     @GetMapping("/{id}")
-    public ResponseEntity<Trip> getCPUByName(@PathVariable(value = "id") String id) {
+    public ResponseEntity<Trip> getCByName(@PathVariable(value = "id") String id) {
 
         Trip trip = dal.dbGetTrip(id);
         if (trip != null) {
