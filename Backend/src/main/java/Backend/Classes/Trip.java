@@ -155,7 +155,6 @@ public class Trip{
             if(Entries.size() >= 10)
             {
                 this.Entries = this.SortbyTime(Entries); //sorts
-
             }
             return true;
         }
