@@ -1,50 +1,102 @@
-import React from 'react';
-import '../styles/NavBar.css';
-import {  Link } from "react-router-dom";
-import {Container ,Navbar, Nav} from 'react-bootstrap'
+import React, { Component } from "react";
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from "reactstrap";
+import "../styles/NavBar.css";
 import logo from "../images/logo.png";
-import SecuredRoute from './SecureRoute';
-import jwtDecode from 'jwt-decode';
+import jwtDecode from "jwt-decode";
 
-
-class NavBar extends React.Component  {
-
+class NavigationBar extends Component {
   constructor(props) {
     super(props);
+    this.toggle = this.toggle.bind(this);
     this.state = {
-        isAuthenticated: ''
+      isOpen: false,
+      username: "",
+      isAuthenticated: "",
     };
-}
-
-componentDidMount() {
-  var tok = localStorage.getItem('token');
-  if(tok == null){
   }
-  else {
-    var decoded = jwtDecode(tok);
-      this.setState({ isAuthenticated: decoded.role});
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    });
+  }
+
+  componentDidMount() {
+    var tok = localStorage.getItem("token");
+    if (tok == null) {
+    } else {
+      var decoded = jwtDecode(tok);
+      this.setState({ isAuthenticated: decoded.role });
       console.log(decoded);
+    }
+  }
+
+  render() {
+    var username = this.state.username;
+    var big = username.toUpperCase();
+    return (
+      <div>
+        <Navbar color="dark" light expand="md">
+          <NavbarBrand href="/">
+            <img src={logo} className="img-logo" alt="Logo" />
+          </NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? (
+                <NavItem>
+                  <NavLink href="/Vehicles">VEHICLES</NavLink>
+                </NavItem>
+              ) : (
+                ""
+              )}
+
+              {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? (
+                <NavItem>
+                  <NavLink href="/users">LIST OF USER</NavLink>
+                </NavItem>
+              ) : (
+                ""
+              )}
+              {this.state.isAuthenticated === "" ? (
+                ""
+                ) : (
+
+                <NavItem>
+                  <NavLink href="/Trips">TRIPS</NavLink>
+                </NavItem>
+              )}
+
+              {this.state.isAuthenticated === "" ? (
+                <NavItem>
+                  <NavLink href="/login">LOGIN</NavLink>
+                </NavItem>
+              ) : (
+             ""
+              )}
+
+              {this.state.isAuthenticated === "" ? (
+                "") : (
+                <NavItem>
+                  <NavLink href="/Logout">LOGOUT</NavLink>
+                </NavItem>
+              )}
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
   }
 }
-
-render(){
-  
-  return (
-    <div className="Navigation">
-    <Navbar bg="dark" variant="dark">
-    <Navbar.Brand href="/"> <img src={logo} className="img-logo" alt="Logo"/></Navbar.Brand>
-     <Nav className="me-auto" >
-     {this.state.isAuthenticated === '' ?  <Nav.Link href="/login">Log in</Nav.Link> : ""}  
-      {this.state.isAuthenticated != '' ? <Nav.Link href="/Trips">Trips</Nav.Link> : ""} 
-      {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? <Nav.Link href="/Vehicles">Vehicles</Nav.Link> : ""} 
-      {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? <Nav.Link href="/Users">Users</Nav.Link> : ""} 
-      {this.state.isAuthenticated === '' ? "" : <Nav.Link href="/Logout">Log out</Nav.Link>} 
-
-
-    </Nav>
-  </Navbar>
-</div>
-  );
-}
-}
-export default NavBar;
+export default NavigationBar;

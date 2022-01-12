@@ -1,6 +1,6 @@
 import SecuredRoute from './components/SecureRoute';
 import './App.css';
-import NavBar from './components/Navbar';
+import NavigationBar from './components/Navbar';
 import Login from './pages/Login';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -25,7 +25,7 @@ function App() {
   return (
     <div>
     <Router>
-      <NavBar/>
+      <NavigationBar/>
       <Switch>
       <Route path='/' exact component={Home} />
       <Route path='/Login' exact component={Login} />
