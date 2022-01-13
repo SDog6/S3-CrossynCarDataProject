@@ -41,8 +41,7 @@ public class AlgorithmHandler
 
     public boolean Add2Trip(@NotNull TripEntry entry) throws IOException //add entry to trip
     {
-        //I do not know what the note under this means anymore but it sounds important so leaving it here for now
-        //this.IncomingEntry = tripEntry; //TODO: instead of directly putting it in Incoming run it throught the algorithm first (so TripEntryAlgorithm.Start(TripEntry))
+
 
         Trip ProcessingTrip;
         TripEntry PrevEntry;
@@ -118,17 +117,17 @@ public class AlgorithmHandler
         }
         else
         {
-            ProcessingTrip = t.CreateTrip(entry.getVehicleID(), entry.getDateTime(), null, true);
+            ProcessingTrip = t.CreateTrip(entry.getVehicleID(), entry.getDateTime(), entry.getDateTime(), true);
             String result = geo.FindAddress(String.valueOf(entry.getLat()),String.valueOf(entry.getLon()));
             ProcessingTrip.setStartAddress(result);
+            ProcessingTrip.setEndAddress("Error; to be determined.");
+            //TODO: SetDriver here, NOT NULL, just make it somehwere
             t.AddTrip(ProcessingTrip);
+            t.dbSaveTrip(ProcessingTrip);
         }
 
         t.AddToTripWithVehicleID(entry.getVehicleID(), entry);
-//        if (LastTrip){
-//            ProcessingTrip.setCurrentlyOngoing(false);
-//            t.dbSaveTrip(ProcessingTrip);
-//        }
+
         return false; //trip has not ended
 
     }

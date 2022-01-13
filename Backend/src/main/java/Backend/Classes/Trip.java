@@ -1,5 +1,6 @@
 package Backend.Classes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mongodb.lang.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -40,6 +41,7 @@ public class Trip{
     private String endAddress;
     private String driver;
 
+    //@JsonIgnore
     private Vehicle vehicle;
 
     private ArrayList<TripEntry> Entries;

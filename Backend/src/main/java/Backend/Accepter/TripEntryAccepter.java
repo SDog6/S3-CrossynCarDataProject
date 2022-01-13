@@ -28,39 +28,13 @@ public class TripEntryAccepter {
 
         BufferedReader bufReader = null;
 
-
-
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Please select 1/2/3/4/5/6/7 to choose a dataset");
+        System.out.println("Please choose a dataset");
         int set = input.nextInt();
 
-        switch (set) {
-            case 1:
-                bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset1.txt"));
-                break;
-            case 2:
-                bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset2.txt"));
-                break;
-            case 3:
-                bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset3.txt"));
-                break;
-            case 4:
-                bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset4.txt"));
-                break;
-            case 5:
-                bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset5.txt"));
-                break;
-            case 6:
-                bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset6.txt"));
-                break;
-            case 7:
-                bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset7.txt"));
-                break;
-        }
-
-//        bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\Splitted Dataset 1\\".concat(String.valueOf(set)).concat(".txt")));
-
+        //bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset".concat(String.valueOf(set)).concat(".txt")));
+        bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\Splitted Dataset 1\\".concat(String.valueOf(set)).concat(".txt")));
 
         String line = bufReader.readLine();
         String finalLine = "";

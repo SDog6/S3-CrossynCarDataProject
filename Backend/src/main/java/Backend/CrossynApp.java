@@ -31,8 +31,6 @@ public class CrossynApp {
 
     private static TripEntryAlgorithm Algorithm;
 
-    @Autowired
-    private TripContainer t;
 
     public CrossynApp(TripEntryAlgorithm Algorithm)
     {
@@ -49,51 +47,18 @@ public class CrossynApp {
 //        return test;
 //    }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException
+    {
         SpringApplication.run(CrossynApp.class, args);
 
 
         BlockingQueue<TripEntry> queue = new ArrayBlockingQueue(10000);
         new Thread(Algorithm).start();
         Algorithm.setQueue(queue);
-//        System.out.println("Debug purpose; You want to use dialog popup to select dataset? (write true or false)");
-//        Scanner input = new Scanner(System.in);
-//
-//        boolean set = input.nextBoolean();
-        // while(true){
-
-        //Algorithm test1 = new Algorithm();
-        TripEntryAccepter TE = new TripEntryAccepter();
-
-        //String finalLine = TE.BigLine();
-
-        List<TripEntry> list;
-//        if (set) {
-//            list = TE.TurnJSONStringToObject(TE.BigLineDialog());
-//        } else {
-//            list = TE.TurnJSONStringToObject(TE.BigLine());
-//        }
-
-        list = TE.TurnJSONStringToObject(TE.BigLine());
 
 
-        for (TripEntry Test : list) {
-            try {
-                //queue.add(Test);
-                if (queue.isEmpty()) {
-                    synchronized (queue) {
-                        queue.notify(); // notify and wake the algorithm
+        AccepterFlow Start = new AccepterFlow(queue);
+        Start.init();
 
-                    }
-                }
-
-                queue.put(Test);
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-
-
-        }
-
-
-    }}
+    }
+}
