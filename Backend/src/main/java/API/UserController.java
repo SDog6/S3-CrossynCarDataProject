@@ -54,17 +54,17 @@ public class UserController {
         u.setUsername(user.getUsername());
         u.setPassword(user.getPassword());
         dal.addUserinDB(u);
-        return ResponseEntity.ok().body(u);
-
-    }
-
+        return ResponseEntity.ok().body(u);}
     @PutMapping("/{username}/{vehicleID}")
     public ResponseEntity<String> updateConnectedVehicle(@PathVariable String username, @PathVariable String vehicleID){
         User u = userService.readUserByUsername(username);
         List<String> temp = u.getConnectedVehicles();
         Vehicle check = Vrepo.getVehicleById(vehicleID);
         if(u.getConnectedVehicles().contains(check.getId())){
-            return ResponseEntity.ok().body("Already connected");
+            temp.remove(vehicleID);
+            u.setConnectedVehicles(temp);
+            dal.addUserinDB(u);
+            return ResponseEntity.ok().body("Disconnected vehicle and user");
         }
         if (check.isActive()){
             temp.add(vehicleID);

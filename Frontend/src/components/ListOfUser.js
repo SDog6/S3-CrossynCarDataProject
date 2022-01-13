@@ -20,7 +20,9 @@ class ListOfUser extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:8083/User`).then((response) => {
+    var tok = localStorage.getItem('token');
+    axios.get(`http://localhost:8083/User`,
+    {headers: {"Authorization" : `${tok}`}}).then((response) => {
       this.setState({
         users: response.data,
       });

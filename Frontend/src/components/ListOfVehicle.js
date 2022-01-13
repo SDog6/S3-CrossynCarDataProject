@@ -24,7 +24,8 @@ class ListOfVehicle extends Component {
         if(decoded.role === "CROSSYNEMPLOYEE"){
           axios
           .get(
-            `http://localhost:8083/Vehicle`
+            `http://localhost:8083/Vehicle`,
+            {headers: {"Authorization" : `${tok}`}}
           )
           .then((response) => {
             this.setState({
@@ -36,7 +37,8 @@ class ListOfVehicle extends Component {
         else {
           axios
           .get(
-            `http://localhost:8083/Vehicle/UserVehicles/${decoded.sub}`
+            `http://localhost:8083/Vehicle/UserVehicles/${decoded.sub}`,
+            {headers: {"Authorization" : `${tok}`}}
           )
           .then((response) => {
             this.setState({
@@ -49,15 +51,34 @@ class ListOfVehicle extends Component {
   }
 
   changeVehicleStatus(id){
-    axios.put(
-      `http://localhost:8083/Vehicle/DisableVehicle/${id}`
-    )
-    .then((response) => {
-      this.setState({
-        vehicles: response.data,
+    var tok = localStorage.getItem('token');
+    var decoded = jwtDecode(tok);
+    if(decoded.role === "CROSSYNEMPLOYEE"){
+      axios.put(
+        `http://localhost:8083/Vehicle/DisableVehicle/${id}`,
+        {headers: {"Authorization" : `${tok}`}}
+      )
+      .then((response) => {
+        this.setState({ 
+          vehicles: response.data,
+        });
+        console.log(this.state.vehicles);
       });
-      console.log(this.state.vehicles);
-    });
+    }
+    else if(decoded.role === "FLEETOWNER"){
+      axios.put(
+        `http://localhost:8083/Vehicle/DisableVehicle/${id}/${decoded.sub}`,
+        {headers: {"Authorization" : `${tok}`}}
+      )
+      .then((response) => {
+        this.setState({ 
+          vehicles: response.data,
+        });
+        console.log(this.state.vehicles);
+      });
+    }
+    
+   
   }
 
   checkVehicleStatus(status){
@@ -83,6 +104,14 @@ class ListOfVehicle extends Component {
               ) : (
                 ""
               )}
+{this.state.role === "FLEETOWNER" ? (
+          <div  className="vehicleButtons"> 
+                 <Button variant="primary" className="vButtons" href={"/VehicleCreation"}>Add vehcile</Button>
+                 <br></br>
+                 </div>
+              ) : (
+                ""
+              )}
       
         </div>
 
@@ -99,7 +128,7 @@ class ListOfVehicle extends Component {
               <CardSubtitle>Color :{vehicle.color}</CardSubtitle>
               <CardSubtitle>Status :{this.checkVehicleStatus(vehicle.active)}</CardSubtitle>
 
-              {this.state.role === "CROSSYNEMPLOYEE" ? (
+              {this.state.role === "CROSSYNEMPLOYEE" || this.state.role === "FLEETOWNER"? (
           <div>
  <Button variant="primary" href={"/" + "Vehicle" + "/" + vehicle.id}>Change Details</Button>
               <Button variant="primary" onClick={() => this.changeVehicleStatus(vehicle.id)}> Change vehicle status </Button>

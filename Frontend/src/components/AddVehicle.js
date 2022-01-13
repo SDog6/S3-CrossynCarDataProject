@@ -2,6 +2,7 @@ import React from "react";
 import { Switch } from "react-router";
 import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
 import axios from "axios";
+import jwtDecode from "jwt-decode";
 
 export default class AddVehicle extends React.Component {
   constructor(props) {
@@ -37,16 +38,35 @@ export default class AddVehicle extends React.Component {
         color: this.state.color,
       };
       console.log(this.state.color);
-      axios.post("http://localhost:8083/Vehicle", vehicle).then(
-        (response) => {
-          console.log(response);
-          this.setState({ errorMessage: "New vehicle is created" });
-        },
-        (error) => {
-          console.log(error);
-          this.setState({ errorMessage: "Vehicle already exists" });
-        }
-      );
+      var tok = localStorage.getItem('token');
+      var decoded = jwtDecode(tok);
+      if(decoded.role === "CROSSYNEMPLOYEE"){
+        axios.post("http://localhost:8083/Vehicle", vehicle, 
+        {headers: {"Authorization" : `${tok}`}}).then(
+          (response) => {
+            console.log(response);
+            this.setState({ errorMessage: "New vehicle is created" });
+          },
+          (error) => {
+            console.log(error);
+            this.setState({ errorMessage: "Vehicle already exists" });
+          }
+        );
+      }
+      else if(decoded.role === "FLEETOWNER"){
+        axios.post(`http://localhost:8083/Vehicle/${decoded.sub}`, vehicle, 
+        {headers: {"Authorization" : `${tok}`}}).then(
+          (response) => {
+            console.log(response);
+            this.setState({ errorMessage: "New vehicle is created" });
+          },
+          (error) => {
+            console.log(error);
+            this.setState({ errorMessage: "Vehicle already exists" });
+          }
+        );
+      }
+    
     }
   };
 

@@ -105,8 +105,22 @@ public class AlgorithmHandler
                 String result = geo.FindAddress(String.valueOf(entry.getLat()),String.valueOf(entry.getLon()));
                 ProcessingTrip.setEndAddress(result);
                 User temp = UserRep.getUserByConnectedVehiclesAndRole(ProcessingTrip.getVehicleId(),"DRIVER");
+                User temp2 = UserRep.getUserByConnectedVehiclesAndRole(ProcessingTrip.getVehicleId(),"FLEETOWNER");
+
+
+
                 if (temp != null) {
                     ProcessingTrip.setDriver(temp.getUsername());
+                    List<String> ConnectedTrip1 = temp.getConnectedTrips();
+                    ConnectedTrip1.add(ProcessingTrip.getid());
+                    temp.setConnectedTrips(ConnectedTrip1);
+                    UserRep.save(temp);
+                }
+                if(temp != null){
+                    List<String> ConnectedTrip = temp2.getConnectedTrips();
+                    ConnectedTrip.add(ProcessingTrip.getid());
+                    temp2.setConnectedTrips(ConnectedTrip);
+                    UserRep.save(temp2);
                 }
 
                 System.out.println(between);

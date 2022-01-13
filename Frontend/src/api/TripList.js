@@ -22,7 +22,8 @@ class TripList extends Component{
         else {
           var decoded = jwtDecode(tok);
           if(decoded.role === "CROSSYNEMPLOYEE"){
-            axios.get(`http://localhost:8083/Trips`)
+            axios.get(`http://localhost:8083/Trips`, 
+            {headers: {"Authorization" : `${tok}`}})
             .then(response =>{
                 this.setState({
                     trips: response.data
@@ -31,7 +32,7 @@ class TripList extends Component{
             })
           }
           else {
-            axios.get(`http://localhost:8083/Trips/connected/${decoded.sub}`)
+            axios.get(`http://localhost:8083/Trips/connected/${decoded.sub}`,  {headers: {"Authorization" : `${tok}`}})
             .then(response =>{
                 this.setState({
                     trips: response.data

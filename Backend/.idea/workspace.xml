@@ -7,8 +7,27 @@
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/Security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/Security/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/TripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/TripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/API/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/VehicleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/GeocoderAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/GeocoderAlgo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/node_modules/babel-loader/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/node_modules/babel-loader/lib/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/api/SingleTrip.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/api/SingleTrip.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/api/TripList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/api/TripList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/AddVehicle.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/AddVehicle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/AddVehicleID.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/AddVehicleID.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/CreateUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/CreateUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/ListOfUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/ListOfUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/ListOfVehicle.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/ListOfVehicle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/PrivateRoute.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/Register.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/SecureRoute.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/UpdateVehicle.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/UpdateVehicle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/pages/Login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,8 +269,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.APIApp" />
         <item itemvalue="Spring Boot.CrossynApp" />
+        <item itemvalue="Spring Boot.APIApp" />
         <item itemvalue="Gradle.BackendApplicationTests" />
         <item itemvalue="Gradle.Backend [build]" />
         <item itemvalue="Gradle.Backend [bootRun]" />

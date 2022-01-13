@@ -23,8 +23,10 @@ class CreateUser extends Component {
 
     saveMember = (hndl) => {
         hndl.preventDefault();
+        var tok = localStorage.getItem('token');
         let member = { username: this.state.username, password: this.state.password , role : this.state.role};
-        axios.post("http://localhost:8083/register", member).then((response) => {
+        axios.post("http://localhost:8083/register", member, 
+        {headers: {"Authorization" : `${tok}`}}).then((response) => {
             console.log(response)
             window.location.href = '/Users';
 
