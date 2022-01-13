@@ -273,6 +273,57 @@ public class TripRepo implements ITripDAL
     }
 
     @Override
+    public void setOngoingTripEndDriverinDBwithVehicleID(String vehicleID, String string) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("vehicleId").is(vehicleID));
+        query.addCriteria(Criteria.where("currentlyOngoing").is(true));
+
+        Update update = new Update();
+        update.set("driver", string);
+
+        mt.findAndModify(query, update, Trip.class, "Trips");
+    }
+
+    @Override
+    public void setOngoingTripAverageRoadinDBwithVehicleID(String vehicleID, int road) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("vehicleId").is(vehicleID));
+        query.addCriteria(Criteria.where("currentlyOngoing").is(true));
+
+        Update update = new Update();
+        update.set("averageRoad", road);
+
+        mt.findAndModify(query, update, Trip.class, "Trips");
+    }
+
+
+    @Override
+    public void setOngoingTripAverageSpeedinDBwithVehicleID(String vehicleID, int speed) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("vehicleId").is(vehicleID));
+        query.addCriteria(Criteria.where("currentlyOngoing").is(true));
+
+        Update update = new Update();
+        update.set("averageSpeed", speed);
+
+        mt.findAndModify(query, update, Trip.class, "Trips");
+    }
+
+
+
+    @Override
+    public void setOngoingTripSpeedLimitBreakinDBwithVehicleID(String vehicleID, int speedbreak) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("vehicleId").is(vehicleID));
+        query.addCriteria(Criteria.where("currentlyOngoing").is(true));
+
+        Update update = new Update();
+        update.set("speedLimitBreakCounter", speedbreak);
+
+        mt.findAndModify(query, update, Trip.class, "Trips");
+    }
+
+    @Override
     public void setTripEndTimeinDBwithTripID(String tripID, ZonedDateTime dateTime)
     {
         Query query = new Query();

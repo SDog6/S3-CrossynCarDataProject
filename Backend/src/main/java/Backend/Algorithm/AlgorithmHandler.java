@@ -50,7 +50,6 @@ public class AlgorithmHandler
         {
             ProcessingTrip = t.GetOngoingTripFromVehicleID(entry.getVehicleID());
             PrevEntry = ProcessingTrip.GetLatestTripEntry();
-
             //Speed Limit Break Calculation
             if(entry.getSpeed() > entry.getSpeedlimit()){
                 int speedBreak = ProcessingTrip.getSpeedLimitBreakCounter() + 1;
@@ -109,7 +108,8 @@ public class AlgorithmHandler
                 if (temp != null) {
                     ProcessingTrip.setDriver(temp.getUsername());
                 }
-                 System.out.println(between);
+
+                System.out.println(between);
                  t.FinishUpTrip(ProcessingTrip);
                 return true; //trip has ended
             }
@@ -121,7 +121,8 @@ public class AlgorithmHandler
             String result = geo.FindAddress(String.valueOf(entry.getLat()),String.valueOf(entry.getLon()));
             ProcessingTrip.setStartAddress(result);
             ProcessingTrip.setEndAddress("Error; to be determined.");
-            //TODO: SetDriver here, NOT NULL, just make it somehwere
+            ProcessingTrip.setDriver("Error; to be determined.");
+
             t.AddTrip(ProcessingTrip);
             t.dbSaveTrip(ProcessingTrip);
         }
