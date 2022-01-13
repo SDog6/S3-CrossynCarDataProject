@@ -7,10 +7,7 @@
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/GeocoderAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/GeocoderAlgo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/CorruptLocationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/CorruptLocationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/DataStream/dataset1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/DataStream/dataset1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/API/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,16 +87,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/Backend/Classes/TripEntry.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Backend/Repo/DocumentToZonedDateTimeConverter.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Backend/Repo/TripRepo.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Backend/Repo/MongoConfiguration.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Backend/Algorithm/TripEntryAlgorithm.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Backend/Interfaces/DatabaseAccess/ITripDAL.java" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
@@ -170,7 +157,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.CrossynApp">
+  <component name="RunManager" selected="Spring Boot.APIApp">
     <configuration name="Backend [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -262,8 +249,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.CrossynApp" />
         <item itemvalue="Spring Boot.APIApp" />
+        <item itemvalue="Spring Boot.CrossynApp" />
         <item itemvalue="Gradle.BackendApplicationTests" />
         <item itemvalue="Gradle.Backend [build]" />
         <item itemvalue="Gradle.Backend [bootRun]" />
@@ -328,22 +315,7 @@
           <properties class="java.util.NoSuchElementException" package="java.util" />
           <option name="timeStamp" value="2" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Backend/Classes/CorruptLocationFilter.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Backend/Classes/CorruptLocationFilter.java</url>
-          <line>81</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="SpringBootApplicationConfigurationType">
-        <watch expression="second" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

@@ -1,8 +1,11 @@
 package API;
 
 import Backend.Classes.Trip;
+import Backend.Classes.User;
+import Backend.Classes.Vehicle;
 import Backend.Interfaces.DatabaseAccess.ITrip;
 import Backend.Interfaces.ITripContainer;
+import Backend.Interfaces.IUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +28,9 @@ public class TripController {
     @Autowired
     ITrip repo;
 
+    @Autowired
+    IUser Urepo;
+
     @GetMapping
     public ResponseEntity<List<Trip>> getAllTrips(){
         List<Trip> test = null;
@@ -44,13 +50,19 @@ public class TripController {
 
     @GetMapping("/connected/{username}")
     public ResponseEntity<List<Trip>> getAllConnectedTrips(@PathVariable(value = "username") String username){
-        return ResponseEntity.ok().body(repo.getTripsByDriver(username));
+        User u = Urepo.getSingleUserByUsername(username);
+        System.out.println(u.getUsername());
+        List<Trip> connectedT = new ArrayList<>();
+        for (String id: u.getConnectedTrips()) {
+            Trip temp = dal.dbGetTrip(id);
+            connectedT.add(temp);
+        }
+        return ResponseEntity.ok().body(connectedT);
     }
 
 
     @GetMapping("/{id}")
     public ResponseEntity<Trip> getCByName(@PathVariable(value = "id") String id) {
-
         Trip trip = dal.dbGetTrip(id);
         if (trip != null) {
             return ResponseEntity.ok().body(trip);

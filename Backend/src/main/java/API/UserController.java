@@ -54,28 +54,31 @@ public class UserController {
         u.setUsername(user.getUsername());
         u.setPassword(user.getPassword());
         dal.addUserinDB(u);
-        return ResponseEntity.ok().body(u);
-
-    }
-
+        return ResponseEntity.ok().body(u);}
     @PutMapping("/{username}/{vehicleID}")
     public ResponseEntity<String> updateConnectedVehicle(@PathVariable String username, @PathVariable String vehicleID){
         User u = userService.readUserByUsername(username);
         List<String> temp = u.getConnectedVehicles();
         Vehicle check = Vrepo.getVehicleById(vehicleID);
-        if(u.getConnectedVehicles().contains(check.getId())){
-            return ResponseEntity.ok().body("Already connected");
+        if (repo.getUserByConnectedVehiclesAndRole(vehicleID,"DRIVER")  != null){
+            return ResponseEntity.ok().body("Only 1 Vehicle can be connected to a driver at a time");
         }
-        if (check.isActive()){
-            temp.add(vehicleID);
-            u.setConnectedVehicles(temp);
-            dal.addUserinDB(u);
-            return ResponseEntity.ok().body("Connected");
+        else {
+            if (u.getConnectedVehicles().contains(check.getId())) {
+                temp.remove(vehicleID);
+                u.setConnectedVehicles(temp);
+                dal.addUserinDB(u);
+                return ResponseEntity.ok().body("Disconnected vehicle and user");
+            }
+            if (check.isActive()) {
+                temp.add(vehicleID);
+                u.setConnectedVehicles(temp);
+                dal.addUserinDB(u);
+                return ResponseEntity.ok().body("Connected");
+            } else {
+                return ResponseEntity.ok().body("Vehicle is disabled please choose another one");
+            }
         }
-        else{
-            return ResponseEntity.ok().body("Vehicle is disabled please choose another one");
-        }
-
 
     }
 

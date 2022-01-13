@@ -19,12 +19,20 @@ class AddVehicleID extends Component {
 
     saveMember = (hndl) => {
         hndl.preventDefault();
+        var tok = localStorage.getItem('token');
         let member = { username: this.state.username, password: this.state.password , role : "DRIVER"};
         console.log(this.state.color);
-        axios.put(`http://localhost:8083/${this.state.username}/${this.state.vehcileID}`, member).then((response) => {
-            console.log(response.data)
-            this.setState({errorMessage:response.data})
-        });
+        if(this.state.username === '' || this.state.vehcileID === ''){
+            this.setState({errorMessage:"Fill in all fields first!"})
+        }
+        else {
+            axios.put(`http://localhost:8083/${this.state.username}/${this.state.vehcileID}`, member, 
+            {headers: {"Authorization" : `${tok}`}}).then((response) => {
+                console.log(response.data)
+                this.setState({errorMessage:response.data})
+            });
+        }
+      
         }
 
 
@@ -58,9 +66,10 @@ class AddVehicleID extends Component {
                                     </div>
                                     <br></br>
                                     <button className="btn btn-success" onClick={this.saveMember}>Add vehicle to user</button>
-                                </form>
-                                { this.state.errorMessage &&
+                                    { this.state.errorMessage &&
                    <p className="message"> { this.state.errorMessage } </p> }
+                                </form>
+                               
                             </div>
                         </div>
                        

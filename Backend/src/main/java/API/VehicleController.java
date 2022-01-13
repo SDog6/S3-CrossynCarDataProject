@@ -44,17 +44,37 @@ public class VehicleController {
 
     @PostMapping()
     public ResponseEntity<Vehicle> createVehicle(@RequestBody Vehicle vehicle) {
-        if (repo.getVehicleByLplate(vehicle.getLplate()) != null || repo.getVehicleById(vehicle.getId()) != null){
-                String entity =  "This vehicle already exists.";
-                return new ResponseEntity(entity, HttpStatus.CONFLICT);
+        if (repo.getVehicleByLplate(vehicle.getLplate()) != null || repo.getVehicleById(vehicle.getId()) != null) {
+            String entity = "This vehicle already exists.";
+            return new ResponseEntity(entity, HttpStatus.CONFLICT);
 
         } else {
             repo.save(vehicle);
             String url = "vehicle" + "/" + vehicle.getBrand();
             URI uri = URI.create(url);
-            return new ResponseEntity(uri,HttpStatus.CREATED);
+            return new ResponseEntity(uri, HttpStatus.CREATED);
         }
     }
+
+
+    @PostMapping("/{username}")
+    public ResponseEntity createVehicleFleet(@RequestBody Vehicle vehicle, @PathVariable(value = "username") String username) {
+        if (repo.getVehicleByLplate(vehicle.getLplate()) != null || repo.getVehicleById(vehicle.getId()) != null) {
+            String entity = "This vehicle already exists.";
+            return new ResponseEntity(entity, HttpStatus.CONFLICT);
+
+        } else {
+            repo.save(vehicle);
+            User u = Urepo.getSingleUserByUsername(username);
+            List<String> connectedV = u.getConnectedVehicles();
+            connectedV.add(vehicle.getId());
+            u.setConnectedVehicles(connectedV);
+            Urepo.save(u);
+            return new ResponseEntity(HttpStatus.CREATED);
+        }
+    }
+
+
     @GetMapping("/{id}")
     public ResponseEntity<Vehicle> getVehiclePath(@PathVariable(value = "id") String vehicleID) {
         Vehicle temp = repo.getVehicleById(vehicleID);
@@ -83,5 +103,24 @@ public class VehicleController {
         repo.save(v);
         return ResponseEntity.ok().body(repo.findAll());
     }
+
+
+    @PutMapping("/DisableVehicle/{id}/{username}")
+    public ResponseEntity<List<Vehicle>> ChangeVehicleStatusFleet(@PathVariable(value="id") String vehicleID,@PathVariable(value="username") String username){
+        Vehicle v = repo.getVehicleById(vehicleID);
+        if (v.isActive()){
+            v.setActive(false);
+        }
+        else{
+            v.setActive(true);
+        }
+        repo.save(v);
+        User u = Urepo.getSingleUserByUsername(username);
+        List<Vehicle> connectedV = new ArrayList<>();
+        for (String id: u.getConnectedVehicles()) {
+            Vehicle vs = repo.getVehicleById(id);
+            connectedV.add(vs);
+        }
+        return ResponseEntity.ok().body(connectedV);    }
 
 }

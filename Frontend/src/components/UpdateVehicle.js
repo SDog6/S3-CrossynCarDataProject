@@ -12,7 +12,9 @@ function UpdateVehicle(props) {
   const [message, setmessage] = useState("");
 
   useEffect(() => {
-    axios.get(`http://localhost:8083/Vehicle/${PropsID}`).then((response) => {
+    var tok = localStorage.getItem('token');
+    axios.get(`http://localhost:8083/Vehicle/${PropsID}`, 
+    {headers: {"Authorization" : `${tok}`}}).then((response) => {
       setVehicle(response.data);
       console.log(response.data);
       console.log(LPlate);
@@ -20,6 +22,7 @@ function UpdateVehicle(props) {
   }, []);
 
   function saveMember(event) {
+    var tok = localStorage.getItem('token');
     event.preventDefault();
     if (LPlate === [] || Color === []) {
       setmessage("Fill in the empty fields");
@@ -31,7 +34,8 @@ function UpdateVehicle(props) {
         color: Color,
       };
       axios
-        .put(`http://localhost:8083/Vehicle/${Vehicle.id}`, vehicle)
+        .put(`http://localhost:8083/Vehicle/${Vehicle.id}`, vehicle, 
+        {headers: {"Authorization" : `${tok}`}})
         .then((response) => {
           console.log(response.data);
           setmessage("Updated");

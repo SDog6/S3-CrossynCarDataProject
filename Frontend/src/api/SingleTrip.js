@@ -8,7 +8,9 @@ function SingleTrip (props) {
     const [Product,setProduct] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:8083/Trips/${PropsID}`)
+        var tok = localStorage.getItem('token');
+        axios.get(`http://localhost:8083/Trips/${PropsID}`, 
+        {headers: {"Authorization" : `${tok}`}})
         .then(response =>{
             setProduct(response.data)
             console.log(response.data)
