@@ -178,6 +178,7 @@ public class TripContainer implements ITripContainer {
                 trippu.AddTripEntry(tripEntry);
                 if(trippu.getEntries().size() >= 10)
                 {
+                    List<TripEntry> rem = new ArrayList<>();
                     List<TripEntry> temp = new ArrayList<TripEntry>();
                     for(int i = trippu.getEntries().size() -1; i >= 0; i--)//is reversed so it's kinda correct in the db
                     {
@@ -189,6 +190,10 @@ public class TripContainer implements ITripContainer {
                                 temp.add(te);
                                 //System.out.println(te);
                             }
+                            else
+                            {
+                                rem.add(te);
+                            }
                         }
 
                     } //HACK: this might work...
@@ -196,6 +201,10 @@ public class TripContainer implements ITripContainer {
 
                     dbSaveEntriestoActiveTripwithVehicleID(temp, vehicleID);
                     for(TripEntry entry : temp)
+                    {
+                        trippu.RemoveTripEntry(entry);
+                    }
+                    for(TripEntry entry : rem)
                     {
                         trippu.RemoveTripEntry(entry);
                     }
