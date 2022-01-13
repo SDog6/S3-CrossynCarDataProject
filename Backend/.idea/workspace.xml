@@ -7,8 +7,6 @@
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/API/Security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/Security/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/API/TripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/TripController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/API/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/API/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/API/VehicleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" afterDir="false" />
