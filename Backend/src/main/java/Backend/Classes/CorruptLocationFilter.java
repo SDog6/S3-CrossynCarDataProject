@@ -15,7 +15,7 @@ public class CorruptLocationFilter {
 
     //calculates the distance between 2 points on a sphere
     public double calculateDistance(double lat1, double lon1, double lat2, double lon2){
-        double R = 6378.137; // Radius of earth in KM
+        double R = 6371.137; // Radius of earth in KM
         double dLat = lat2 * Math.PI / 180 - lat1 * Math.PI / 180;
         double dLon = lon2 * Math.PI / 180 - lon1 * Math.PI / 180;
         double a = Math.sin(dLat/2) * Math.sin(dLat/2) +
@@ -36,7 +36,7 @@ public class CorruptLocationFilter {
         double hours = time.toHours();
         if (hours == 0)
         {
-            hours = 0.000277778;
+            hours = 0.0005;
         }
         return distance/hours; // KM/H
     }
@@ -48,7 +48,7 @@ public class CorruptLocationFilter {
         return fakeEntry;
     }
 
-    public TripEntry doFilter(List<TripEntry> data) //TODO: maybe add a trySwitch method which checks the speed if the long and lat were changed
+    public TripEntry doFilter(TripEntry newEntry, List<TripEntry> data) //TODO: maybe add a trySwitch method which checks the speed if the long and lat were changed
     {
         //if one of the first 3 entries is corrupt it breaks this keeps the application alive even tho the corrupt entries don't get filtered
         if (data.size() < 3)
@@ -57,10 +57,13 @@ public class CorruptLocationFilter {
         }
 
 
+
         //get data from parameter
         TripEntry first = data.get(0);
         TripEntry second = data.get(1);
         TripEntry third = data.get(2);
+
+
 
         if (first.getFake() == true) // if working with fake data increase the margin
         {
@@ -68,8 +71,8 @@ public class CorruptLocationFilter {
         }
 
         //calculate the speed
-        double distance = calculateDistance(first.getLat(), first.getLon(), second.getLat(), second.getLon());
-        Duration time = Duration.between(first.getDateTime().toLocalTime(),second.getDateTime().toLocalTime());
+        double distance = calculateDistance(newEntry.getLat(), newEntry.getLon(), first.getLat(), first.getLon());
+        Duration time = Duration.between(newEntry.getDateTime().toLocalTime(),first.getDateTime().toLocalTime());
         double speed = calculateSpeed(time, distance);
 
         //if the car was too fast then the data was corrupt otherwise give back nothing
@@ -80,6 +83,7 @@ public class CorruptLocationFilter {
             double fakeAlt = first.getAlt()+avgDifference(first.getAlt(), second.getAlt(), third.getAlt());
             double fakeLon = first.getLon()+avgDifference(first.getLon(), second.getLon(), third.getLon());
             double fakeLat = first.getLat()+avgDifference(first.getLat(), second.getLat(), third.getLat());
+            double damn = newEntry.getLat();
 
             return createFalseTripEntry(first, first.getAlt(), first.getLon(), first.getLat()); //return a fake entry with the fake location and the corrupt data entry
         }

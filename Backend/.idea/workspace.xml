@@ -7,10 +7,11 @@
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/GeocoderAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/GeocoderAlgo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/CorruptLocationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/CorruptLocationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/DataStream/dataset1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/DataStream/dataset1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/node_modules/.cache/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/DataStream/DemoSet/6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/DataStream/DemoSet/6.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,19 +331,21 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Backend/Classes/CorruptLocationFilter.java</url>
-          <line>85</line>
+          <line>89</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Backend/Classes/CorruptLocationFilter.java</url>
-          <line>81</line>
-          <option name="timeStamp" value="8" />
+          <line>85</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="second" />
+        <watch expression="newEntry" />
+        <watch expression="first" />
       </configuration>
     </watches-manager>
   </component>

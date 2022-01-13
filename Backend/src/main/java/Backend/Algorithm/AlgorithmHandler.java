@@ -90,7 +90,7 @@ public class AlgorithmHandler
             ProcessingTrip.setAverageRoad(popular);
             //Average Road Type Calculation END
             //if the entry is corrupt a fakeEntry is provided else proceed as normal
-            TripEntry falseEntry = filter.doFilter(ProcessingTrip.getEntries());
+            TripEntry falseEntry = filter.doFilter(entry, ProcessingTrip.getEntries());
             if (falseEntry != null)
             {
                 entry = falseEntry; //now when you save the entry you'll save the false entry instead
