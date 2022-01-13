@@ -89,6 +89,7 @@
 {"vehicleId":"00A3","lat":51.59324,"lon":4.77203,"alt":49,"dateTime":"2021-08-30T13:44:30+02:00","speed":30,"speedLimit":50,"roadType":3},
 {"vehicleId":"00A3","lat":51.59329,"lon":4.77225,"alt":49,"dateTime":"2021-08-30T13:44:30+02:00","speed":30,"speedLimit":50,"roadType":3},
 {"vehicleId":"00A3","lat":51.59336,"lon":4.7726,"alt":49,"dateTime":"2021-08-30T13:44:30+02:00","speed":30,"speedLimit":50,"roadType":3},
-{"vehicleId":"00A3","lat":51.5934,"lon":4.77285,"alt":49,"dateTime":"2021-08-30T13:44:30+02:00","speed":30,"speedLimit":50,"roadType":3,"ignition":"true"},
+{"vehicleId":"00A3","lat":51.5934,"lon":4.77285,"alt":49,"dateTime":"2021-08-30T13:44:30+02:00","speed":30,"speedLimit":50,"roadType":3},
+{"vehicleId":"00A3","lat":51.5934,"lon":4.77285,"alt":49,"dateTime":"2021-08-30T13:44:34+02:00","speed":30,"speedLimit":50,"roadType":3,"ignition":"true"},
 {"vehicleId":"00A3","lat":51.5934,"lon":4.77285,"alt":49,"dateTime":"2021-08-30T13:49:54+02:00","speed":30,"speedLimit":50,"roadType":3}
 ]

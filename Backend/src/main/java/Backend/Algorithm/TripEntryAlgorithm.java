@@ -57,7 +57,7 @@ public class TripEntryAlgorithm implements Runnable {
     @Override
     public void run()
     {
-
+        t.LoadTrips();
         while(true) //queue.peek() != null) //set to true when threading again
         {
 

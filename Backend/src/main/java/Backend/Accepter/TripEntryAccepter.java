@@ -45,7 +45,7 @@ public class TripEntryAccepter {
         else
         {
             set = set - 10;
-            bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\Splitted Dataset 1.txt\\".concat(String.valueOf(set)).concat(".txt")));
+            bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\Splitted Dataset 1\\".concat(String.valueOf(set)).concat(".txt")));
         }
 
 

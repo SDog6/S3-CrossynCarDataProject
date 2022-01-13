@@ -101,7 +101,7 @@ public class TripRepo implements ITripDAL
         details.getEntries().remove(0);
 
         Update update = new Update();
-        update.pull("Entries", new BasicDBObject("vehicleId", "00A1"));
+        update.pull("Entries", new BasicDBObject("vehicleId", details.getVehicleId()));
 
         mt.findAndModify(query, update, Trip.class, "Trips");
 
