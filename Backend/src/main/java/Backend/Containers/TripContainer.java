@@ -193,7 +193,7 @@ public class TripContainer implements ITripContainer {
 
                     } //HACK: this might work...
 
-                    System.out.println(temp.toString());
+
                     dbSaveEntriestoActiveTripwithVehicleID(temp, vehicleID);
                     for(TripEntry entry : temp)
                     {
