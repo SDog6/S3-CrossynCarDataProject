@@ -75,7 +75,7 @@ public class TripEntryAlgorithm implements Runnable {
 
                 if(h.Add2Trip(entry))
                 {
-                    System.out.println("Trip Finished: " + t.GetPastTripsFromVehicleID(entry.getVehicleID()).get(t.GetPastTripsFromVehicleID(entry.getVehicleID()).size() - 1));
+                    System.out.println("Trip Finished: " + entry.getVehicleID() + entry.getDateTime());
                 }
             }
             catch(InterruptedException ex)
