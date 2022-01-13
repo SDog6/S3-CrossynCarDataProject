@@ -25,7 +25,6 @@ public class UserController {
     @Autowired
     IUser repo;
 
-
     @Autowired
     IVehicleRepo Vrepo;
 
@@ -64,7 +63,7 @@ public class UserController {
         User u = userService.readUserByUsername(username);
         List<String> temp = u.getConnectedVehicles();
         Vehicle check = Vrepo.getVehicleById(vehicleID);
-        if(u.getConnectedVehicles().contains(check)){
+        if(u.getConnectedVehicles().contains(check.getId())){
             return ResponseEntity.ok().body("Already connected");
         }
         if (check.isActive()){

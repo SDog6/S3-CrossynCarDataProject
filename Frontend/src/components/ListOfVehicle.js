@@ -3,26 +3,49 @@ import axios from "axios";
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button } from 'reactstrap';
 import "../styles/vehicleCard.css"
+import jwtDecode from "jwt-decode";
 
 class ListOfVehicle extends Component {
   constructor(props) {
     super(props);
     this.state = {
       vehicles: [],
+      role : ""
     };
   }
 
   componentDidMount() {
-    axios
-      .get(
-        `http://localhost:8083/Vehicle`
-      )
-      .then((response) => {
-        this.setState({
-          vehicles: response.data,
-        });
-        console.log(this.state.vehicles);
-      });
+      var tok = localStorage.getItem('token');
+      if(tok == null){
+      }
+      else {
+        var decoded = jwtDecode(tok);
+        this.setState({role : decoded.role})
+        if(decoded.role === "CROSSYNEMPLOYEE"){
+          axios
+          .get(
+            `http://localhost:8083/Vehicle`
+          )
+          .then((response) => {
+            this.setState({
+              vehicles: response.data,
+            });
+            console.log(this.state.vehicles);
+          });
+        }
+        else {
+          axios
+          .get(
+            `http://localhost:8083/Vehicle/UserVehicles/${decoded.sub}`
+          )
+          .then((response) => {
+            this.setState({
+              vehicles: response.data,
+            });
+            console.log(response.data);
+          });
+        }
+      }
   }
 
   changeVehicleStatus(id){
@@ -50,10 +73,17 @@ class ListOfVehicle extends Component {
     return (
       <div className="vehicle">
         <div className="vehicleButtons">
-        <label htmlFor="vehicle" style={{fontSize:"40px"}}>VEHICLE</label>
-        <Button variant="primary" className="vButtons" href={"/VehicleCreation"}>Add vehcile</Button>
-        <br></br>
-        <Button variant="primary"className="vButtons" href={"/ConnectVehicle"}>Connect user to vehicle</Button>
+        <label htmlFor="vehicle" style={{fontSize:"40px"}}>VEHICLES</label>
+        {this.state.role === "CROSSYNEMPLOYEE" ? (
+          <div  className="vehicleButtons"> 
+                 <Button variant="primary" className="vButtons" href={"/VehicleCreation"}>Add vehcile</Button>
+                 <br></br>
+                 <Button variant="primary"className="vButtons" href={"/ConnectVehicle"}>Connect user to vehicle</Button>
+                 </div>
+              ) : (
+                ""
+              )}
+      
         </div>
 
 
@@ -69,9 +99,15 @@ class ListOfVehicle extends Component {
               <CardSubtitle>Color :{vehicle.color}</CardSubtitle>
               <CardSubtitle>Status :{this.checkVehicleStatus(vehicle.active)}</CardSubtitle>
 
-              <Button variant="primary" href={"/" + "Vehicle" + "/" + vehicle.id}>Change Details</Button>
+              {this.state.role === "CROSSYNEMPLOYEE" ? (
+          <div>
+ <Button variant="primary" href={"/" + "Vehicle" + "/" + vehicle.id}>Change Details</Button>
               <Button variant="primary" onClick={() => this.changeVehicleStatus(vehicle.id)}> Change vehicle status </Button>
-
+                 </div>
+              ) : (
+                ""
+              )}
+             
             </CardBody>
           </Card>
           <br></br>

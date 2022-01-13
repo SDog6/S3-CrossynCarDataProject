@@ -50,7 +50,7 @@ class NavigationBar extends Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? (
+              {this.state.isAuthenticated != "" ? (
                 <NavItem>
                   <NavLink href="/Vehicles">VEHICLES</NavLink>
                 </NavItem>

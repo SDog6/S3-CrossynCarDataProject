@@ -2,6 +2,7 @@ package API;
 
 import Backend.Classes.User;
 import Backend.Classes.Vehicle;
+import Backend.Interfaces.IUser;
 import Backend.Interfaces.IVehicleRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,10 +21,25 @@ public class VehicleController {
 
     @Autowired
     IVehicleRepo repo;
+    @Autowired
+    IUser Urepo;
+
 
     @GetMapping
     public ResponseEntity<List<Vehicle>> getAllVehicles() {
         return ResponseEntity.ok().body(repo.findAll());
+    }
+
+
+    @GetMapping("/UserVehicles/{username}")
+    public ResponseEntity<List<Vehicle>> getAllVehicles(@PathVariable(value = "username") String username) {
+        User u = Urepo.getSingleUserByUsername(username);
+        List<Vehicle> connectedV = new ArrayList<>();
+        for (String id: u.getConnectedVehicles()) {
+            Vehicle v = repo.getVehicleById(id);
+            connectedV.add(v);
+        }
+        return ResponseEntity.ok().body(connectedV);
     }
 
     @PostMapping()
