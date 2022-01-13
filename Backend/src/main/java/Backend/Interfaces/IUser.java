@@ -13,4 +13,5 @@ public interface IUser extends MongoRepository<User, String> {
     User getSingleUserByUsername(String username);
     String getUserByUsernameAndAndConnectedVehicles(String username,String VehicleID);
     User getUserByConnectedVehiclesAndRole(String connectedVehicles,String role);
+
 }

@@ -31,7 +31,6 @@ public class TripContainer implements ITripContainer {
 
     public boolean AddTrip(Trip t) {
         if (trips.add(t)) {
-
             return true;
         }
         return false;
@@ -52,6 +51,13 @@ public class TripContainer implements ITripContainer {
     public List<Trip> dbFetchAllTripSummaries() {return dal.getAllTripswithoutTripEntriesfromDB();}
     public List<Trip> dbFetchAllTripSummarieswithStatus(boolean isActive) {return dal.getAllTripswthoutTripEntriesfromDBwithOngoingStatus(isActive);}
     public void dbSaveEntriestoActiveTripwithVehicleID(List<TripEntry> entries, String VehicleID) {dal.addTripEntryListToActiveTripinDBwithVehicleID(entries, VehicleID);}
+
+
+
+    public void dbSetActiveTripOngoingStatusToFalsewithDriver(String VehicleID,String driver) {dal.setOngoingTripEndDriverinDBwithVehicleID(VehicleID,driver);};
+    public void dbSetActiveTripOngoingStatusToFalsewithSpeedLimitBreak(String VehicleID,int breakcount) {dal.setOngoingTripSpeedLimitBreakinDBwithVehicleID(VehicleID,breakcount);};
+    public void dbSetActiveTripOngoingStatusToFalsewithAverageRoad(String VehicleID,int avgRoad) {dal.setOngoingTripAverageRoadinDBwithVehicleID(VehicleID,avgRoad);};
+    public void dbSetActiveTripOngoingStatusToFalsewithAverageSpeed(String VehicleID,int avgSpeed) {dal.setOngoingTripAverageSpeedinDBwithVehicleID(VehicleID,avgSpeed);};
 
     public void dbSetActiveTripOngoingStatusToFalsewithVehicleID(String VehicleID) {dal.setTripStatustoFalseinDBwithVehicleID(VehicleID);};
     public void dbSetActiveTripEndTimewithVehicleID(String vehicleID, ZonedDateTime endTime) {dal.setOngoingTripEndTimeinDBwithVehicleID(vehicleID, endTime);};
@@ -151,7 +157,13 @@ public class TripContainer implements ITripContainer {
 
         //push end time and set status to false db
         dbSetActiveTripEndTimewithVehicleID(trip.getVehicleId(),trip.GetLatestTripEntry().getDateTime());
+
+        dbSetActiveTripOngoingStatusToFalsewithAverageRoad(trip.getVehicleId(),trip.getAverageRoad());
+        dbSetActiveTripOngoingStatusToFalsewithSpeedLimitBreak(trip.getVehicleId(),trip.getSpeedLimitBreakCounter());
+        dbSetActiveTripOngoingStatusToFalsewithAverageSpeed(trip.getVehicleId(),trip.getAverageSpeed());
+
         dbSetActiveTripEndAddresswithVehicleID(trip.getVehicleId(), trip.getEndAddress());
+        dbSetActiveTripOngoingStatusToFalsewithDriver(trip.getVehicleId(),trip.getDriver());
         dbSetActiveTripOngoingStatusToFalsewithVehicleID(trip.getVehicleId());
         //remove from memory
         trips.remove(trip);
