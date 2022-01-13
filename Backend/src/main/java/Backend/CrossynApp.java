@@ -2,7 +2,6 @@ package Backend;
 
 import Backend.Accepter.AccepterFlow;
 import Backend.Accepter.TripEntryAccepter;
-import Backend.Algorithm.Algorithm;
 import Backend.Algorithm.TripEntryAlgorithm;
 import Backend.Classes.Trip;
 import Backend.Classes.TripEntry;
@@ -25,15 +24,13 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 
-@SpringBootApplication()
-//@RestController
+@SpringBootApplication(scanBasePackages={
+        "Backend", "API"})
 public class CrossynApp {
 
 
     private static TripEntryAlgorithm Algorithm;
 
-//    @Autowired
-//    private TripContainer t;
 
     public CrossynApp(TripEntryAlgorithm Algorithm)
     {
@@ -64,30 +61,4 @@ public class CrossynApp {
         Start.init();
 
     }
-
-
-//     TODO:           SpeedLimit Breaking
-
-//    List<TripEntry> BrokenSpeeds = new LinkedList<>();
-//
-//                for (TripEntry entry : list) {
-//        if (entry.getSpeed() > entry.getSpeedlimit())
-//        {
-//            BrokenSpeeds.add(entry);
-//        }
-//    }
-//                System.out.println("Speed Limit broken: " + BrokenSpeeds.size());
-//                System.out.println("Do you want to see the entries Where speed was broken? (Y/N)");
-//                if(Prompt())
-//    {
-//        for (TripEntry Entry : BrokenSpeeds)
-//        {
-//            System.out.println(Entry);
-//        }
-//    }
-//}
 }
-
-
-
-

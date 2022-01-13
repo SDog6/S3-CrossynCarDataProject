@@ -3,6 +3,7 @@ package Backend.Repo;
 import Backend.Classes.Trip;
 import Backend.Classes.TripEntry;
 import Backend.Interfaces.DatabaseAccess.ITripDAL;
+import com.mongodb.BasicDBObject;
 import com.mongodb.client.model.*;
 import org.bson.conversions.Bson;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,9 +77,39 @@ public class TripRepo implements ITripDAL
         q.addCriteria(Criteria.where("_id").is(tripID));
 
         Update update = new Update();
-        update.pullAll("Entries", new List[]{entries});
+        update.pull("Entries", entries);
 
         mt.findAndModify(q, update, Trip.class, "Trips");
+    }
+
+    @Override
+    public void rmLastThreeTripEntriesFromTripinDBwithID(String ID) {
+        Query query= new Query();
+        query.addCriteria(Criteria.where("_id").is(ID));
+
+
+        Trip details = mt.findOne(query, Trip.class, "Trips");
+
+        Collections.sort(details.getEntries(), new Comparator<TripEntry>() {
+            public int compare(TripEntry o1, TripEntry o2) {
+                return o2.getDateTime().compareTo(o1.getDateTime());
+            }
+        });
+
+        details.getEntries().remove(0);
+        details.getEntries().remove(0);
+        details.getEntries().remove(0);
+
+        Update update = new Update();
+        update.pull("Entries", new BasicDBObject("vehicleId", "00A1"));
+
+        mt.findAndModify(query, update, Trip.class, "Trips");
+
+        update = new Update();
+
+        update.push("Entries").each(details.getEntries());
+        mt.findAndModify(query, update, Trip.class, "Trips");
+
     }
 
     @Override

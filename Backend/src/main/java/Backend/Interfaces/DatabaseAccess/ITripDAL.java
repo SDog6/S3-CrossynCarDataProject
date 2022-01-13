@@ -34,4 +34,5 @@ public interface ITripDAL
         void setOngoingTripEndTimeinDBwithVehicleID(String vehicleID, ZonedDateTime dateTime);
         void setTripEndTimeinDBwithTripID(String tripID, ZonedDateTime dateTime);
 
+        void rmLastThreeTripEntriesFromTripinDBwithID(String ID);
 }

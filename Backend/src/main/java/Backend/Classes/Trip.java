@@ -1,5 +1,6 @@
 package Backend.Classes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mongodb.lang.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,7 +34,14 @@ public class Trip{
     @Nullable
     private ZonedDateTime endTime;
     private boolean currentlyOngoing;
+    private int speedLimitBreakCounter;
+    private int averageSpeed;
+    private int averageRoad;
+    private String startAddress;
+    private String endAddress;
+    private String driver;
 
+    //@JsonIgnore
     private Vehicle vehicle;
 
     private ArrayList<TripEntry> Entries;
@@ -102,6 +110,45 @@ public class Trip{
         this.currentlyOngoing = currentlyOngoing;
     }
 
+    public int getSpeedLimitBreakCounter() {
+        return speedLimitBreakCounter;
+    }
+
+    public void setSpeedLimitBreakCounter(int speedLimitBreakCounter) {
+        this.speedLimitBreakCounter = speedLimitBreakCounter;
+    }
+
+    public int getAverageSpeed() {
+        return averageSpeed;
+    }
+
+    public void setAverageSpeed(int averageSpeed) {
+        this.averageSpeed = averageSpeed;
+    }
+
+    public int getAverageRoad() {
+        return averageRoad;
+    }
+
+    public void setAverageRoad(int averageRoad) {
+        this.averageRoad = averageRoad;
+    }
+
+    public String getStartAddress() {
+        return startAddress;
+    }
+
+    public void setStartAddress(String startAddress) {
+        this.startAddress = startAddress;
+    }
+
+    public String getEndAddress() {
+        return endAddress;
+    }
+
+    public void setEndAddress(String endAddress) {
+        this.endAddress = endAddress;
+    }
 
     public boolean AddTripEntry(TripEntry a) {
         if (a != null){
@@ -110,7 +157,6 @@ public class Trip{
             if(Entries.size() >= 10)
             {
                 this.Entries = this.SortbyTime(Entries); //sorts
-
             }
             return true;
         }
@@ -118,6 +164,14 @@ public class Trip{
             return false;
         }
 
+    }
+
+    public String getDriver() {
+        return driver;
+    }
+
+    public void setDriver(String driver) {
+        this.driver = driver;
     }
 
     public boolean RemoveTripEntry(TripEntry a) {

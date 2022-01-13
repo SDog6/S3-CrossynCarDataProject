@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class TripEntryAccepter {
 
     public TripEntryAccepter() {
@@ -27,26 +28,14 @@ public class TripEntryAccepter {
 
         BufferedReader bufReader = null;
 
-
-
         Scanner input = new Scanner(System.in);
 
-            System.out.println("Please select 1/2/3 to choose a dataset");
-            int set = input.nextInt();
+        System.out.println("Please choose a dataset");
+        int set = input.nextInt();
 
-//            switch (set) {
-//                case 1:
-//                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset1.txt"));
-//                    break;
-//                case 2:
-//                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset2.txt"));
-//                    break;
-//                case 3:
-//                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset3.txt"));
-//                    break;
-//            }
-            bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset".concat(String.valueOf(set)).concat(".txt")));
-            //bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\Splitted Dataset 1\\".concat(String.valueOf(set)).concat(".txt")));
+        //bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset".concat(String.valueOf(set)).concat(".txt")));
+        bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\Splitted Dataset 1\\".concat(String.valueOf(set)).concat(".txt")));
+
             String line = bufReader.readLine();
             String finalLine = "";
             while (line != null) {
@@ -58,65 +47,7 @@ public class TripEntryAccepter {
 
     }
 
-    public String BigLineDialog() throws IOException {
-        BufferedReader bufReader = null;
-
-        JFileChooser fc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
-        int returnVal = fc.showOpenDialog(null);
-        if (returnVal == JFileChooser.APPROVE_OPTION) {
-            // set the label to the path of the selected directory
-            bufReader = new BufferedReader(new FileReader(fc.getSelectedFile().getAbsolutePath()));
-        }
-
-        String line = bufReader.readLine();
-        String finalLine = "";
-        while (line != null) {
-            finalLine = finalLine + line;
-            line = bufReader.readLine();
-        }
-        bufReader.close();
-        return finalLine;
-
-    }
-
-    public String TurnDatasetIntoString() throws IOException {
-
-        BufferedReader bufReader = null;
-        Scanner input = new Scanner(System.in);
-        String finalLine = null;
-        bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset1.txt"));
-
-
-
-//            System.out.println("Please select 1/2/3 to choose a dataset");
-//            int set = input.nextInt();
-//
-//            switch (set) {
-//                case 1:
-//                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset1.txt"));
-//                    break;
-//                case 2:
-//                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset2.txt"));
-//                    break;
-//                case 3:
-//                    bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset3.txt"));
-//                    break;
-//            }
-
-
-            String line = bufReader.readLine();
-
-            while (line != null) {
-                finalLine = finalLine + line;
-                line = bufReader.readLine();
-            }
-            bufReader.close();
-
-
-        return finalLine;
-
-
-    }
+   
 
     public List<TripEntry> TurnJSONStringToObject(String JSON) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();

@@ -3,7 +3,6 @@ package Backend.Containers;
 import Backend.Classes.*;
 import Backend.Interfaces.DatabaseAccess.ITripDAL;
 import Backend.Interfaces.ITripContainer;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,48 +18,35 @@ public class TripContainer implements ITripContainer {
     @Autowired
     ITripDAL dal;
 
-    @Setter
-    private List<Trip>  trips;
+    private List<Trip> trips;
 
-    public TripContainer()
-    {
+    public TripContainer() {
         this.trips = new ArrayList<>();
     }
 
-    public List<Trip> GetAllTrips(){
+    public List<Trip> GetAllTrips() {
         return dal.getAllTripsfromDB();
     }
 
 
-    //Functions (Crud)
-
-    /*
-    public boolean AddTrip(Trip t)
-    {
-        if(trips.add(t))
-        {
-            return true;
-        }
-        return false;
-    }*/
-
-    public boolean AddTrip(Trip t)
-    {
-        if(trips.add(t))
-        {
+    public boolean AddTrip(Trip t) {
+        if (trips.add(t)) {
 
             return true;
         }
         return false;
     }
 
-    public void dbSaveTrip(Trip t)
-    {
+    public void dbSaveTrip(Trip t) {
         dal.addTripinDB(t);
     }
+
+
+
     public Trip dbGetTrip(String id) {return dal.getTripbyIdinDB(id);}
     public List<TripEntry> dbGetLast3TripEntriesfromOngoingTripWithVehicleID(String VehID) {return dal.getLastThreeTripEntriesFromTripinDBwithVehicleID(VehID);};
     public ArrayList<TripEntry> dbGetLast3TripEntriesfromTripWithID(String ID) {return dal.getLastThreeTripEntriesFromTripinDBwithID(ID);};
+    public void dbRemoveLast3TripEntriesfromTripWithID(String ID) {dal.rmLastThreeTripEntriesFromTripinDBwithID(ID);};
     public List<Trip> dbgetAllTrips() {return dal.getAllTripsfromDB();}
     public Trip dbGetOngoingTripbyVehicleID(String vehicleID) {return dal.getOngoingTripbyVehicleIDinDB(vehicleID);}
     public List<Trip> dbFetchAllTripSummaries() {return dal.getAllTripswithoutTripEntriesfromDB();}
@@ -76,111 +62,85 @@ public class TripContainer implements ITripContainer {
         for(Trip trip : trips)
         {
             trip.setEntries(dbGetLast3TripEntriesfromTripWithID(trip.getid()));
-            dbDeleteTripEntriesfromTrip(trip.getid(), trip.getEntries()); //might work too fast, should work in theorie, if problems arise, uncomment for loop under here;
+            dbRemoveLast3TripEntriesfromTripWithID(trip.getid());
+            //dbDeleteTripEntriesfromTrip(trip.getid(), trip.getEntries()); //might work too fast, should work in theorie, if problems arise, uncomment for loop under here;
         }
-//        for(Trip trip : trips)
-//        {
-//            dbDeleteTripEntriesfromTrip(trip.getid(), trip.getEntries());
-//        }
     }
-    public Trip CreateTrip(String vehicleId, ZonedDateTime startTime, ZonedDateTime endTime, boolean currentlyOngoing)
-    {
-         return new Trip(vehicleId, startTime, endTime, currentlyOngoing);
+    public Trip CreateTrip(String vehicleId, ZonedDateTime startTime, ZonedDateTime endTime, boolean currentlyOngoing) {
+        return new Trip(vehicleId, startTime, endTime, currentlyOngoing);
     }
     //TODO: make this an easy create, but also add it too Trip class itself
     /*public Trip CreateTrip(String vehicleId, LocalDate startTime){
         return new Trip(vehicleId, startTime, );
     }*/
 
-    public List<Trip> ReadTrips()
-    {
+    public List<Trip> ReadTrips() {
         return trips;
     }
 
     public boolean UpdateTrips(Trip oldTrip, Trip newTrip) //replace 1 item
     {
-        try
-        {
+        try {
             trips.remove(oldTrip);
 
             try //if can't add new trip re-add old trip
             {
                 trips.add(newTrip);
-            }
-            catch(Exception ex)
-            {
+            } catch (Exception ex) {
                 trips.add(oldTrip);
                 return false;
             }
 
             return true;
-        }
-        catch(Exception ex)
-        {
+        } catch (Exception ex) {
             return false;
         }
     }
 
-    public boolean DeleteTrip(Trip trip)
-    {
-        try
-        {
+    public boolean DeleteTrip(Trip trip) {
+        try {
             trips.remove(trip);
             return true;
-        }
-        catch(Exception ex)
-        {
+        } catch (Exception ex) {
             return false;
         }
     }
 
-    public boolean VehicleOnTrip(String vehicleID)
-    {
-        for(Trip trippu: trips )
-        {
-            if(trippu.getVehicleId().equals(vehicleID) && trippu.isCurrentlyOngoing())
-            {
+    public boolean VehicleOnTrip(String vehicleID) {
+        for (Trip trippu : trips) {
+            if (trippu.getVehicleId().equals(vehicleID) && trippu.isCurrentlyOngoing()) {
                 return true;
             }
         }
         return false;
     }
 
-    public Trip GetOngoingTripFromVehicleID(String vehicleID)
-    {
-        for(Trip trippu: trips )
-        {
-            if(trippu.getVehicleId().equals(vehicleID) && trippu.isCurrentlyOngoing())
-            {
+    public Trip GetOngoingTripFromVehicleID(String vehicleID) {
+        for (Trip trippu : trips) {
+            if (trippu.getVehicleId().equals(vehicleID) && trippu.isCurrentlyOngoing()) {
                 return trippu;
             }
         }
         return null;
     }
 
-    public List<Trip> GetPastTripsFromVehicleID(String vehicleID)
-    {
-        List<Trip> pastTrips=new LinkedList<Trip>();
+    public List<Trip> GetPastTripsFromVehicleID(String vehicleID) {
+        List<Trip> pastTrips = new LinkedList<Trip>();
 
-        for( Trip trippu : trips)
-        {
-            if(trippu.getVehicleId().equals(vehicleID))
-            {
+        for (Trip trippu : trips) {
+            if (trippu.getVehicleId().equals(vehicleID)) {
                 pastTrips.add(trippu);
             }
         }
-        if(!pastTrips.isEmpty())
-        {
+        if (!pastTrips.isEmpty()) {
             return pastTrips;
-        }
-        else
-        {
+        } else {
             return null;
         }
     }
-
     public void FinishUpTrip(Trip trip)
     {
+
         //find trip
         Trip toBeEnded = trips.get(trips.indexOf(trip));
         //push latest non fake entries to db
@@ -217,6 +177,7 @@ public class TripContainer implements ITripContainer {
 
                     } //HACK: this might work...
 
+                    System.out.println(temp.toString());
                     dbSaveEntriestoActiveTripwithVehicleID(temp, vehicleID);
                     for(TripEntry entry : temp)
                     {
@@ -228,8 +189,4 @@ public class TripContainer implements ITripContainer {
         }
         return false;
     }
-
-
-
-
 }

@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="babc8bef-6cb0-4ffe-95f2-e608172673ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Backend/Repo/StringToDocumentConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Accepter/TripEntryAccepter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Accepter/TripEntryAccepter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/TripEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/TripEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/GeocoderAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/GeocoderAlgo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/TripEntryAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Algorithm/TripEntryAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Classes/Trip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Backend/CrossynApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/CrossynApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Backend/Repo/MongoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Backend/Repo/MongoConfiguration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,8 +78,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -90,23 +94,14 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/Backend/Algorithm/AlgorithmHandler.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Backend/Repo/MongoConfiguration.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Backend/Algorithm/TripEntryAlgorithm.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Backend/Containers/TripContainer.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Backend/Classes/TripEntry.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Backend/Algorithm/Algorithm.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Backend/Repo/TripRepo.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Backend/Repo/DocumentToZonedDateTimeConverter.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Backend/Interfaces/DatabaseAccess/ITripDAL.java" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
         <entry key="JPA Inspector" value="true" />
         <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="true" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
@@ -115,6 +110,8 @@
         <entry key="JPA Inspector" value="false" />
         <entry key="JPA Palette" value="false" />
         <entry key="JPA Structure" value="false" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
@@ -137,7 +134,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/API/Security" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -148,6 +145,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\GitStuff\ZAP\Backend\src\main\java\API\Security" />
       <recent name="C:\GitStuff\ZAP\Backend\src\main\java\Backend\DataStream" />
       <recent name="C:\Users\Hristo\Desktop\New folder\crossyn_project\Backend" />
     </key>
@@ -156,7 +154,7 @@
       <recent name="Backend" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Backend.Repo" />
+      <recent name="Backend.Containers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -295,6 +293,10 @@
       <workItem from="1638176599911" duration="9672000" />
       <workItem from="1638187311931" duration="853000" />
       <workItem from="1638267688007" duration="6803000" />
+      <workItem from="1638795437068" duration="13824000" />
+      <workItem from="1641830728499" duration="10472000" />
+      <workItem from="1641976309074" duration="34000" />
+      <workItem from="1642078923627" duration="3272000" />
     </task>
     <servers />
   </component>

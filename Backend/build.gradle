@@ -40,6 +40,7 @@ dependencies {
 
     implementation 'javax.persistence:javax.persistence-api'
     implementation 'org.jetbrains:annotations:20.1.0'
+    implementation 'org.webjars.bowergithub.perliedman:leaflet-control-geocoder:1.13.0'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
@@ -56,9 +57,15 @@ dependencies {
 
 // https://mvnrepository.com/artifact/org.springframework/gs-spring-boot-docker
     //implementation 'org.springframework:gs-spring-boot-docker:0.1.0'
+
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'com.auth0:java-jwt:3.11.0'
 }
 
 
 test {
     useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }

@@ -15,13 +15,13 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import javax.swing.*;
+import java.io.IOException;
 import java.time.Duration;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
-
 @NoArgsConstructor
 @Service
 public class TripEntryAlgorithm implements Runnable {
@@ -30,8 +30,6 @@ public class TripEntryAlgorithm implements Runnable {
 
     @Setter
     BlockingQueue<TripEntry> queue;
-    //Queue<TripEntry> queue;
-
 
     @Autowired
     private TripContainer t;
@@ -59,8 +57,7 @@ public class TripEntryAlgorithm implements Runnable {
     @Override
     public void run()
     {
-        t.LoadTrips();
-        System.out.println(t.ReadTrips());
+
         while(true) //queue.peek() != null) //set to true when threading again
         {
 
@@ -70,16 +67,16 @@ public class TripEntryAlgorithm implements Runnable {
             {
                 synchronized(queue) {
                     while (queue.isEmpty())
-                        queue.wait();
+                        queue.wait(); //wait for the queue to become empty
                 }
 
-                 entry = queue.take();
-                 //entry = queue.poll();
-                 if(h.Add2Trip(entry))
-                 {
-                     //System.out.println("Trip Finished: " + t.GetPastTripsFromVehicleID(entry.getVehicleID()).get(t.GetPastTripsFromVehicleID(entry.getVehicleID()).size() - 1));
-                     if(!h.Add2Trip(entry)){System.out.println("Something went wrong here.... a trip with one entry is created?");}
-                 }
+                entry = queue.take();
+
+
+                if(h.Add2Trip(entry))
+                {
+                    System.out.println("Trip Finished: " + t.GetPastTripsFromVehicleID(entry.getVehicleID()).get(t.GetPastTripsFromVehicleID(entry.getVehicleID()).size() - 1));
+                }
             }
             catch(InterruptedException ex)
             {
@@ -90,31 +87,11 @@ public class TripEntryAlgorithm implements Runnable {
             {
                 System.out.println(ex2);
                 ex2.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
 
 
         }
     }
-
-
-    /*
-    TripEntry OldEntry = null;
-        for (TripEntry entry : list)
-    {
-        if(OldEntry == null)
-        {
-            OldEntry = entry;
-
-        }
-        else
-        {
-            if(entry.getDateTime().getHour() - OldEntry.getDateTime().getHour() >= 1){
-                System.out.print(entry.getDateTime());
-                System.out.println(OldEntry.getDateTime());
-
-            }
-            OldEntry = entry;
-        }*/
-
 }

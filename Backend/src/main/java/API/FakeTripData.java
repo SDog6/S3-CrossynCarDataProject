@@ -15,7 +15,6 @@ public class FakeTripData {
         this.s = new ArrayList<>();
 
         ZonedDateTime zone = ZonedDateTime.now();
-        s.add(new Trip(new Vehicle("s","s","s","s",true),zone,zone,false));
 
     }
 

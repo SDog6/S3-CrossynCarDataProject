@@ -12,7 +12,6 @@ public class TripEntryContainer
     //facts
     private List<TripEntry> tripEntryList=new ArrayList<TripEntry>();
 
-    //Functions (Crud)
     public TripEntry AddTripEntry(String vehicleId, double lat, double lon, int alt, ZonedDateTime dateTime, int speed, int speedLimit, int roadType, boolean ignition)
     {
         TripEntry tripEntry = CreateTripEntry(vehicleId, lat, lon, alt, dateTime, speed, speedLimit, roadType, ignition);

@@ -1,45 +1,98 @@
-import React from 'react';
-import '../styles/NavBar.css';
-import {  Link } from "react-router-dom";
-import {Container ,Navbar, Nav} from 'react-bootstrap'
+import React, { Component } from "react";
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from "reactstrap";
+import "../styles/NavBar.css";
 import logo from "../images/logo.png";
-import SecuredRoute from './SecureRoute';
+import jwtDecode from "jwt-decode";
 
-
-
-class NavBar extends React.Component  {
-
+class NavigationBar extends Component {
   constructor(props) {
     super(props);
+    this.toggle = this.toggle.bind(this);
     this.state = {
-        isAuthenticated: ''
+      isOpen: false,
+      username: "",
+      isAuthenticated: "",
     };
-}
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    });
+  }
 
-componentDidMount() {
-  if (localStorage.getItem('token') === "logged in") {
-      this.setState({ isAuthenticated: "logged in" });
+  componentDidMount() {
+    var tok = localStorage.getItem("token");
+    if (tok == null) {
+    } else {
+      var decoded = jwtDecode(tok);
+      this.setState({ isAuthenticated: decoded.role });
+      console.log(decoded);
+    }
+  }
+
+  render() {
+    var username = this.state.username;
+    var big = username.toUpperCase();
+    return (
+      <div>
+        <Navbar color="dark" light expand="md">
+          <NavbarBrand href="/">
+            <img src={logo} className="img-logo" alt="Logo" />
+          </NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              {this.state.isAuthenticated != "" ? (
+                <NavItem>
+                  <NavLink href="/Vehicles">VEHICLES</NavLink>
+                </NavItem>
+              ) : (
+                ""
+              )}
+
+              {this.state.isAuthenticated === "CROSSYNEMPLOYEE" ? (
+                <NavItem>
+                  <NavLink href="/users">LIST OF USER</NavLink>
+                </NavItem>
+              ) : (
+                ""
+              )}
+              {this.state.isAuthenticated === "" ? (
+                ""
+                ) : (
+
+                <NavItem>
+                  <NavLink href="/Trips">TRIPS</NavLink>
+                </NavItem>
+              )}
+
+              {this.state.isAuthenticated === "" ? (
+                <NavItem>
+                  <NavLink href="/login">LOGIN</NavLink>
+                </NavItem>
+              ) : (
+             ""
+              )}
+
+              {this.state.isAuthenticated === "" ? (
+                "") : (
+                <NavItem>
+                  <NavLink href="/Logout">LOGOUT</NavLink>
+                </NavItem>
+              )}
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
   }
 }
-
-render(){
-  
-  const isAuthenticated = localStorage.getItem("token")
-
-  return (
-    <div className="Navigation">
-    <Navbar bg="dark" variant="dark">
-    <Container>
-    <Navbar.Brand href="/"> <img src={logo} className="img-logo" alt="Logo"/></Navbar.Brand>
-     <Nav className="me-auto" >
-     {isAuthenticated === "logged in" ? "" : <Nav.Link href="/login">Log in</Nav.Link>}  
-      {isAuthenticated === "logged in" ? <Nav.Link href="/Trips">Trips</Nav.Link> : ""} 
-      {isAuthenticated === "logged in" ? <Nav.Link href="/Logout">Log out</Nav.Link> : ""} 
-    </Nav>
-    </Container>
-  </Navbar>
-</div>
-  );
-}
-}
-export default NavBar;
+export default NavigationBar;

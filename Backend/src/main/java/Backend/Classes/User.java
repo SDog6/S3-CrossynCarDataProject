@@ -1,7 +1,14 @@
 package Backend.Classes;
-import lombok.Data;
-import org.springframework.data.mongodb.core.mapping.Document;
 
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,24 +17,32 @@ import java.util.List;
 
 @Data
 @Document(collection = "User")
+@AllArgsConstructor
 public class User {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long userID;
-
+    private String id;
     private String username;
     private String password;
-    private boolean admin;
-    private List<String> connectedTripIDs;
-    private List<String> activeVehicles;
+    private String role;
+    @Field("connectedVehicles")
+    private List<String> connectedVehicles;
+    @Field("connectedTrips")
+    private List<String> connectedTrips;
+
     public User() {
     }
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+    public User(String username, String password, String role) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
     }
 
     public String getUsername() {
@@ -46,20 +61,19 @@ public class User {
         this.password = password;
     }
 
-    public Long getId() {
-        return userID;
+    public String getId() {
+        return id;
     }
 
-    public void setId(Long userID) {
-        this.userID = userID;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public boolean isAdmin() {
-        return admin;
+    public String getRole() {
+        return role;
     }
 
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
+    public void setRole(String role) {
+        this.role = role;
     }
-
 }

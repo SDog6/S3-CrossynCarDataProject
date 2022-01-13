@@ -1,20 +1,21 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import HomeImg from "../images/homeimg.jpg";
-
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import Carousel from './Carousel.js';
 function Home() {
   return (
-    <div>
-<div className="HomePage">
-<h1>Welcome</h1>
-<br></br>
-<img src={HomeImg} className="home-img" alt="homeimg"/>
-</div>
+    <div className='home' style={{ textAlign: "center" }}>
+      <br></br>
+      <br></br>
+      <h1 >WELCOME !</h1>
+      <br></br>
+      <br></br>
+      <Carousel/>      
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
     </div>
-   
   );
 }
-
 export default Home;

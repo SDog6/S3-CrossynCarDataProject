@@ -1,39 +1,45 @@
 package Backend.Classes;
 
-import Backend.Interfaces.IVehicleContainer;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
 
-@Data
 @NoArgsConstructor
 @Entity
 @Document(collection = "Vehicle")
-public class Vehicle
-{
+public class Vehicle {
 
+    @Getter
+    @Setter
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String vehicleID;
-
+    private String id;
+    @Getter
+    @Setter
     private String brand;
-
-    private String licensePlate;
-
+    @Getter
+    @Setter
+    private String lplate;
+    @Getter
+    @Setter
     private String color;
+    private boolean active;
 
-    private boolean currentlyInUse;
-
-    public Vehicle(String vehicleID, String brand, String licensePlate, String color,boolean currentlyInUse) {
-        this.vehicleID = vehicleID;
+    public Vehicle(String id, String brand, String lplate, String color) {
+        this.id = id;
         this.brand = brand;
-        this.licensePlate = licensePlate;
+        this.lplate = lplate;
         this.color = color;
-        this.currentlyInUse = currentlyInUse;
     }
 
+    public boolean isActive() {
+        return active;
+    }
 
+    public void setActive(boolean active) {
+        this.active = active;
+    }
 }

@@ -32,10 +32,9 @@ class Login extends Component{
         })
             .then(response => { 
                 console.log(response);
-                const token = "logged in";
+                const token = response.data.Authorization;
                 localStorage.setItem("token", token);
                 window.location.href = '/';
-
             
             },
             (error) => {
