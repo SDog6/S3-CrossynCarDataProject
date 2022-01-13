@@ -52,8 +52,11 @@ public class TripContainer implements ITripContainer {
     public List<Trip> dbFetchAllTripSummaries() {return dal.getAllTripswithoutTripEntriesfromDB();}
     public List<Trip> dbFetchAllTripSummarieswithStatus(boolean isActive) {return dal.getAllTripswthoutTripEntriesfromDBwithOngoingStatus(isActive);}
     public void dbSaveEntriestoActiveTripwithVehicleID(List<TripEntry> entries, String VehicleID) {dal.addTripEntryListToActiveTripinDBwithVehicleID(entries, VehicleID);}
+
     public void dbSetActiveTripOngoingStatusToFalsewithVehicleID(String VehicleID) {dal.setTripStatustoFalseinDBwithVehicleID(VehicleID);};
     public void dbSetActiveTripEndTimewithVehicleID(String vehicleID, ZonedDateTime endTime) {dal.setOngoingTripEndTimeinDBwithVehicleID(vehicleID, endTime);};
+    public void dbSetActiveTripEndAddresswithVehicleID(String vehicleID, String EndAddress) {dal.setOngoingTripEndAddressinDBwithVehicleID(vehicleID, EndAddress);}
+
     public void dbDeleteTripEntriesfromTrip(String tripID, List<TripEntry> entries) {dal.removeTripEntriesfromTripinDBwithID(tripID, entries);}
 
     public void LoadTrips()
@@ -148,6 +151,7 @@ public class TripContainer implements ITripContainer {
 
         //push end time and set status to false db
         dbSetActiveTripEndTimewithVehicleID(trip.getVehicleId(),trip.GetLatestTripEntry().getDateTime());
+        dbSetActiveTripEndAddresswithVehicleID(trip.getVehicleId(), trip.getEndAddress());
         dbSetActiveTripOngoingStatusToFalsewithVehicleID(trip.getVehicleId());
         //remove from memory
         trips.remove(trip);

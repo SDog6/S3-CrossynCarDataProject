@@ -33,8 +33,16 @@ public class TripEntryAccepter {
         System.out.println("Please choose a dataset");
         int set = input.nextInt();
 
-        //bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset".concat(String.valueOf(set)).concat(".txt")));
-        bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\Splitted Dataset 1\\".concat(String.valueOf(set)).concat(".txt")));
+        if(set <= 10)
+        {
+            bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset".concat(String.valueOf(set)).concat(".txt")));
+        }
+        else
+        {
+            set = set - 10;
+            bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\Splitted Dataset 1\\".concat(String.valueOf(set)).concat(".txt")));
+        }
+
 
             String line = bufReader.readLine();
             String finalLine = "";
@@ -47,7 +55,7 @@ public class TripEntryAccepter {
 
     }
 
-   
+
 
     public List<TripEntry> TurnJSONStringToObject(String JSON) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();

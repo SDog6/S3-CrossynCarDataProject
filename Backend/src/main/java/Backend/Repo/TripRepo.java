@@ -261,6 +261,18 @@ public class TripRepo implements ITripDAL
     }
 
     @Override
+    public void setOngoingTripEndAddressinDBwithVehicleID(String vehicleID, String string) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("vehicleId").is(vehicleID));
+        query.addCriteria(Criteria.where("currentlyOngoing").is(true));
+
+        Update update = new Update();
+        update.set("endAddress", string);
+
+        mt.findAndModify(query, update, Trip.class, "Trips");
+    }
+
+    @Override
     public void setTripEndTimeinDBwithTripID(String tripID, ZonedDateTime dateTime)
     {
         Query query = new Query();

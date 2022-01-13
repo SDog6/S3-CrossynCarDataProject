@@ -32,6 +32,8 @@ public interface ITripDAL
         void changeTripOngoingStatusinDB(boolean status, String tripID);
         void setTripStatustoFalseinDBwithVehicleID(String VehicleID);
         void setOngoingTripEndTimeinDBwithVehicleID(String vehicleID, ZonedDateTime dateTime);
+        void setOngoingTripEndAddressinDBwithVehicleID(String vehicleID, String string);
+
         void setTripEndTimeinDBwithTripID(String tripID, ZonedDateTime dateTime);
 
         void rmLastThreeTripEntriesFromTripinDBwithID(String ID);
