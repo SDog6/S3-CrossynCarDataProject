@@ -17,7 +17,7 @@ public class GeocoderAlgo {
 
     //THIS THING WILL EXPIRE AND THEN IT WILL NOT WORK
     //MAKE SURE YOU CHANGE THIS AND TEST IT ON THE DAY OF PRESENTATION!!!!!!!!
-    private String apikey = "e0gwvkMbkFCWOUKVjS3yqxXpnzZiBmlGGOh-4MW564A";
+    private String apikey = "XFj0oyiVP1fKGWEHP3PAiZ1qLizm3ZwCIgGN504qiy4";
     private String Stringify(String lat, String lon) {
         return "https://revgeocode.search.hereapi.com/v1/revgeocode?lang=en-US&at=" + lat + "%2C" + lon + "&apikey=" + apikey;
     }
