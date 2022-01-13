@@ -37,7 +37,7 @@ public class TripEntryAccepter {
         {
             bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\dataset".concat(String.valueOf(set)).concat(".txt")));
         }
-        else if(set > 100)
+        else if(set > 99)
         {
             set = set - 100;
             bufReader = new BufferedReader(new FileReader("src\\main\\java\\Backend\\DataStream\\DemoSet\\".concat(String.valueOf(set)).concat(".txt")));
