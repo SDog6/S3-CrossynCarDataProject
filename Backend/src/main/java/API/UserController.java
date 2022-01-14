@@ -60,6 +60,8 @@ public class UserController {
         User u = userService.readUserByUsername(username);
         List<String> temp = u.getConnectedVehicles();
         Vehicle check = Vrepo.getVehicleById(vehicleID);
+        if(check != null && u != null){
+
             if (u.getConnectedVehicles().contains(check.getId())) {
                 temp.remove(vehicleID);
                 u.setConnectedVehicles(temp);
@@ -70,6 +72,9 @@ public class UserController {
                 if (u.getRole().equals("DRIVER") && repo.getUserByConnectedVehiclesAndRole(vehicleID,"DRIVER")  != null){
                     return ResponseEntity.ok().body("Only 1 Vehicle can be connected to a driver at a time");
                 }
+                if (u.getRole().equals("FLEETOWNER") && repo.getUserByConnectedVehiclesAndRole(vehicleID,"FLEETOWNER")  != null){
+                    return ResponseEntity.ok().body("Vehicle can only have 1 fleet owner at a time");
+                }
                 temp.add(vehicleID);
                 u.setConnectedVehicles(temp);
                 dal.addUserinDB(u);
@@ -77,6 +82,11 @@ public class UserController {
             } else {
                 return ResponseEntity.ok().body("Vehicle is disabled please choose another one");
             }
+
+        }
+        else{
+            return ResponseEntity.ok().body("Select valid vehicle and user");
+        }
 
 
     }

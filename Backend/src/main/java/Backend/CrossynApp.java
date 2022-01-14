@@ -37,15 +37,7 @@ public class CrossynApp {
         this.Algorithm = Algorithm;
     }
 
-//    @RequestMapping("/")
-//    public String home() {
-//        String test = "";
-//        for (Trip item : t.dbFetchAllTripSummaries())
-//        {
-//            test = test + item;
-//        }
-//        return test;
-//    }
+
 
     public static void main(String[] args) throws IOException
     {
