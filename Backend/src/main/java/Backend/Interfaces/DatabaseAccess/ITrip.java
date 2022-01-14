@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface ITrip extends MongoRepository<Trip, String> {
     List<Trip> getTripsByDriver(String Driver);
+    Trip getTripById(String id);
 }

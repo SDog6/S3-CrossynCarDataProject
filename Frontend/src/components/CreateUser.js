@@ -11,7 +11,9 @@ class CreateUser extends Component {
         this.state = {         
             username: '',
             password: '',
-            role:''
+            role:'',
+            errorMessage: ""
+
         }
         this.changeUsernameHandler = this.changeUsernameHandler.bind(this);
         this.changePasswordHandler = this.changePasswordHandler.bind(this);
@@ -23,14 +25,19 @@ class CreateUser extends Component {
 
     saveMember = (hndl) => {
         hndl.preventDefault();
-        var tok = localStorage.getItem('token');
-        let member = { username: this.state.username, password: this.state.password , role : this.state.role};
-        axios.post("http://localhost:8083/register", member, 
-        {headers: {"Authorization" : `${tok}`}}).then((response) => {
-            console.log(response)
-            window.location.href = '/Users';
-
-        });
+        if(this.state.username === '' || this.state.password === '' || this.state.role === ''){
+            this.setState({ errorMessage: "Fill in all the empty fields" });
+        }else{
+            var tok = localStorage.getItem('token');
+            let member = { username: this.state.username, password: this.state.password , role : this.state.role};
+            axios.post("http://localhost:8083/register", member, 
+            {headers: {"Authorization" : `${tok}`}}).then((response) => {
+                console.log(response)
+                window.location.href = '/Users';
+    
+            });
+        }
+       
         }
 
 
@@ -82,7 +89,10 @@ class CreateUser extends Component {
                                     </div>
                                     <br></br>
                                     <button className="btn btn-success" onClick={this.saveMember}>Create user</button>
+                                    { this.state.errorMessage &&
+                   <p className="message"> { this.state.errorMessage } </p> }
                                 </form>
+                                
                             </div>
                         </div>
                     </div>

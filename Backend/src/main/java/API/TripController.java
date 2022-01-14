@@ -51,7 +51,6 @@ public class TripController {
     @GetMapping("/connected/{username}")
     public ResponseEntity<List<Trip>> getAllConnectedTrips(@PathVariable(value = "username") String username){
         User u = Urepo.getSingleUserByUsername(username);
-        System.out.println(u.getUsername());
         List<Trip> connectedT = new ArrayList<>();
         for (String id: u.getConnectedTrips()) {
             Trip temp = dal.dbGetTrip(id);

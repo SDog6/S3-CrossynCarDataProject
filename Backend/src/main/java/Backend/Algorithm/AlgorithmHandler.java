@@ -116,7 +116,7 @@ public class AlgorithmHandler
                     temp.setConnectedTrips(ConnectedTrip1);
                     UserRep.save(temp);
                 }
-                if(temp != null){
+                if(temp2 != null){
                     List<String> ConnectedTrip = temp2.getConnectedTrips();
                     ConnectedTrip.add(ProcessingTrip.getid());
                     temp2.setConnectedTrips(ConnectedTrip);
