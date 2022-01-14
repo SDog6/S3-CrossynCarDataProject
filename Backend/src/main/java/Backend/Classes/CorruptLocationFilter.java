@@ -36,7 +36,7 @@ public class CorruptLocationFilter {
         double hours = time.toHours();
         if (hours == 0)
         {
-            hours = 0.0005;
+            hours = 0.005;
         }
         return distance/hours; // KM/H
     }
